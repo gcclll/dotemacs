@@ -397,3 +397,21 @@
 [submodule "site-lisp/extensions/magit"]
 	path = site-lisp/extensions/magit
 	url = https://github.com/magit/magit.git
+[submodule "site-lisp/extensions/org-roam-ui"]
+	path = site-lisp/extensions/org-roam-ui
+	url = https://github.com/org-roam/org-roam-ui.git
+[submodule "site-lisp/extensions/emacs-web-server"]
+	path = site-lisp/extensions/emacs-web-server
+	url = https://github.com/skeeto/emacs-web-server.git
+[submodule "site-lisp/extensions/emacs-which-key"]
+	path = site-lisp/extensions/emacs-which-key
+	url = https://github.com/justbur/emacs-which-key.git
+[submodule "site-lisp/extensions/vimish-fold"]
+	path = site-lisp/extensions/vimish-fold
+	url = https://github.com/matsievskiysv/vimish-fold.git
+[submodule "site-lisp/extensions/expand-region.el"]
+	path = site-lisp/extensions/expand-region.el
+	url = https://github.com/magnars/expand-region.el.git
+[submodule "site-lisp/extensions/tiny"]
+	path = site-lisp/extensions/tiny
+	url = https://github.com/abo-abo/tiny.git
