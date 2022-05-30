@@ -385,3 +385,6 @@
 [submodule "site-lisp/extensions/emacs-application-framework"]
 	path = site-lisp/extensions/emacs-application-framework
 	url = https://github.com/emacs-eaf/emacs-application-framework.git
+[submodule "site-lisp/extensions/org-special-block-extras"]
+	path = site-lisp/extensions/org-special-block-extras
+	url = https://github.com/alhassy/org-special-block-extras.git
