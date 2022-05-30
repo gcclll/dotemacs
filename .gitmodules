@@ -433,3 +433,9 @@
 [submodule "site-lisp/extensions/general.el"]
 	path = site-lisp/extensions/general.el
 	url = https://github.com/noctuid/general.el.git
+[submodule "site-lisp/extensions/tabnine-capf"]
+	path = site-lisp/extensions/tabnine-capf
+	url = https://github.com/50ways2sayhard/tabnine-capf.git
+[submodule "site-lisp/extensions/all-the-icons.el"]
+	path = site-lisp/extensions/all-the-icons.el
+	url = https://github.com/domtronn/all-the-icons.el.git

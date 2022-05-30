@@ -47,7 +47,7 @@
     (require 'init-highlight-parentheses)
     (require 'init-awesome-tray)
     (require 'init-line-number)
-    ;; (require 'init-lsp-bridge)
+    (require 'init-lsp-bridge)
     (require 'init-auto-save)
     (require 'init-mode)
     (require 'init-grammatical-edit)
