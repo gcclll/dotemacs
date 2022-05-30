@@ -370,3 +370,9 @@
 [submodule "site-lisp/extensions/company-mode"]
 	path = site-lisp/extensions/company-mode
 	url = https://github.com/company-mode/company-mode.git
+[submodule "site-lisp/extensions/evil"]
+	path = site-lisp/extensions/evil
+	url = https://github.com/emacs-evil/evil.git
+[submodule "site-lisp/extensions/tree-sitter-langs"]
+	path = site-lisp/extensions/tree-sitter-langs
+	url = https://github.com/emacs-tree-sitter/tree-sitter-langs.git
