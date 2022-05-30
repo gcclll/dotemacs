@@ -376,3 +376,12 @@
 [submodule "site-lisp/extensions/tree-sitter-langs"]
 	path = site-lisp/extensions/tree-sitter-langs
 	url = https://github.com/emacs-tree-sitter/tree-sitter-langs.git
+[submodule "site-lisp/extensions/smooth-scrolling"]
+	path = site-lisp/extensions/smooth-scrolling
+	url = https://github.com/aspiers/smooth-scrolling.git
+[submodule "site-lisp/extensions/yasnippet"]
+	path = site-lisp/extensions/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git
+[submodule "site-lisp/extensions/emacs-application-framework"]
+	path = site-lisp/extensions/emacs-application-framework
+	url = https://github.com/emacs-eaf/emacs-application-framework.git

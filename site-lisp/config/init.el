@@ -24,6 +24,7 @@
      ;;(require 'benchmark-init)
      ;;(benchmark-init/activate)
  
+     (require 'init-proxy)
      (require 'init-utils)
      (require 'init-file-type)
      (require 'init-evil)
@@ -46,7 +47,7 @@
     (require 'init-highlight-parentheses)
     (require 'init-awesome-tray)
     (require 'init-line-number)
-    (require 'init-lsp-bridge)
+    ;; (require 'init-lsp-bridge)
     (require 'init-auto-save)
     (require 'init-mode)
     (require 'init-grammatical-edit)
@@ -66,7 +67,7 @@
          (require 'elf-mode)
          (require 'snails)
 
-         (require 'init-tree-sitter)
+        ;;  (require 'init-tree-sitter)
          (require 'init-eldoc)
          (require 'init-yasnippet)
          (require 'init-smooth-scrolling)
@@ -80,7 +81,6 @@
          (require 'init-popweb)
 
          (require 'init-eaf) ;; 我这mac上依旧卡，干脆不用了
-         (require 'init-proxy)
          (require 'init-search-engine)
          (require 'init-ivy)
          (require 'init-which-key)
