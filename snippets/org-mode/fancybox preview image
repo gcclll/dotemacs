@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: fancybox preview image
+# key: ximg
+# --
+#+begin_export html
+<a href="../assets/img/$1"
+   data-fancybox="gallery"
+   data-caption="Preview"
+><img src="../assets/img/$1"/></a>
+#+end_export

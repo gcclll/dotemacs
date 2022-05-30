@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org head tag and category
+# key: xmetas
+# --
+#+HTML_HEAD: <meta name="category" content="$1"/>
+#+HTML_HEAD: <meta name="tags" content="$2"/>
+#+HTML_HEAD: <meta name="createdAt" content="`(insert-current-date-time)`"/>

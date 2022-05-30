@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: include whole source file
+# key: xincsrc
+# --
+#+include: "$1" src $2

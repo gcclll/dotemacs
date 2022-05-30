@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: insert createdAt header
+# key: xmetadate
+# --
+#+HTML_HEAD: <meta name="createdAt" content="`(insert-current-date-time)`"/>

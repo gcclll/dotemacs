@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-capture-last-stored"
+ (filename . "~/github/mine/blog.cheng92.com/org/emacs_all_keybindings.org")
+ (front-context-string . "\n* COMMENT Local")
+ (rear-context-string . "macs | tinder>\n\n")
+ (position . 316))
+)

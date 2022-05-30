@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: test go with plane
+# key: testgo
+# --
+[[$1][go test 🛬]]

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: debug log
+# key: xlog
+# --
+const log = (hint, ...msg) => {
+  console.log(`--------- ${hint} ---------`)
+  msg.forEach((m) => {
+    console.log(m)
+  })
+}

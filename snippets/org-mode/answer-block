@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: answer-block
+# key: 1ia
+# --
+#+begin_answer-block
+@@html:<p>❗ <strong>Answer</strong> ❗</p>@@
+
+$2
+#+end_answer-block

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: vue element-plus page
+# key: xelementhead
+# --
+#+HTML_HEAD: <script>window.linkHome=true</script>
+#+HTML_HEAD: <style>#content{width:100%;max-width:80%;}</style>

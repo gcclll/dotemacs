@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: include source file
+# key: xinclines
+# --
+#+include: "$1" :lines "$2-$3" src $4

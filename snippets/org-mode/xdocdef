@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: xdocdef
+# key: xdocdef
+# --
+#+begin_documentation $1 :show t :color blue
+$2
+#+end_documentation

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: blog src export to file
+# key: xefile
+# --
+#+begin_src js -n -r :noweb yes :tangle "~/github/mine/blog.cheng92.com/assets/tests/$1.js"
+$2
+#+end_src

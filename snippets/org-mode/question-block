@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: question-block
+# key: 1iq
+# --
+#+begin_question-block
+@@html:<p>❓ <strong>Question</strong></p>@@
+
+$2
+
+#+begin_answer-block
+@@html:<p>❗ <strong>Answer</strong></p>@@
+
+$3
+#+end_answer-block
+#+end_question-block
