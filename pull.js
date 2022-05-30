@@ -25,7 +25,7 @@ fs.readFile('./bak.gitmodules', 'utf8', (err, data) => {
         console.log(`~/.emacs.d/${path} existed.`)
         return
       }
-      exec(`git submodule add ${url} ${path}`, (err, stdout, stdin) => {
+      exec(`git submodule add -f ${url} ${path}`, (err, stdout, stdin) => {
         if (err) {
           //console.log('\nERROR: ' + err + '\n')
           return

@@ -415,3 +415,21 @@
 [submodule "site-lisp/extensions/tiny"]
 	path = site-lisp/extensions/tiny
 	url = https://github.com/abo-abo/tiny.git
+[submodule "site-lisp/extensions/emacs-emojify"]
+	path = site-lisp/extensions/emacs-emojify
+	url = https://github.com/iqbalansari/emacs-emojify.git
+[submodule "site-lisp/extensions/emacs-vdiff"]
+	path = site-lisp/extensions/emacs-vdiff
+	url = https://github.com/justbur/emacs-vdiff.git
+[submodule "site-lisp/extensions/ace-jump-mode"]
+	path = site-lisp/extensions/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule "site-lisp/extensions/popup-el"]
+	path = site-lisp/extensions/popup-el
+	url = https://github.com/auto-complete/popup-el.git
+[submodule "site-lisp/extensions/js-doc"]
+	path = site-lisp/extensions/js-doc
+	url = https://github.com/mooz/js-doc.git
+[submodule "site-lisp/extensions/general.el"]
+	path = site-lisp/extensions/general.el
+	url = https://github.com/noctuid/general.el.git
