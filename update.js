@@ -15,7 +15,7 @@ fs.readFile('./.gitmodules', 'utf8', (err, data) => {
     return
   }
   
-  // let matched = data.match(/path = (.+)/g) // 
+  let matched = data.match(/path = (.+)/g) // 
   if (matched) {
     matched = matched.forEach(m => {
       const path = m.replace(/^path = /, '')
