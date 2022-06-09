@@ -155,6 +155,7 @@
  "C-\"" 'delete-current-buffer-and-window ;删除当前buffer 和 window
  "C-2" 'rename-this-file-and-buffer       ;重命名当前文件及buffer名称
  "C-M-;" 'kill-other-window-buffer
+ "C-M-," 'delete-other-windows          ;删除其他窗口
  "C-c <backspace>" 'delete-this-file
  
  ;; buffer
@@ -273,6 +274,7 @@
  "C-c 0" 'org-mac-link-chrome-get-frontmost-url
  "C-c d" 'dash-at-point
  "C-c o e" 'switch-to-erc
+ "C-c o t" 'treemacs
  "s-n" 'aweshell-new
  "s-h" 'aweshell-toggle
  "s-x s-x" 'aweshell-dedicated-toggle

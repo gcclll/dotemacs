@@ -4,6 +4,7 @@
 (require 'magit)
 (require 'git-gutter)
 (require 'vc-msg)
+(require 'blamer)
 
 ;; {{ git-gutter
 (with-eval-after-load 'git-gutter
@@ -380,6 +381,15 @@ If LEVEL > 0, find file in previous LEVEL commit."
   (interactive)
   (when (y-or-n-p (format "Delete remote branch (%s): " (magit-get-current-branch)))
     (magit-run-git-async "push" "origin" (format ":%s" (magit-get-current-branch)))))
+
+;; blamer, show commit message like vscode
+(global-blamer-mode 1)
+(setq blamer-idle-time 0.3
+      blamer-min-offset 70
+      blamer-author-formatter " ✎ %s "
+      blamer-datetime-formatter "[%s]"
+      blamer-commit-formatter " ● %s"
+      )
 
 (provide 'init-git)
 

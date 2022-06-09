@@ -100,6 +100,7 @@
          (require 'init-sdcv)
          (require 'init-ibuffer)        ;ibuffer显示优化
          (require 'init-ranger)
+         (require 'init-treemacs)
 
          ;; Restore session at last.
          (require 'init-session)
