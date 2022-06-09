@@ -284,6 +284,7 @@
  ;; {{ 版本管理 ##
  "M-s-u" 'vdiff-buffers
  "C-c o g" 'magit
+ "s-i"  'blamer-show-posframe-commit-info ;显示git提交日志
  ;; }}
 
  ;; {{ org-mode 相关 ##
@@ -305,7 +306,7 @@
  "C-c y i" 'popweb-dict-bing-input ;; 翻译输入单词
  "C-c y ," 'insert-translated-name-insert-with-underline
  "C-c y ." 'insert-translated-name-insert-with-camel
- "s-i" 'insert-translated-name-insert
+ ;; "s-i" 'insert-translated-name-insert
  ;; }}
  
 
