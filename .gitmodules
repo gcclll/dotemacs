@@ -439,3 +439,6 @@
 [submodule "site-lisp/extensions/all-the-icons.el"]
 	path = site-lisp/extensions/all-the-icons.el
 	url = https://github.com/domtronn/all-the-icons.el.git
+[submodule "site-lisp/extensions/counsel-projectile"]
+	path = site-lisp/extensions/counsel-projectile
+	url = https://github.com/ericdanan/counsel-projectile.git

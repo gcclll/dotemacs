@@ -537,6 +537,7 @@
   ;; "sf" '(:ignore t :which-key "fastdef")
   ;; "sfi" 'fastdef-insert
   ;; "sfh" 'fastdef-insert-from-history
+  "sp" 'counsel-projectile-rg
   ;; color-rg
   "sg" 'color-rg-search-symbol
   "sh" 'color-rg-search-input

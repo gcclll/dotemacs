@@ -71,4 +71,3 @@ elpy/
 package-quickstart.el
 .lsp-session*
 sdcv-dict/
-vimish-fold/
