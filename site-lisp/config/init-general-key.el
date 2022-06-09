@@ -87,6 +87,7 @@
  ;; }}
 
  ;; {{ 复制，粘贴，文本操作 ##
+ "C-=" 'er/expand-region
  "C-y" 'yank
  "C-c j" 'tiny-expand
  "M-SPC" 'just-one-space                ;合并多个空格
@@ -98,8 +99,8 @@
  "M-N" 'delete-block-backward
  "s--" 'text-scale-decrease
  "s-=" 'text-scale-increase
- "C--" 'cnfonts-decrease-fontsize       ;增大字体
- "C-=" 'cnfonts-increase-fontsize       ;减小字体
+ ;; "C--" 'cnfonts-decrease-fontsize       ;增大字体
+ ;; "C-=" 'cnfonts-increase-fontsize       ;减小字体
  "s-k" 'kill-and-join-forward
  "s-N" 'move-text-down
  "s-P" 'move-text-up
@@ -235,6 +236,7 @@
  ;; }}
 
  ;; {{ 搜索，查询(search&replace) ##
+ "C-s" 'swiper
  "M-%" 'isearch-query-replace
  "C-M-%" 'vr/query-replace
  "s-R" 're-builder
