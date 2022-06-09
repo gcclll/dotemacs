@@ -463,3 +463,9 @@
 [submodule "site-lisp/extensions/editorconfig-emacs"]
 	path = site-lisp/extensions/editorconfig-emacs
 	url = https://github.com/editorconfig/editorconfig-emacs.git
+[submodule "site-lisp/extensions/emacs-material-theme"]
+	path = site-lisp/extensions/emacs-material-theme
+	url = https://github.com/cpaulik/emacs-material-theme.git
+[submodule "site-lisp/extensions/spacemacs-theme"]
+	path = site-lisp/extensions/spacemacs-theme
+	url = https://github.com/nashamri/spacemacs-theme.git

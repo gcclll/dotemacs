@@ -1,7 +1,7 @@
 ;;; init-parrot.el
 (require 'parrot)
 
-(parrot-mode)
+(parrot-mode -1)
 
 (setq parrot-rotate-dict
       '(
