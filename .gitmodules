@@ -451,3 +451,15 @@
 [submodule "site-lisp/extensions/blamer.el"]
 	path = site-lisp/extensions/blamer.el
 	url = https://github.com/Artawower/blamer.el.git
+[submodule "site-lisp/extensions/prettier.el"]
+	path = site-lisp/extensions/prettier.el
+	url = https://github.com/jscheid/prettier.el.git
+[submodule "site-lisp/extensions/iter2"]
+	path = site-lisp/extensions/iter2
+	url = https://github.com/doublep/iter2.git
+[submodule "site-lisp/extensions/nvm.el"]
+	path = site-lisp/extensions/nvm.el
+	url = https://github.com/rejeep/nvm.el.git
+[submodule "site-lisp/extensions/editorconfig-emacs"]
+	path = site-lisp/extensions/editorconfig-emacs
+	url = https://github.com/editorconfig/editorconfig-emacs.git

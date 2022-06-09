@@ -101,6 +101,7 @@
          (require 'init-ibuffer)        ;ibuffer显示优化
          (require 'init-ranger)
          (require 'init-treemacs)
+         (require 'init-formatter)
 
          ;; Restore session at last.
          (require 'init-session)

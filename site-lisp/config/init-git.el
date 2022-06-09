@@ -383,7 +383,7 @@ If LEVEL > 0, find file in previous LEVEL commit."
     (magit-run-git-async "push" "origin" (format ":%s" (magit-get-current-branch)))))
 
 ;; blamer, show commit message like vscode
-(global-blamer-mode 1)
+;; (global-blamer-mode 1) ; 影响操作性能，有需要使用 s-i 查看
 (setq blamer-idle-time 0.3
       blamer-min-offset 70
       blamer-author-formatter " ✎ %s "
