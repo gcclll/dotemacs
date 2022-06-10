@@ -37,6 +37,7 @@
 ;; (require 'fastdef)
 (require 'find-file-in-project)
 (require 'workgroups2)
+(require 'dumb-jump)
 
 ;; fastdef, 搜索google并插入结果
 ;; (autoload 'fastdef-insert "fastdef" nil t)

@@ -21,7 +21,7 @@
 	url = https://github.com/manateelazycat/open-newline.git
 [submodule "site-lisp/extensions/lazy-search"]
 	path = site-lisp/extensions/lazy-search
-	url = https://github.com/manateelazycat/lazy-search.git
+	url = https://github.com/vapniks/lazy-search.git
 [submodule "site-lisp/extensions/rcodetools"]
 	path = site-lisp/extensions/rcodetools
 	url = http://github.com/rcodetools/rcodetools
@@ -472,3 +472,9 @@
 [submodule "site-lisp/extensions/apheleia"]
 	path = site-lisp/extensions/apheleia
 	url = https://github.com/radian-software/apheleia.git
+[submodule "site-lisp/extensions/dumb-jump"]
+	path = site-lisp/extensions/dumb-jump
+	url = https://github.com/jacktasia/dumb-jump.git
+[submodule "site-lisp/extensions/corfu-doc"]
+	path = site-lisp/extensions/corfu-doc
+	url = https://github.com/galeo/corfu-doc.git

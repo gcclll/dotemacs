@@ -103,6 +103,7 @@
          (require 'init-treemacs)
          (require 'init-formatter)
          (require 'init-speedbar)
+         (require 'init-thing-edit)
 
          ;; Restore session at last.
          (require 'init-session)

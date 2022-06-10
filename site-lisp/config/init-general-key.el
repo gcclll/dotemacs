@@ -19,10 +19,21 @@
  "f" 'evil-ace-jump-char-mode
  "F" 'evil-ace-jump-line-mode
  "s" 'evil-ace-jump-word-mode
+ "gb" 'xref-go-back
+ "gj" 'xref-find-definitions-other-window
+ "g," 'xref-find-definitions
  ;; }}
  )
 
-;; ;; visual 模式
+;; normal mode
+(general-define-key
+ :states 'normal
+ ;; {{ evil normal mode ##
+ "g;" 'dumb-jump-go-prefer-external
+ ;; }}
+ )
+
+;; visual 模式
 (general-define-key
  :states 'visual
  ;; {{ evil visual mode ##
@@ -72,6 +83,9 @@
  "C->" 'remember-init                   ;开始记忆
  "C-<" 'remember-jump                   ;跳到记忆点
  "C-," 'goto-last-change
+ ;; "C-." 'xref-find-definitions
+ "M-," 'xref-find-definitions
+ "M-." 'xref-go-back
  "C-e" 'end-of-line
  "C-a" 'beginning-of-line
  "C-c u" 'mark-line
@@ -81,9 +95,9 @@
  "M-s-." 'point-stack-push              ; buffer 索引标记
  "M-s-," 'point-stack-pop               ; buffer 索引跳转
  ;; ace jump, evil 模式下可以直接单字符跳转(f/s/F)      
- "s-<" 'ace-jump-word-mode
- "s->" 'ace-jump-char-mode
-  "s-?" 'ace-jump-line-mode
+ ;; "s-<" 'ace-jump-word-mode
+ ;; "s->" 'ace-jump-char-mode
+ ;; "s-?" 'ace-jump-line-mode
  "s-g" 'goto-percent
  ;; }}
 
@@ -207,11 +221,10 @@
  "M-s-j" 'flycheck-next-error
  "M-s-k" 'flycheck-previous-error
 
- "M-h" 'corfu-insert
- "M-." 'corfu-first
- "M-," 'corfu-last
- "M-j" 'corfu-next
- "M-k" 'corfu-previous
+ "M-h" 'acm-select-first
+ "M-l" 'acm-select-last
+ "M-j" 'acm-select-next
+ "M-k" 'acm-select-prev
 
  "M-'" 'cycle-quotes
  "M-\"" 'grammatical-edit-wrap-double-quote
@@ -608,8 +621,17 @@
   :states '(normal visual))
 
 (my-comma-leader-def
-  ;; {{ , , - one-key menus ##
-  ",d" 'one-key-menu-directory
+  ;; {{ ,.[de] one-key menus ##
+  ".d" 'one-key-menu-directory
+  ".e" 'one-key-menu-thing-edit
+  ;; }}
+
+  ;; {{ ,,[jgsw] hydra menus ##
+  ",j" 'my-jump-hydra/body
+  ",g" 'my-hydra-git/body
+  ",s" 'my-hydra-search/body
+  ",w" 'my-hydra-window/body
+  ",," 'gcl-everything/body
   ;; }}
   )
 

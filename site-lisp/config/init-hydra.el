@@ -1,4 +1,5 @@
 ;;; init-hydra.el --
+;;; keybindings
 (require 'hydra)
 
 ;; {{ everything
@@ -116,9 +117,9 @@ _SPC_ cancel _o_nly this     _d_elete     _=_ Balance
                      :color blue)
 "
 Git:
-[_dd_] Diff               [_ri_] Rebase closest
-[_dc_] Diff staged        [_s_] Show commit
-[_dr_] Diff range         [_rr_] Reset gutter
+[_dd_] Diff               [_ri_] Rebase closest             [_vs_] Show commit message
+[_dc_] Diff staged        [_s_] Show commit                 [_vb_] Blamer Commit message
+[_dr_] Diff range         [_rr_] Reset gutter               [_ob_] Blamer mode
 [_au_] Add modified       [_rh_] Gutter => HEAD
 [_cc_] Commit             [_l_] Log selected/file
 [_ca_] Amend              [_b_] Branches
@@ -148,6 +149,9 @@ Git:
   ("Q" git-gutter-toggle)
   ("f" my-git-find-file-in-commit)
   ("cr" my-git-cherry-pick-from-reflog)
+  ("vs" vc-msg-show)
+  ("vb" blamer-show-posframe-commit-info)
+  ("ob" blamer-mode)
   ("q" nil))
 (global-set-key (kbd "C-c C-g") 'my-hydra-git/body)
 ;; }}
@@ -160,7 +164,6 @@ Git:
 _g_ Google        _b_ English => English
 _/_ Github        _t_ English => Chinese
 _s_ StackOverflow _y_ popweb 翻译
-_h_ Code
 _m_ Man
 "
   ("b" sdcv-search-input)
@@ -184,6 +187,16 @@ _m_ Man
 ;; _j_
 ;; ")
 ;; ;; }}
+
+(defhydra my-jump-hydra (:color blue :columns 3)
+    "Dumb Jump"
+    ("j" dumb-jump-go "[Dumb]Go")
+    ("o" dumb-jump-go-other-window "[Dumb]Other window")
+    ("e" dumb-jump-go-prefer-external "[Dumb]Go external")
+    ("x" dumb-jump-go-prefer-external-other-window "[Dumb]Go external other window")
+    ("i" dumb-jump-go-prompt "[Dumb]Prompt")
+    ("l" dumb-jump-quick-look "[Dumb]Quick look")
+    ("b" dumb-jump-back "[Dumb]Back"))
 
 (provide 'init-hydra)
 ;;; init-hydra.el ends here
