@@ -58,6 +58,7 @@
  "<f2>" 'refresh-file                   ;刷新并格式化当前buffer
  "<f5>" 'restart-emacs                  ;这个更常用，mac键盘有问题用的外接，按 f<n> 要结合 fn
  "C-<f5>" 'emacs-session-save
+ "<f8>" 'apheleia-format-buffer
  "<f9>" 'my-next-merge-conflict         ;下一个冲突点
  "S-<f9>" 'my-prev-merge-conflict       ;上一个冲突点
  "C-<f9>" 'my-search-next-merge-conflict ;搜索下一个冲突点
@@ -135,6 +136,7 @@
 
  ;; {{ window & frame & buffer & file 操作 ##
  "M-F" 'format-all-buffer
+ "<f8>" 'apheleia-format-buffer
  "M-<" 'watch-other-window-up-line
  "M->" 'watch-other-window-down-line
  "M-J" 'watch-other-window-up
@@ -526,6 +528,8 @@
   "pD" 'projectile-find-dir-other-window
   "pr" 'projectile-replace
   "pR" 'projectile-replace-regexp
+  "pb" 'projectile-switch-to-buffer
+  "pB" 'projectile-switch-to-buffer-other-window
   ;; }}
   
 
@@ -597,6 +601,16 @@
   "tf" 'toggle-frame-fullscreen
   ;; }}
 
+  )
+
+(general-create-definer my-comma-leader-def
+  :prefix ","
+  :states '(normal visual))
+
+(my-comma-leader-def
+  ;; {{ , , - one-key menus ##
+  ",d" 'one-key-menu-directory
+  ;; }}
   )
 
 (provide   'init-general-key)

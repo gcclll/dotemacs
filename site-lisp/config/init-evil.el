@@ -37,6 +37,7 @@
 (evil-set-initial-state 'messages-buffer-mode 'emacs)
 (evil-set-initial-state 'js2-error-buffer-mode 'emacs)
 (evil-set-initial-state 'ffip-diff-mode 'emacs)
+(evil-set-initial-state 'speedbar-mode 'emacs)
 ;; (evil-set-initial-state 'vc-msg-mode 'normal)
 
 ;; {{ change mode-line color by evil state

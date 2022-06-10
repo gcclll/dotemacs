@@ -469,3 +469,6 @@
 [submodule "site-lisp/extensions/spacemacs-theme"]
 	path = site-lisp/extensions/spacemacs-theme
 	url = https://github.com/nashamri/spacemacs-theme.git
+[submodule "site-lisp/extensions/apheleia"]
+	path = site-lisp/extensions/apheleia
+	url = https://github.com/radian-software/apheleia.git

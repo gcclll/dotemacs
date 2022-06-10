@@ -38,7 +38,7 @@
     (when (featurep 'cocoa)
       (require 'cache-path-from-shell))
     ;; (require 'lazy-load)
-    ;; (require 'one-key)
+    (require 'one-key)
     (require 'grammatical-edit)
     (require 'display-line-numbers)
     (require 'basic-toolkit)
@@ -52,7 +52,7 @@
     (require 'init-mode)
     (require 'init-grammatical-edit)
     (require 'init-indent)
-    ;; (require 'init-one-key)
+    (require 'init-one-key)
     ;; (require 'init-vi-navigate)
     (require 'init-isearch-mb)
     (require 'init-performance)
@@ -67,7 +67,7 @@
          (require 'elf-mode)
          (require 'snails)
 
-        ;;  (require 'init-tree-sitter)
+         (require 'init-tree-sitter)
          (require 'init-eldoc)
          (require 'init-yasnippet)
          (require 'init-smooth-scrolling)
@@ -101,7 +101,8 @@
          (require 'init-ibuffer)        ;ibuffer显示优化
          (require 'init-ranger)
          (require 'init-treemacs)
-         ;; (require 'init-formatter)
+         (require 'init-formatter)
+         (require 'init-speedbar)
 
          ;; Restore session at last.
          (require 'init-session)
