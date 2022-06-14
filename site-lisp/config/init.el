@@ -92,6 +92,7 @@
          (require 'init-formatter)
          (require 'init-iedit)
 	 (require 'init-woman)
+	 (require 'init-org)
         ;;  (require 'init-sort-tab)	 
          ;; (require 'init-eldoc)
          ;; (require 'init-yasnippet)
@@ -100,7 +101,7 @@
          ;; (require 'init-winpoint)
          ;; ;; (require 'init-info)
          ;; (require 'init-c)
-         ;; (require 'init-org)
+
 
          ;; (require 'init-markdown-mode)
 
