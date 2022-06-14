@@ -11,6 +11,7 @@
                 (olivetti-set-width 120)
                 )))
 
+(message "> init-markdown.el")
 (provide 'init-markdown-mode)
 
 ;;; init-markdown-mode.el ends here

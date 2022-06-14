@@ -91,6 +91,7 @@
                      (require 'rainbow-mode)
                      (rainbow-mode))))
 
+(message "> init-css-mode.el")
 (provide 'init-css-mode)
 
 ;;; init-css-mode.el ends here

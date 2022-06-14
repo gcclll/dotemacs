@@ -93,6 +93,7 @@
                      (turn-on-eldoc-mode)
                      )))
 
+(message "> init-eldoc.el")
 (provide 'init-eldoc)
 
 ;;; init-eldoc.el ends here

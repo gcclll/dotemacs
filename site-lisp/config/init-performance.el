@@ -12,6 +12,7 @@
 ;; Improve the performance of rendering long lines.
 (setq-default bidi-display-reordering nil)
 
+(message "> init-performance.el")
 (provide 'init-performance)
 
 ;;; init-performance.el ends here

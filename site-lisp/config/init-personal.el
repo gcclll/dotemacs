@@ -17,4 +17,5 @@
       org-latex-listings 'minted
       org-html-htmlize-output-type 'css)
 
+(message "> init-personal.el")
 (provide 'init-personal)

@@ -5,4 +5,5 @@
       leetcode-save-solutions t
       leetcode-directory "~/github/mine/make-leetcode")
 
+(message "> init-leetcode.el")
 (provide 'init-leetcode)

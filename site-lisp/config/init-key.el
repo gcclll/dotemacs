@@ -360,59 +360,10 @@
 
 ;; iedit
 (lazy-load-global-keys '(("s-o" . iedit-mode)) "init-iedit")
+;; (lazy-load-set-keys '(("C-c C-t" . org-todo)) org-mode-map)
 
-;;; ### expand-region ###
-(lazy-load-global-keys '(("C-=" . er/expand-region)) "expand-region")
+;; web-mode
+(lazy-load-global-keys '(("C-`" . one-key-menu-web)) "init-web")
 
-;;; Elisp
-(lazy-load-set-keys '(("RET" . comment-indent-new-line) ;自动换行并注释
-                      ) emacs-lisp-mode-map)
-
-;;; ### Man ###
-;;; --- Man
-(lazy-load-global-keys '(("<f1>" . woman)) "init-woman")
-
-;;; --- Emacs Lisp 解释模式
-(autoload 'ielm-map "ielm")
-(lazy-load-global-keys '(("M-s-i" . ielm-toggle) ;切换ielm
-                         ("C-c d" . insert-standard-date)) "lazycat-toolkit")
-
-(eval-after-load 'ielm-mode '(lambda () 
-                               (progn (lazy-load-unset-keys '("M-p" "M-n") ielm-map)
-                                        ;卸载按键
-                                      (lazy-load-set-keys '(("C-s-p" . comint-previous-input) ;上一个输入
-                                                            ("C-s-n" . comint-next-input) ;下一个输入
-                                                            ) ielm-map))))
-
-;;; ### Ace jump ###
-(lazy-load-global-keys '(("s-<" . ace-jump-word-mode) 
-                         ("s->" . ace-jump-char-mode) 
-                         ("s-?" . ace-jump-line-mode)) "ace-jump-mode")
-
-;;; ### Org ###
-;;; --- 笔记管理和组织
-(lazy-load-global-keys '(
-                         ;; ("s-s" . one-key-menu-org)      ;Org 文件
-                         ("C-c r" . org-remember) ;Org-remeber
-                         ;; org-roam
-                         ("C-c n a" . org-id-get-create) 
-                         ("C-c n c" . org-roam-capture) 
-                         ("C-c n f" . org- roam-node-find) 
-                         ("C-c n g" . org-roam-graph) 
-                         ("C-c n i" . org-roam-node-insert) 
-                         ("C-c n j" . org-roam-dailies-capture-today) 
-                         ("C-c n l" . org-roam-buffer-toggle) 
-                         ("C-c n r" . org-roam-ref-add) 
-                         ("C-c n u". org-roam-ui-open)
-                         ;; org-mac-link
-                         ("C-c 0" . org-mac-link-chrome-insert-frontmost-url)
-                         ;; agenda
-                         ("C-c a" . org-agenda)) "init-org")
-
-;; for org-mode
-(lazy-load-set-keys '(("C-c C-t" . org-todo)) org-mode-map)
-
-(lazy-load-global-keys '(
-                         ("C-`" . one-key-menu-web)) "init-web")
-
+(message "> init-key.el")
 (provide 'init-key)

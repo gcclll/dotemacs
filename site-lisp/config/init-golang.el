@@ -106,6 +106,7 @@
    ("C-c b" . go-test-current-benchmark))
  go-mode-map)
 
+(message "> init-golang.el")
 (provide 'init-golang)
 
 ;;; init-golang.el ends here

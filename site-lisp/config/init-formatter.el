@@ -13,4 +13,5 @@
 (require 'elisp-format)
 (require 'format-all)
 
+(message "> init-formatter.el")
 (provide 'init-formatter)

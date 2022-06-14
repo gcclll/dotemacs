@@ -198,5 +198,6 @@ _m_ Man
     ("l" dumb-jump-quick-look "[Dumb]Quick look")
     ("b" dumb-jump-back "[Dumb]Back"))
 
+(message "> init-hydra.el")
 (provide 'init-hydra)
 ;;; init-hydra.el ends here

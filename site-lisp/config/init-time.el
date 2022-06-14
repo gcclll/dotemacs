@@ -82,6 +82,7 @@
 (setq display-time-format "%H:%M")                             ;设定时间显示格式
 (setq display-time-24hr-format t)                              ;打开24小时显示模式
 
+(message "> init-time.el")
 (provide 'init-time)
 
 ;;; init-time.el ends here

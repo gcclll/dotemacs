@@ -18,6 +18,7 @@
                      (require 'insert-translated-name)
                      (insert-translated-name-use-original-translation))))
 
+(message "> init-popweb.el")
 (provide 'init-popweb)
 
 ;;; init-popweb.el ends here

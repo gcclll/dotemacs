@@ -227,6 +227,7 @@
 ;; 最后设置
 ;;(gnus-compile)                          ;编译一些选项, 加快速度
 
+(message "> init-gnus.el")
 (provide 'init-gnus)
 
 ;;; init-gnus.el ends here

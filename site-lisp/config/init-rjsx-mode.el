@@ -10,5 +10,6 @@
   ;; (define-key rjsx-mode-map ">" nil)
 )
 
+(message "> init-rjsx.el")
 (provide 'init-rjsx-mode)
 ;;; init-rjsx-mode.el ends here

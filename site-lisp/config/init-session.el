@@ -127,7 +127,7 @@
     (kill-emacs)))
 
 
-
+(message "> init-session.el")
 (provide 'init-session)
 
 ;;; init-session.el ends here

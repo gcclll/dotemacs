@@ -38,6 +38,8 @@
 
 (proxy-socks-enable)
 
+(message "> init-proxy.el")
+
 (provide 'init-proxy)
 
 ;;; init-proxy.el ends here

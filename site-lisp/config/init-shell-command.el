@@ -102,6 +102,7 @@
    )
  t)
 
+(message "> init-shell-command.el")
 (provide 'init-shell-command)
 
 ;;; init-shell-command.el ends here

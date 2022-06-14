@@ -19,6 +19,7 @@
    )
  t)
 
+(message "> init-one-key.el")
 (provide 'init-one-key)
 
 ;;; init-one-key.el ends here

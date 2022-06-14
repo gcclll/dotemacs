@@ -392,6 +392,7 @@ If LEVEL > 0, find file in previous LEVEL commit."
       blamer-commit-formatter " ● %s"
       )
 
+(message "> init-git.el")
 (provide 'init-git)
 
 ;;; init-git.el ends here

@@ -119,6 +119,7 @@
         "quick_eng-zh_CN"
         ))
 
+(message "> init-sdcv.el")
 (provide 'init-sdcv)
 
 ;;; init-sdcv.el ends here

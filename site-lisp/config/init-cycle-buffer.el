@@ -114,6 +114,7 @@
    )
  t)
 
+(message "> init-cycle-buffer.el")
 (provide 'init-cycle-buffer)
 
 ;;; init-cycle-buffer.el ends here

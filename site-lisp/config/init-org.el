@@ -178,6 +178,7 @@
         )
   )
 
+(message "> init-org.el")
 (provide 'init-org)
 
 ;;; init-org.el ends here

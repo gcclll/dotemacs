@@ -91,6 +91,7 @@
  python-mode-map
  "python-extension")
 
+(message "> init-python.el")
 (provide 'init-python)
 
 ;;; init-python.el ends here

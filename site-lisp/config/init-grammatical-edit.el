@@ -37,6 +37,7 @@
                ))
   (add-hook hook #'(lambda () (grammatical-edit-mode 1))))
 
+(message "> init-grammatical-edit.el")
 (provide 'init-grammatical-edit)
 
 ;;; init-grammatical-edit.el ends here

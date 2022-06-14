@@ -152,6 +152,7 @@
  )
 (lazy-load-local-keys doi-key-alist erc-mode-map "init-erc") ;doi 的局部按键
 
+(message "> init-erc.el")
 (provide 'init-erc)
 
 ;;; init-erc.el ends here

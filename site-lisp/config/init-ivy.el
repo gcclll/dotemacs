@@ -9,5 +9,6 @@
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 
+(message "> init-ivy.el")
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

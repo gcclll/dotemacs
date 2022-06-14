@@ -1,5 +1,7 @@
 ;;; init-yasnippet.el --- Yasnippet configuration
+(require 'yasnippet)
 (require 'auto-yasnippet)
+
 
 (add-hook 'prog-mode-hook
           #'(lambda ()
@@ -23,6 +25,7 @@
                 (add-hook hook #'(lambda () (yas-minor-mode -1))))
               ))
 
+(message "> init-yasnippet.el")
 (provide 'init-yasnippet)
 
 ;;; init-yasnippet.el ends here

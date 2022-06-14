@@ -88,6 +88,7 @@
 (change-cursor-mode 1)
 (toggle-cursor-type-when-idle 1)
 
+(message "> init-cursor-chg.el")
 (provide 'init-cursor-chg)
 
 ;;; init-cursor-chg.el ends here

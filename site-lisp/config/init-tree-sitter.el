@@ -35,6 +35,7 @@
 (tree-sitter-load 'typescript)
 (add-to-list 'tree-sitter-major-mode-language-alist '(typescript-mode . typescript))
 
+(message "> init-tree-sitter.el")
 (provide 'init-tree-sitter)
 
 ;;; init-tree-sitter.el ends here

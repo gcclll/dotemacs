@@ -87,6 +87,7 @@
 (defun eaf-translate-text (text)
   (popweb-dict-bing-input text))
 
+(message "> init-eaf.el")
 (provide 'init-eaf)
 
 ;;; init-eaf.el ends here

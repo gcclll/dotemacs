@@ -85,6 +85,7 @@
 ;;; Code:
 (setq hl-paren-colors '("DarkOrange" "DeepSkyBlue" "DarkRed"))
 
+(message "> init-highlight-parentheses.el")
 (provide 'init-highlight-parentheses)
 
 ;;; init-highlight-parentheses.el ends here

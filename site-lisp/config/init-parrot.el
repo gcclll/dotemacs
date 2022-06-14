@@ -47,4 +47,5 @@
         (:rot ("Object" "String" "Array" "Date" "Number" "Boolean"))
         ))
 
+(message "> init-parrot.el")
 (provide 'init-parrot)

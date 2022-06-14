@@ -158,5 +158,7 @@ If HINT is empty, use symbol at point."
   (when (region-active-p)
     (delete-region (region-beginning) (region-end))))
 
+(message "> init-utils.el")
+
 (provide 'init-utils)
 ;;; init-utils.el ends here

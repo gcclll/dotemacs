@@ -53,6 +53,7 @@
 (setq js2-mode-show-parse-errors nil
       js2-mode-show-strict-warnings nil)
 
+(message "> init-indent.el")
 (provide 'init-indent)
 
 ;;; init-indent.el ends here

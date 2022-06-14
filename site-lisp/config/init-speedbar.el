@@ -43,6 +43,7 @@
 ;;  speedbar-key-map
 ;;  )
 
+(message "> init-speedbar.el")
 (provide 'init-speedbar)
 
 ;;; init-speedbar.el ends here

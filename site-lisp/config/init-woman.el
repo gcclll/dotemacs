@@ -29,6 +29,7 @@
       woman-use-own-frame nil           ;同一个frame
       woman-cache-level 3)              ;缓存级别, 最快
 
+(message "> init-woman.el")
 (provide 'init-woman)
 
 ;;; init-woman.el ends here

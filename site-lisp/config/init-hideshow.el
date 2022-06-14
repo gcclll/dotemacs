@@ -87,6 +87,7 @@
                ))
   (add-hook hook 'hs-minor-mode))
 
+(message "> init-hideshow.el")
 (provide 'init-hideshow)
 
 ;;; init-hideshow.el ends here

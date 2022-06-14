@@ -75,6 +75,7 @@
 ;; allow remembering risky variables
 (defun risky-local-variable-p (sym &optional _ignored) nil)
 
+(message "> init-generic.el")
 (provide 'init-generic)
 
 ;;; init-generic.el ends here

@@ -62,6 +62,8 @@
                ))
   (add-hook hook #'(lambda () (load-font-setup))))
 
+
+(message "> init-font.el")
 (provide 'init-font)
 
 ;;; init-font.el ends here

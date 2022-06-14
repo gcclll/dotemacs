@@ -27,6 +27,8 @@
   (require 'fullscreen)
   (fullscreen))
 
+(message "> init-fullscreen.el")
+
 (provide 'init-fullscreen)
 
 ;;; init-fullscreen.el ends here

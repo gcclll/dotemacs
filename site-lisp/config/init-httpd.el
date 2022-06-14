@@ -14,4 +14,5 @@
   (setq httpd-root default-directory)
   (httpd-restart-now))
 
+(message "> init-httpd.el")
 (provide 'init-httpd)

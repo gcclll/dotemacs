@@ -6,6 +6,7 @@
 
 (setq snails-show-with-frame nil)
 
+(message "> init-snails.el")
 (provide 'init-snails)
 
 ;;; init-snails.el ends here

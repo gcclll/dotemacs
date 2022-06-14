@@ -43,6 +43,7 @@
 ;; 其实直接使用 color-rg 就够用了
 (setq wgrep-auto-save-buffer t) ;; 当 wgrep-finish-edit 完成后自动保存
 
+(message "> init-search.el")
 (provide 'init-search)
 ;;; init-search-engine.el ends here
 

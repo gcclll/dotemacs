@@ -88,7 +88,7 @@
                                    ;; 开发语言相关
                                    (require 'init-c)
                                    (require 'init-web-mode)
-                                   (require 'init-rjsx-mode)
+                                   ;; (require 'init-rjsx-mode)
 
                                    ;; (require 'init-restclient)
 

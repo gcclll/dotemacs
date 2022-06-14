@@ -60,6 +60,7 @@ from tradition chinese to simple chinese" t)
       '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
         ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 
+(message "> init-idle.el")
 (provide 'init-idle)
 
 ;;; init-idle.el ends here

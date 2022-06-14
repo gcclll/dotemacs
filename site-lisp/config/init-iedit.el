@@ -20,6 +20,7 @@
     ("T" maple-iedit-skip-and-match-previous "skip and previous")
     ("p" maple-iedit-match-previous "prev"))
 
+(message "> init-iedit.el")
 (provide 'init-iedit)
 
 ;;; init-iedit.el ends here

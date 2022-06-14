@@ -85,4 +85,5 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(message "> init-ibuffer.el")
 (provide 'init-ibuffer)

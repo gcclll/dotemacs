@@ -23,6 +23,7 @@
    )
  symbol-overlay-map)
 
+(message "> init-symbol-overlay.el")
 (provide 'init-symbol-overlay)
 
 ;;; init-symbol-overlay.el ends here

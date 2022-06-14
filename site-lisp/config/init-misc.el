@@ -24,4 +24,5 @@
 ;; 英文和中文之间自动插入空格
 (global-pangu-spacing-mode 1)
 
+(message "> init-misc.el")
 (provide 'init-misc)

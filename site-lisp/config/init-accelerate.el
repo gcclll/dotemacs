@@ -92,6 +92,7 @@
  package-enable-at-startup nil
  package--init-file-ensured t)
 
+(message "> init-accelerate.el")
 (provide 'init-accelerate)
 
 ;;; init-accelerate.el ends here

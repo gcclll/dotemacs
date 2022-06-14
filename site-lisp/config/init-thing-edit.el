@@ -47,6 +47,7 @@
    )
  t)
 
+(message "> init-thing-edit.el")
 (provide 'init-thing-edit)
 
 ;;; init-thing-edit.el ends here

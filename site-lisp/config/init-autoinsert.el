@@ -10,5 +10,7 @@
                           ))
 (add-hook 'find-file-hook #'auto-insert)
 
+(message "> init-autoinsert.el")
+
 (provide 'init-autoinsert)
 ;;; init-autoinsert.el ends here

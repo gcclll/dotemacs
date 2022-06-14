@@ -55,5 +55,6 @@
 ;; (add-hook 'post-command-hook #'my-show-evil-state)
 ;; }}
 
+(message "> init-evil.el")
 (provide 'init-evil)
 ;;; init-evil.el ends here

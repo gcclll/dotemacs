@@ -50,6 +50,7 @@
    )
  t)
 
+(message "> init-web-mode.el")
 (provide 'init-web-mode)
 
 ;;; init-web-mode.el ends here

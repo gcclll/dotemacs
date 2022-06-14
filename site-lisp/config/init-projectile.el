@@ -17,5 +17,7 @@
   (counsel-projectile-mode 1)
   (ivy-set-display-transformer #'counsel-projectile-find-file nil)
   ) 
+
+  (message "> init-projectile.el")
 (provide 'init-projectile)
 ;;; init-projectile.el ends here

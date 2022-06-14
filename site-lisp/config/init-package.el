@@ -90,6 +90,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/")
              'APPEND)
 
+(message "> init-package.el")
 (provide 'init-package)
 
 ;;; init-package.el ends here

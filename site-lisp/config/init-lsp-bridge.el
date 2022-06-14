@@ -90,6 +90,7 @@
 ;;                    (lsp-bridge-mix-multi-backends) ; 通过Cape融合多个补全后端
 ;;                    )))
 
+(message "> init-lsp-bridge.el")
 (provide 'init-lsp-bridge)
 
 ;;; init-lsp-bridge.el ends here

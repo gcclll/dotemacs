@@ -40,7 +40,7 @@
                                                  '(("\\<Q[A-Z][A-Za-z]\\>" . 'qt-keywords-face)))
                          ))
                      (c-mode-style-setup))))
-
+(message "> init-c.el")
 (provide 'init-c)
 
 ;;; init-qt.el ends here

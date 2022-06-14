@@ -18,6 +18,9 @@
                                     "belong"
                                     ;; "flymake"
                                     ))
+
+(message "> init-awesome-tray.el")
+
 (provide 'init-awesome-tray)
 
 ;;; init-awesome-tray.el ends here

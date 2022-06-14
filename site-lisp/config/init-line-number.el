@@ -48,6 +48,7 @@
                ))
   (add-hook hook (lambda () (display-line-numbers-mode))))
 
+(message "> init-line-number.el")
 (provide 'init-line-number)
 
 ;;; init-line-number.el ends here

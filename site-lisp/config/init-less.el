@@ -101,6 +101,7 @@
  less-minor-mode-map
  )
 
+(message "> init-less.el")
 (provide 'init-less)
 
 ;;; init-less.el ends here

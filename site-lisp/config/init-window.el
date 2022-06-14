@@ -20,6 +20,7 @@
 (window-point-remember-mode 1)
 (setq winpoint-non-restore-buffer-list '("*Group*"))
 
+(message "> init-window.el")
 (provide 'init-window)
 
 ;;; init-window.el ends here
