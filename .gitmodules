@@ -244,3 +244,6 @@
 [submodule "site-lisp/extensions/js2-mode"]
 	path = site-lisp/extensions/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "site-lisp/extensions/olivetti"]
+	path = site-lisp/extensions/olivetti
+	url = https://github.com/rnkn/olivetti.git
