@@ -10,5 +10,6 @@
 (require 'recursive-search-references)
 (require 'tiny)
 (require 'expand-region)
+(require 'string-inflection)
 
 (provide 'init-misc)

@@ -96,13 +96,7 @@
    )
  "init-erc")
 
-;;; Elisp
-(lazy-load-set-keys
- '(
-   ("RET" . comment-indent-new-line)    ;自动换行并注释
-   )
- emacs-lisp-mode-map
- )
+
 
 ;;; ### Org ###
 ;;; --- 笔记管理和组织
@@ -126,23 +120,6 @@
    ("C-c a" . org-agenda)
    )
  "init-org")
-
-;;; ### String Inflection ###
-;; --- 单词语法风格快速转换
-(lazy-load-global-keys
- '(
-   ;; ("C-c C-u" . one-key-string-inflection)
-   ("M-i" . string-inflection-toggle)
-   )
- "init-string-inflection")
-
-;;; ### Projectile Rails ###
-;; Rails 文件快速导航
-(lazy-load-global-keys
- '(
-   ("s-c p" . one-key-projectile-rails) ;projectile rails
-   )
- "init-projectile-rails")
 
 ;;; ### Keyboard Macro ###
 ;;; --- 键盘宏

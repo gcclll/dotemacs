@@ -107,9 +107,10 @@
 ;; }}
 
 ;; {{ misc
-(lazy-load-global-keys '(("y" . dash-at-point) 
-			 ("r" . restart-emacs) 
-			 ("j" . tiny-expand)) "init-misc" "C-x")
+(lazy-load-global-keys '(("C-x y" . dash-at-point) 
+			 ("C-x r" . restart-emacs) 
+			 ("C-x j" . tiny-expand) 
+			 ("M-i" . string-inflection-toggle)) "init-misc")
 ;; }}
 
 ;; {{ search
@@ -347,5 +348,9 @@
 
 ;;; ### expand-region ###
 (lazy-load-global-keys '(("C-=" . er/expand-region)) "expand-region")
+
+;;; Elisp
+(lazy-load-set-keys '(("RET" . comment-indent-new-line)	;自动换行并注释
+		      ) emacs-lisp-mode-map)
 
 (provide 'init-key)
