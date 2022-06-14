@@ -160,3 +160,6 @@
 [submodule "site-lisp/extensions/emacs-maple-iedit"]
 	path = site-lisp/extensions/emacs-maple-iedit
 	url = https://github.com/honmaple/emacs-maple-iedit.git
+[submodule "site-lisp/extensions/ace-jump-mode"]
+	path = site-lisp/extensions/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git

@@ -353,4 +353,25 @@
 (lazy-load-set-keys '(("RET" . comment-indent-new-line)	;自动换行并注释
 		      ) emacs-lisp-mode-map)
 
+;;; ### Man ###
+;;; --- Man
+(lazy-load-global-keys '(("<f1>" . woman)) "init-woman")
+
+;;; --- Emacs Lisp 解释模式
+(autoload 'ielm-map "ielm")
+(lazy-load-global-keys '(("M-s-i" . ielm-toggle) ;切换ielm
+			 ("C-c d" . insert-standard-date)) "lazycat-toolkit")
+
+(eval-after-load 'ielm-mode '(lambda () 
+			       (progn (lazy-load-unset-keys '("M-p" "M-n") ielm-map)
+					;卸载按键
+				      (lazy-load-set-keys '(("C-s-p" . comint-previous-input) ;上一个输入
+							    ("C-s-n" . comint-next-input) ;下一个输入
+							    ) ielm-map))))
+
+;;; ### Ace jump ###
+(lazy-load-global-keys '(("s-<" . ace-jump-word-mode) 
+			 ("s->" . ace-jump-char-mode) 
+			 ("s-?" . ace-jump-line-mode)) "ace-jump-mode")
+
 (provide 'init-key)

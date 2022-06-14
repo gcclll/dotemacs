@@ -11,5 +11,6 @@
 (require 'tiny)
 (require 'expand-region)
 (require 'string-inflection)
+(require 'ace-jump-mode)
 
 (provide 'init-misc)
