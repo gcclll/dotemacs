@@ -188,59 +188,6 @@
    ("M-s-u" . vdiff-buffers))
  "vdiff")
 
-;; git menu
-(lazy-load-global-keys
- '(
-   ("s-x f" . one-key-menu-git))
- "init-eaf")
-
-;; 切换输入法
-(lazy-load-global-keys
- '(
-   ("s-m" . toggle-input-method)
-   )
- "init-rime")
-
-;; (lazy-load-global-keys
-;;  '(
-;;    ("M-x" . smex+)
-;;    ("C-c C-c M-x" . execute-extended-command)
-;;    )
-;;  "init-smex")
-
-;; 搜索替换
-(lazy-load-global-keys
- '(
-   ("C-M-%" . vr/query-replace))
- "init-visual-regexp")
-
-
-
-;; lsp-bridge
-(lazy-load-global-keys
- '(
-   ("C-6" . lsp-bridge-lookup-documentation)
-   ("C-7" . lsp-bridge-jump-back)
-   ("C-8" . lsp-bridge-jump)
-   ("C-9" . lsp-bridge-find-references)
-   ("C-0" . lsp-bridge-rename)
-   )
- "init-lsp-bridge")
-
-;; 搜索引用
-(lazy-load-global-keys
- '(
-   ("C--" . recursive-search-references)
-   )
- "recursive-search-references")
-
-;; ivy
-(lazy-load-global-keys
- '(
-   ("M-x" . counsel-M-x)
-   ("C-c '" . ivy-resume)
-   )
- "init-ivy")
 
 ;; window move
 (lazy-load-global-keys
@@ -278,12 +225,5 @@
    ("C-c i e" . emojify-insert-emoji)
    ) 
  "init-misc")
-
-;; magit
-(lazy-load-global-keys
- '(
-   ("s-x F" . one-key-menu-magit)
-   )
- "init-git")
 
 (provide 'init-key)

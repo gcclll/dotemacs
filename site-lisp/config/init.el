@@ -88,6 +88,8 @@
 	 (require 'init-symbol-overlay)
          (require 'init-thing-edit)
 	 (require 'init-snails)
+	 (require 'init-visual-regexp)
+         (require 'init-formatter)
 	 
         ;;  (require 'init-sort-tab)	 
          ;; (require 'init-eldoc)
@@ -115,7 +117,7 @@
          ;; (require 'init-ibuffer)        ;ibuffer显示优化
          ;; (require 'init-ranger)
          ;; (require 'init-treemacs)
-         ;; (require 'init-formatter)
+
          ;; (require 'init-speedbar)
 
 

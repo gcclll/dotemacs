@@ -1,5 +1,5 @@
 ;; (require 'prettier)
-(require 'apheleia)
+;; (require 'apheleia)
 ;; 找不到 prettier-el.js.gz.base64 问题: https://github.com/radian-software/straight.el/issues/621
 ;; 这个只对 straight 有用啊!!!
 ;; cd straight/repos/prettier.el/
@@ -11,5 +11,6 @@
 
 ;; (add-hook 'after-init-hook #'global-prettier-mode)
 (require 'elisp-format)
+(require 'format-all)
 
 (provide 'init-formatter)

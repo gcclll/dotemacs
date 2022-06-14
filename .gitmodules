@@ -136,3 +136,15 @@
 [submodule "site-lisp/extensions/hydra"]
 	path = site-lisp/extensions/hydra
 	url = https://github.com/abo-abo/hydra.git
+[submodule "site-lisp/extensions/recursive-search-references"]
+	path = site-lisp/extensions/recursive-search-references
+	url = https://github.com/manateelazycat/recursive-search-references.git
+[submodule "site-lisp/extensions/emacs-format-all-the-code"]
+	path = site-lisp/extensions/emacs-format-all-the-code
+	url = https://github.com/lassik/emacs-format-all-the-code.git
+[submodule "site-lisp/extensions/inheritenv"]
+	path = site-lisp/extensions/inheritenv
+	url = https://github.com/purcell/inheritenv.git
+[submodule "site-lisp/extensions/emacs-language-id"]
+	path = site-lisp/extensions/emacs-language-id
+	url = https://github.com/lassik/emacs-language-id.git
