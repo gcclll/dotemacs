@@ -217,3 +217,9 @@
 [submodule "site-lisp/extensions/emacs-web-server"]
 	path = site-lisp/extensions/emacs-web-server
 	url = https://github.com/skeeto/emacs-web-server.git
+[submodule "site-lisp/extensions/pangu-spacing"]
+	path = site-lisp/extensions/pangu-spacing
+	url = https://github.com/coldnew/pangu-spacing.git
+[submodule "site-lisp/extensions/cycle-quotes"]
+	path = site-lisp/extensions/cycle-quotes
+	url = https://github.com/emacsmirror/cycle-quotes.git

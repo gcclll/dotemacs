@@ -5,6 +5,7 @@
 (require 'git-gutter)
 (require 'vc-msg)
 (require 'blamer)
+;; (require 'vdiff)
 
 ;; {{ git-gutter
 (with-eval-after-load 'git-gutter

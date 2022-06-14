@@ -4,7 +4,7 @@
 (require 'rg)
 (require 'color-rg)
 ;;(require 're-builder)
-;;(require 're-builder)
+;;(require 're-builder+)
 
 (engine/set-keymap-prefix (kbd "C-c s"))
 (defengine baidu "https://www.baidu.com/s?wd=%s"
@@ -37,7 +37,10 @@
            :keybinding "y")
 
 (engine-mode t)
-;;; Code
+
+;; wgrep 可以在 grep/rg/color-rg 搜索结果中直接批量修改
+;; 其实直接使用 color-rg 就够用了
+(setq wgrep-auto-save-buffer t) ;; 当 wgrep-finish-edit 完成后自动保存
 
 (provide 'init-search)
 ;;; init-search-engine.el ends here
