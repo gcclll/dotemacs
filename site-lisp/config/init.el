@@ -48,8 +48,9 @@
      (require 'init-key)
      (require 'init-lsp-bridge)     
      (require 'init-hydra)
-
      (require 'init-performance)
+     (require 'init-mode)
+     (require 'init-grammatical-edit)
      
     ;; (require 'init-theme)
     ;; (require 'lazycat-theme)
@@ -57,10 +58,6 @@
     ;; (lazycat-theme-load-dark)
      
      ;; (require 'redo)
-    ;; (require 'init-highlight-parentheses)
-
-    ;; (require 'init-mode)
-    ;; (require 'init-grammatical-edit)
     ;; (require 'init-indent)
 
     ;; ;; (require 'init-vi-navigate)
@@ -93,6 +90,7 @@
          (require 'init-iedit)
 	 (require 'init-woman)
 	 (require 'init-org)
+         (require 'init-web-mode)
         ;;  (require 'init-sort-tab)	 
          ;; (require 'init-eldoc)
          ;; (require 'init-yasnippet)
@@ -109,7 +107,6 @@
          ;; (require 'init-rjsx-mode)
 
          ;; (require 'init-git)
-         ;; (require 'init-web-mode)
 
          ;; (require 'init-parrot)
          ;; ;;(require 'init-leetcode)

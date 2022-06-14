@@ -223,3 +223,24 @@
 [submodule "site-lisp/extensions/cycle-quotes"]
 	path = site-lisp/extensions/cycle-quotes
 	url = https://github.com/emacsmirror/cycle-quotes.git
+[submodule "site-lisp/extensions/web-mode"]
+	path = site-lisp/extensions/web-mode
+	url = https://github.com/fxbois/web-mode.git
+[submodule "site-lisp/extensions/js-doc"]
+	path = site-lisp/extensions/js-doc
+	url = https://github.com/mooz/js-doc.git
+[submodule "site-lisp/extensions/rjsx-mode"]
+	path = site-lisp/extensions/rjsx-mode
+	url = https://github.com/felipeochoa/rjsx-mode.git
+[submodule "site-lisp/extensions/instant-rename-tag"]
+	path = site-lisp/extensions/instant-rename-tag
+	url = https://github.com/manateelazycat/instant-rename-tag.git
+[submodule "site-lisp/extensions/highlight-matching-tag"]
+	path = site-lisp/extensions/highlight-matching-tag
+	url = https://github.com/manateelazycat/highlight-matching-tag.git
+[submodule "site-lisp/extensions/emmet-mode"]
+	path = site-lisp/extensions/emmet-mode
+	url = https://github.com/smihica/emmet-mode.git
+[submodule "site-lisp/extensions/js2-mode"]
+	path = site-lisp/extensions/js2-mode
+	url = https://github.com/mooz/js2-mode.git

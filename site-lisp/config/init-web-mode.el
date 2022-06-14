@@ -1,11 +1,12 @@
 ;;; init-web-mode.el --- Init web mode
 (require 'web-mode)
-(require 'js)
+;; (require 'js)
 (require 'grammatical-edit)
 (require 'instant-rename-tag)
 (require 'highlight-matching-tag)
 (require 'emmet-mode)
 (require 'js-doc)
+(require 'js2-mode)
 
 ;;; Code:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; OS Config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
