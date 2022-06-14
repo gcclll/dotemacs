@@ -4,7 +4,7 @@
 (require 'maple-iedit)
 
 ;;; iedit
-(setq iedit-toggle-key-default (kbd "s-o"))
+;; (setq iedit-toggle-key-default (kbd "s-o"))
 (when iedit-toggle-key-default
   (define-key global-map iedit-toggle-key-default 'iedit-mode)
   (define-key isearch-mode-map iedit-toggle-key-default 'iedit-mode-from-isearch)

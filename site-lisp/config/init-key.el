@@ -7,7 +7,8 @@
   (setq mac-command-modifier 'meta))
 
 ;;; unset keys
-(lazy-load-unset-keys '("C-x C-f" "C-z" "C-q" "M-h" "C-x C-c" "C-\\" "s-p" "C-6" "C-c i" "s-x"))
+(lazy-load-unset-keys '("C-x C-f" "C-z" "C-q" "s-W" "M-h" "C-x C-c" "C-\\" "s-c" "s-x" "s-v" "s-p"
+			"C-6" "C-c i"))
 
 ;; 全局按键
 (lazy-load-set-keys '(
@@ -98,12 +99,17 @@
 			 ("C-x C-h" . buf-move-left) 
 			 ("C-x C-l" . buf-move-right) 
 			 ("C-x C-k" . buf-move-up) 
-			 ("C-x C-j" . buf-move-down )) "init-window")
+			 ("C-x C-j" . buf-move-down ) 
+			 ("C-S-<left>" . buf-move-left) 
+			 ("C-S-<right>" . buf-move-right) 
+			 ("C-S-<up>" . buf-move-up) 
+			 ("C-S-<down>" . buf-move-down)) "init-window")
 ;; }}
 
 ;; {{ misc
 (lazy-load-global-keys '(("y" . dash-at-point) 
-			 ("r" . restart-emacs)) "init-misc" "C-x")
+			 ("r" . restart-emacs) 
+			 ("j" . tiny-expand)) "init-misc" "C-x")
 ;; }}
 
 ;; {{ search
@@ -335,5 +341,11 @@
 
 ;; elisp-format
 (lazy-load-set-keys '(("M-F" . elisp-format-buffer)) emacs-lisp-mode-map)
+
+;; iedit
+(lazy-load-global-keys '(("s-o" . iedit-mode)) "init-iedit")
+
+;;; ### expand-region ###
+(lazy-load-global-keys '(("C-=" . er/expand-region)) "expand-region")
 
 (provide 'init-key)

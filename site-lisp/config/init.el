@@ -90,7 +90,7 @@
 	 (require 'init-snails)
 	 (require 'init-visual-regexp)
          (require 'init-formatter)
-	 
+         (require 'init-iedit)	 
         ;;  (require 'init-sort-tab)	 
          ;; (require 'init-eldoc)
          ;; (require 'init-yasnippet)
@@ -109,7 +109,7 @@
 
          ;; (require 'init-git)
          ;; (require 'init-web-mode)
-         ;; (require 'init-iedit)
+
          ;; (require 'init-parrot)
          ;; ;;(require 'init-leetcode)
          ;; (require 'init-httpd)

@@ -1,13 +1,3 @@
- init-key.el --- 所有按键绑定
-;; Mac平台下交换 Option 和 Command 键。
-(when (featurep 'cocoa)
-  (setq mac-option-modifier 'super)
-  (setq mac-command-modifier 'meta))
-
-;;; ### Unset key ###
-;;; --- 卸载按键
-(lazy-load-unset-keys                   ;全局按键的卸载
- '("C-x C-f" "C-z" "C-q" "s-W" "s-z" "M-h" "C-x C-c" "C-\\" "s-c" "s-x" "s-v" "s-p" "C-6" "C-c i"))
 
 ;;; ### iedit ###
 ;;; --- iedit
@@ -170,60 +160,11 @@
    )
  "macros+")
 
-;;; ### auto-install ###
-(lazy-load-global-keys
- '(
-   ("C-s-x" . auto-install-from-emacswiki))
- "init-auto-install")
-
-;;; ### expand-region ###
-(lazy-load-global-keys
- '(
-   ("C-=" . er/expand-region))
- "expand-region")
-
 ;; ### vdiff ###
 (lazy-load-global-keys
  '(
    ("M-s-u" . vdiff-buffers))
  "vdiff")
 
-
-;; window move
-(lazy-load-global-keys
- '(
-   ("s-x w" . one-key-menu-window-navigation)
-   ("C-<left>" . windmove-left)
-   ("C-<right>" . windmove-right)
-   ("C-<down>" . windmove-down)
-   ("C-<up>" . windmove-up)
-   )
- "init-window")
-
-;; vimish
-(lazy-load-global-keys
- '(
-   ;; fold
-   ("M-+" . vimish-fold)
-   ("M-`" . vimish-fold-toggle)
-   ("C-M-`" . vimish-fold-toggle-all)
-   ("C-M-n" . vimish-fold-next-fold)
-   ("C-M-p" . vimish-fold-previous-fold)
-   ("M-<backspace>" . vimish-fold-delete)
-   ("M-S-<backspace>" . vimish-fold-delete-all)
-   ;; format-all
-   ("M-F" . format-all-buffer)
-   ;; buf move
-   ("C-S-<left>" . buf-move-left)
-   ("C-S-<right>" . buf-move-right)
-   ("C-S-<up>" . buf-move-up)
-   ("C-S-<down>" . buf-move-down)
-   ;; tiny
-   ("C-c j" . tiny-expand)
-   
-   ;; emojify
-   ("C-c i e" . emojify-insert-emoji)
-   ) 
- "init-misc")
 
 (provide 'init-key)

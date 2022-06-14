@@ -148,3 +148,15 @@
 [submodule "site-lisp/extensions/emacs-language-id"]
 	path = site-lisp/extensions/emacs-language-id
 	url = https://github.com/lassik/emacs-language-id.git
+[submodule "site-lisp/extensions/tiny"]
+	path = site-lisp/extensions/tiny
+	url = https://github.com/abo-abo/tiny.git
+[submodule "site-lisp/extensions/expand-region.el"]
+	path = site-lisp/extensions/expand-region.el
+	url = https://github.com/magnars/expand-region.el.git
+[submodule "site-lisp/extensions/iedit"]
+	path = site-lisp/extensions/iedit
+	url = https://github.com/victorhge/iedit.git
+[submodule "site-lisp/extensions/emacs-maple-iedit"]
+	path = site-lisp/extensions/emacs-maple-iedit
+	url = https://github.com/honmaple/emacs-maple-iedit.git

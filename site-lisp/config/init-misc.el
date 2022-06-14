@@ -8,5 +8,7 @@
 (require 'smart-align)
 (require 'restart-emacs)
 (require 'recursive-search-references)
+(require 'tiny)
+(require 'expand-region)
 
 (provide 'init-misc)
