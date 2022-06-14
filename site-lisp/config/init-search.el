@@ -3,6 +3,7 @@
 (require 'wgrep)
 (require 'rg)
 (require 'color-rg)
+(require 'visual-regexp)
 ;;(require 're-builder)
 ;;(require 're-builder+)
 

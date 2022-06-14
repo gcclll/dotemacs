@@ -41,6 +41,15 @@
       js-doc-url user-blog-url
       js-doc-license "MIT")
 
+(one-key-create-menu
+ "WEB"
+ '(
+   (("c" . "Clone") . web-mode-element-clone)
+   (("a" . "Beginning") . web-mode-element-beginning)
+   (("e" . "End") . web-mode-element-end)
+   )
+ t)
+
 (provide 'init-web-mode)
 
 ;;; init-web-mode.el ends here

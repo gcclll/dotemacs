@@ -80,7 +80,7 @@
                                    (require 'init-org) 
                                    ;; (require 'init-sort-tab)
                                    ;; (require 'init-eldoc)
-                                   ;; (require 'init-yasnippet)
+                                   (require 'init-yasnippet)
 
                                    (require 'init-cursor-chg)
                                    (require 'init-markdown-mode)

@@ -247,3 +247,9 @@
 [submodule "site-lisp/extensions/olivetti"]
 	path = site-lisp/extensions/olivetti
 	url = https://github.com/rnkn/olivetti.git
+[submodule "site-lisp/extensions/auto-yasnippet"]
+	path = site-lisp/extensions/auto-yasnippet
+	url = https://github.com/abo-abo/auto-yasnippet.git
+[submodule "site-lisp/extensions/yasnippet"]
+	path = site-lisp/extensions/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git
