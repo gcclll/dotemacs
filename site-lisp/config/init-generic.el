@@ -43,7 +43,7 @@
       '((100 left)
         (19 right ((14 right profiler-format-number)
                    (5 right)))))
-(add-hook 'find-file-hook 'highlight-parentheses-mode t) ;增强的括号高亮
+;; (add-hook 'find-file-hook 'highlight-parentheses-mode t) ;增强的括号高亮
 (add-hook 'prog-mode-hook #'hs-minor-mode)
 
 (setq ad-redefinition-action 'accept)   ;不要烦人的 redefine warning

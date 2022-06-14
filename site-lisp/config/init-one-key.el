@@ -5,7 +5,6 @@
 (require 'eaf-file-manager)
 
 ;;; Code:
-
 (one-key-create-menu
  "DIRECTORY"
  '(

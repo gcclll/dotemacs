@@ -53,11 +53,22 @@
         (add-subdirs-to-load-path subdir-path)))))
 
 (add-subdirs-to-load-path "~/.emacs.d/site-lisp/")
-(require 'exec-path-from-shell)
+
+;; 直接将环境变量拷贝到 ~/.path 中
+;; sh -c 'printf "%s" "$PATH"' > ~/.path
+(condition-case err
+    (let ((path (with-temp-buffer
+                  (insert-file-contents-literally "~/.path")
+                  (buffer-string))))
+      (setenv "PATH" path)
+      (setq exec-path (append (parse-colon-path path) (list exec-directory))))
+  (error (warn "%s" (error-message-string err))))
+
+;;(require 'exec-path-from-shell)
 ;; 设成nil 则不从 .zshrc 读 只从 .zshenv读（可以加快速度，但是需要你将环境变量相关的都放到 .zshenv 中，而非 .zshrc 中）
-;; (setq exec-path-from-shell-check-startup-files nil) ;
-;; (setq exec-path-from-shell-arguments '("-l" )) ;remove -i read form .zshenv
-(exec-path-from-shell-initialize)
+;;(setq exec-path-from-shell-check-startup-files nil) ;
+;;(setq exec-path-from-shell-arguments '("-l" )) ;remove -i read form .zshenv
+;;(exec-path-from-shell-initialize)
 
 ;; (add-subdirs-to-load-path "/usr/share/emacs/lazycat")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

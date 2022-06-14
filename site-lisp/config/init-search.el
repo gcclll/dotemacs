@@ -1,8 +1,10 @@
 ;;; init-search-engine.el
-
-
-;;; Require
 (require 'engine-mode)
+(require 'wgrep)
+(require 'rg)
+(require 'color-rg)
+;;(require 're-builder)
+;;(require 're-builder)
 
 (engine/set-keymap-prefix (kbd "C-c s"))
 (defengine baidu "https://www.baidu.com/s?wd=%s"
@@ -37,6 +39,6 @@
 (engine-mode t)
 ;;; Code
 
-(provide 'init-search-engine)
+(provide 'init-search)
 ;;; init-search-engine.el ends here
 

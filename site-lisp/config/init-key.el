@@ -1,77 +1,86 @@
- init-key.el --- 所有按键绑定
+;; init-key.el
+
 ;; Mac平台下交换 Option 和 Command 键。
 (when (featurep 'cocoa)
   (setq mac-option-modifier 'super)
   (setq mac-command-modifier 'meta))
 
-;;; ### Unset key ###
-;;; --- 卸载按键
-(lazy-load-unset-keys                   ;全局按键的卸载
- '("C-x C-f" "C-z" "C-q" "s-W" "s-z" "M-h" "C-x C-c" "C-\\" "s-c" "s-x" "s-v" "s-p" "C-6" "C-c i"))
-
-;; ### 下面将按键统一整理，根据前缀区分
-;; C-c 开头
+;;; unset keys
+(lazy-load-unset-keys
+ '("C-x C-f" "C-z" "C-q" "M-h" "C-x C-c" "C-\\" "s-p" "C-6" "C-c i" "s-x"))
 
 ;; 全局按键
 (lazy-load-set-keys
  '(
-   ;; one-key 所有菜单
-   ;; ("<escape>". one-key-menu-everything)
-   ;; 工具函数
-   ("s-c o" . one-key-menu-directory)   ;目录打开菜单
+   ;; {{ fn 功能键 ##
+   ("<f5>" . emacs-session-save)        ;退出 Emacs
+   ;; }}
+
+   ("C-s" . swiper)
+   ;; {{ buffer 和 window 管理 ##
    ("s-," . bury-buffer)                ;隐藏当前buffer
-   ("s-." . unbury-buffer)              ;反隐藏当前buffer
-   ("s-[" . eval-expression)            ;执行表达式
-   ("C-s-q" . quoted-insert)            ;读取系一个输入字符并插入
-   ("M-h" . set-mark-command) ;Instead C-Space for Chinese input method
-   ("M-H" . set-mark-command) ;Instead C-Space for Chinese input method
-   ("M-;" . comment-dwim)
-   
-   ;; 表情
-   ("C-c i E" . emoji-insert)
-   
-   ;; 缓存编辑
-   ("C-x C-x" . exchange-point-and-mark)   ;交换当前点和标记点
-   ("M-o" . backward-delete-char-untabify) ;向前删除字符
-   ("C-M-S-h" . mark-paragraph)            ;选中段落
-   ("M-SPC" . just-one-space)              ;只有一个空格在光标处
-
-   ;; 字体调整
-   ("s--" . text-scale-decrease)        ;减小字体大小
-   ("s-=" . text-scale-increase)        ;增加字体大小
-
-   ;; 窗口操作
-   ("C-c v" . split-window-vertically)   ;纵向分割窗口
+   ("s-." . unbury-buffer)              ;显示隐藏的buffer
+   ("C-c v" . split-window-vertically)  ;纵向分割窗口
    ("C-c h" . split-window-horizontally) ;横向分割窗口
    ("C-x ;" . delete-other-windows)      ;关闭其它窗口
+   ("C-x n" . next-buffer)               ;下一个buffer
+   ("C-x p" . previous-buffer)           ;前一个buffer
+   ("C-x b" . ido-switch-buffer)         ;切换buffer
+   ("C-x i" . ido-insert-buffer)         ;插入buffer内容到当前buffer
+   ("C-x I" . ido-insert-file)           ;插入文件内容到当前buffer
 
-   ;; 功能函数
-   ("<f5>" . emacs-session-save)        ;退出emacs
-   ("C-<f5>" . restart-emacs)           ;重启 emacs
-   ("C-4" . insert-changelog-date)      ;插入日志时间 (%Y/%m/%d)
-   ;; ("C-&" . switch-to-messages)         ;跳转到 *Messages* buffer
+   ;; start, end
+   ("C-<" . beginning-of-buffer)        ;当前buffer最开始位置
+   ("C->" . end-of-buffer)              ;当前buffer最后位置
+   ;; }}
 
-   ;; 交互式管理文件和缓存
-   ("C-x C-f" . ido-find-file)          ;交互式查找文件
-   ("C-x b" . ido-switch-buffer)        ;交互式切换buffer
-   ("C-x i" . ido-insert-buffer)        ;插入缓存
-   ("C-x I" . ido-insert-file)          ;插入文件
+   ;; {{ 文件管理 ##
+   ("C-c C-f" . ido-find-file)               ;打开文件
+   ("C-c f f" . find-file)                   ;打开文件
+   ("C-c f r" . rename-this-file-and-buffer) ;重命名文件和buffer
+   ("C-c f d" . delete-this-file)            ;删除当前文件和buffer
+   ("C-c f l" . load-file)
+   ;; }}
+
+   ("s-[" . eval-expression)            ;执行表达式
+   ;; ("C-s-q" . quoted-insert)         ;插入输入的第一个字符???
+
+   ;; {{ 标记+注释 ##
+   ("M-h" . set-mark-command)           ;中文输入法的时候标记
+   ("M-;" . comment-dwim)               ;在行尾添加注释
+   ("C-x C-x" . exchange-point-and-mark) ;交换当前点和标记点
+   ("C-M-S-h" . mark-paragraph)          ;选中段落
+   ;; }}
+
+   ;; {{ insert 插入点什么 ##
+   ("C-c i e" . emoji-insert)           ;插入Emacs内置表情包
+   ;; }}
+
+   ;; {{ 文本操作 ##
+   ("M-o" . backward-delete-char-untabify) ;向前删除一个字符
+   ("M-SPC" . just-one-space)              ;合并空格
+   ("C-/" . undo)                          ;回退
+   ;; }}
+
+   ;; {{ 主题和字体 ##
+   ("s--" . text-scale-decrease)        ;减小字体
+   ("s-=" . text-scale-increase)        ;增大字体
+   ;; }}
    ))
 
 ;; eaf menu
 (one-key-create-menu
  "EAF"
  '(
-   (("g" . "Git") . one-key-menu-git)
    (("r" . "RSS") . eaf-open-rss-reader)
    )
  t)
 
-;; one-key-menu 文件操作
+;; 文件操作 menu
 (one-key-create-menu
  "FILE"
  '(
-   (("f" . "Open in finder") . osx-lib-find-file-in-finder)
+   (("f" . "Open in finder") )
    (("d" . "Delete") . delete-this-file)
    (("r" . "Rename") . rename-this-file-and-buffer)
    (("c" . "Copy filename") . cp-filename-of-current-buffer)
@@ -79,59 +88,61 @@
    )
  t)
 
-;;; 文件操作
+;; init-utils key
 (lazy-load-global-keys
- '(("<backspace>" . delete-this-file)
+ '(
+   ("<backspace>" . delete-this-file)
    ("R" . rename-this-file-and-buffer)
    ("c" . cp-filename-of-current-buffer)
-   ("C" . cp-fullpath-of-current-buffer))
+   ("C" . cp-fullpath-of-current-buffer)
+   )
  "init-utils"
  "C-c")
 
-;;; ### Popweb ###
-;;; --- Web翻译
+;; {{ 翻译
 (lazy-load-global-keys
- '((";" . popweb-dict-bing-input)
-   ("y" . popweb-dict-bing-pointer))
+ '(
+   (";" . popweb-dict-bing-input)       ;翻译输入的内容
+   ("y" . popweb-dict-bing-pointer)     ;翻译当前光标处的内容
+   ("," . insert-translated-name-insert-with-underline) ;翻译输入的中文
+   ("." . insert-translated-name-insert-with-camel)
+   ("i" . insert-translated-name-insert)
+   )
  "init-popweb"
  "C-z")
+;; }}
 
-;;; ### Insert translated name ###
+;; {{ window
 (lazy-load-global-keys
  '(
-   ("," . insert-translated-name-insert-with-underline)
-   ("." . insert-translated-name-insert-with-camel)
+   ("C-<left>" . windmove-left)
+   ("C-<right>" . windmove-right)
+   ("C-<up>" . windmove-up)
+   ("C-<down>" . windmove-down)
+   ;; buffer-move
+   ("C-x C-h" . buf-move-left)
+   ("C-x C-l" . buf-move-right)
+   ("C-x C-k" . buf-move-up)
+   ("C-x C-j" . buf-move-down )
    )
- "insert-translated-name"
- "C-z"
- )
+ "init-window")
+;; }}
+
+;; {{ misc
 (lazy-load-global-keys
  '(
-   ("s-i" . insert-translated-name-insert)
+   ("y" . dash-at-point)
+   ("r" . restart-emacs)
    )
- "init-insert-translated-name")
+ "init-misc"
+ "C-x")
+;; }}
 
-;; Dash.
-(lazy-load-global-keys
- '(("y" . dash-at-point)
-   )
- "dash-at-point"
- "C-x"
- )
-
-
-
-;; 正则
+;; {{ search
 (lazy-load-global-keys
  '(
-   ("s-R" . re-builder)                 ;可视化构建正则表达式
-   )
- "init-rebuilder")
-
-;;; ### Color-Rg ###
-;;; --- 搜索重构
-(lazy-load-global-keys
- '(
+   ("s-R" . re-builder)
+   ;; color-rg
    ("s-x g" . color-rg-search-symbol)
    ("s-x h" . color-rg-search-input)
    ("s-x j" . color-rg-search-symbol-in-project)
@@ -139,14 +150,15 @@
    ("s-x ," . color-rg-search-symbol-in-current-file)
    ("s-x ." . color-rg-search-input-in-current-file)
    )
- "color-rg")
+ "init-search")
+;; }}
 
-;; 工具函数
+;; {{ 工具函数
 (lazy-load-global-keys
  '(
-   ("C-z l" . display-line-numbers-mode) ;行号模式切换
-   ("M-s-n" . comment-part-move-down)    ;向下移动注释
-   ("M-s-p" . comment-part-move-up)      ;向上移动注释
+   ("C-z m l" . display-line-numbers-mode) ;行号模式切换
+   ("M-s-n" . comment-part-move-down)      ;向下移动注释
+   ("M-s-p" . comment-part-move-up)        ;向上移动注释
    ("C-s-n" . comment-dwim-next-line)    ;移动到上一行并注释
    ("C-s-p" . comment-dwim-prev-line)    ;移动到下一行并注释
    ("M-2" . indent-buffer)               ;自动格式化当前Buffer
@@ -154,8 +166,8 @@
    ("C-x u" . mark-line)      ;选中整行
    ("s-k" . kill-and-join-forward)      ;在缩进的行之间删除
    ("M-G" . goto-column)                ;到指定列
-   ("C->" . remember-init)              ;记忆初始函数
-   ("C-<" . remember-jump)              ;记忆跳转函数
+   ;;("C->" . remember-init)              ;记忆初始函数
+   ;;("C-<" . remember-jump)              ;记忆跳转函数
    ("M-s-," . point-stack-pop)          ;buffer索引跳转
    ("M-s-." . point-stack-push)         ;buffer索引标记
    ("s-g" . goto-percent)    ;跳转到当前Buffer的文本百分比, 单位为字符
@@ -167,23 +179,22 @@
    ("s-r" . find-file-smb)              ;访问sambao
    )
  "basic-toolkit")
+;; }}
 
-;; goto 跳转
+;; goto
 (lazy-load-global-keys
- '(
-   ("M-g" . goto-line-preview))
+ '(("M-g" . goto-line-preview))
  "goto-line-preview")
 
-;;; ### Delete block ###
-;;; --- 快速删除光标左右的内容
+;; delete block
 (lazy-load-global-keys
  '(
    ("M-N" . delete-block-backward)
-   ("M-M" . delete-block-forward))
+   ("M-M" . delete-block-forward)
+   )
  "delete-block")
 
-;;; ### Watch other window ###
-;;; --- 滚动其他窗口
+;; 滚动其它窗口
 (lazy-load-global-keys
  '(
    ("M-J" . watch-other-window-up)        ;向下滚动其他窗口
@@ -193,8 +204,7 @@
    )
  "watch-other-window")
 
-;;; ### Buffer Move ###
-;;; --- 缓存移动
+;; buffer move
 (lazy-load-set-keys
  '(
    ("C-z k" . beginning-of-buffer)      ;缓存开始
@@ -209,22 +219,28 @@
    ("C-M-e" . end-of-defun)             ;函数末尾
    ))
 
-;; symbol-overlay
+;; osx-lib
 (lazy-load-global-keys
  '(
-   ("M-s" . symbol-overlay-put)         ;懒惰搜索
+   ("f o" . osx-lib-reveal-in-finder)
    )
+ "init-osx"
+ "C-c")
+
+;; symbol-overlay
+(lazy-load-global-keys
+ '(("M-s" . symbol-overlay-put))
  "init-symbol-overlay")
 
 ;; move-text
 (lazy-load-global-keys
  '(
-   ("s-N" . move-text-down)      ;把光标所在的整行文字(或标记)下移一行
-   ("s-P" . move-text-up)        ;把光标所在的整行文字(或标记)上移一行
+   ("s-P" . move-text-up)
+   ("s-N" . move-text-down)
    )
  "move-text")
 
-;; 复制和注释
+;; copy and comment
 (lazy-load-global-keys
  '(
    ("C-S-o" . duplicate-line-or-region-above) ;向上复制当前行或区域
@@ -235,36 +251,23 @@
    )
  "duplicate-line")
 
+;; buffer 扩展
+(lazy-load-global-keys
+ '(("C-M-;" . kill-other-window-buffer))
+ "buffer-extension")
+
+;; last change
+(lazy-load-global-keys
+ '(("C-," . goto-last-change))
+ "goto-last-change")
+
 ;; newline
 (lazy-load-global-keys
  '(
-   ("C-o" . open-newline-above)         ;在上面一行新建一行
-   ("C-l" . open-newline-below)         ;在下面一行新建一行
+   ("C-o" . open-newline-above)
+   ("C-l" . open-newline-below) ;; recenter ???
    )
  "open-newline")
-
-;;; ### Buffer Name ###
-;;; --- 缓存名字
-(lazy-load-global-keys
- '(
-   ("C-M-;" . kill-other-window-buffer) ;关闭其他窗口的buffer
-   )
- "buffer-extension")
-
-;; undo
-(lazy-load-global-keys
- '(
-   ("C-/" . undo-tree-undo)             ;撤销
-   ("C-?" . undo-tree-redo)             ;重做
-   )
- "undo-tree")
-
-;; goto last change
-(lazy-load-global-keys
- '(
-   ("C-," . goto-last-change)           ;跳到最后编辑的地方
-   )
- "goto-last-change")
 
 ;;; ### Rect ###
 ;;; --- 矩形操作
@@ -285,29 +288,26 @@
    )
  "rect-extension")
 
-;;; ### 调整数字 ###
-;;; --- 调整光标处数字
+;; shift-number, +-数字
 (lazy-load-global-keys
  '(
    ("M--" . shift-number-down)
-   ("M-=" . shift-number-up))
+   ("M-=" . shift-number-up)
+   )
  "shift-number")
 
-;; 关闭buffer或window
+;; 关闭buffer/window
 (lazy-load-global-keys
  '(
-   ("C-'" . delete-current-buffer-and-window) ;关闭当前buffer, 并关闭窗口
-   ("C-\"" . delete-current-buffer-window)    ;删除当前buffer的窗口
+   ("C-'" . delete-current-buffer-and-window)
+   ("C-\"" . delete-current-buffer-window)
    ("C-x O" . toggle-window-split)
    )
- "Window-extension")
+ "window-extension")
 
-;;; ### Toggle-One-Window ###
-;;; --- 临时最大化当前窗口
+;; 临时最大当前窗口
 (lazy-load-global-keys
- '(
-   ("M-s-o" . toggle-one-window)        ;切换一个窗口
-   )
+ '(("M-s-o" . toggle-one-window))
  "toggle-one-window")
 
 ;;; ### Sort-Tab ###
@@ -407,296 +407,12 @@
    )
  "init-cycle-buffer")
 
-;;; ### Isearch ###
-;;; --- 交互式搜索
-(lazy-load-set-keys
- '(
-   ("TAB" . isearch-complete)           ;isearch补全
-   ("C-s" . isearch-repeat-forward) ;重复向前搜索, 第一次可以用来搜索上一次的历史哟
-   ("C-r" . isearch-repeat-backward)   ;重复向后搜索
-   ("C-g" . isearch-abort)             ;中止搜索
-   ("C-w" . isearch-yank-word-or-char) ;粘帖光标后的词或字符作为搜索对象
-   ("C-y" . isearch-yank-line)         ;粘帖光标后的行作为搜索对象
-   ("M-o" . isearch-delete-char)       ;删除
-   ("M-p" . isearch-ring-retreat)      ;搜索历史向后
-   ("M-n" . isearch-ring-adjust)       ;搜索历史向前
-   ("M-y" . isearch-yank-kill) ;从 kill ring 中粘帖最后一项到搜索对象后
-   ("M-h" . isearch-yank-char) ;粘帖光标后的字符到搜索对象
-   ("M-e" . isearch-edit-string)        ;编辑搜索对象
-   ("M-c" . isearch-toggle-case-fold)   ;切换大小写
-   ("M-r" . isearch-toggle-regexp)      ;切换正则表达式
-   ("M-w" . isearch-toggle-word)        ;切换词
-   ("M->" . isearch-beginning-of-buffer) ;跳转到buffer开头并重新搜索, 搜索最前面一个
-   ("M-<" . isearch-end-of-buffer) ;跳转到buffer末尾并重新搜索, 搜索最后面一个
-   ("M-%" . isearch-query-replace) ;替换
-   ("M-d" . isearch-find-duplicate-word)    ;查找重复的单词
-   ("M-z" . isearch-find-duplicate-line)    ;查找重复的行
-   ("C-M-%" . isearch-query-replace-regexp) ;正则表达式替换
-   )
- isearch-mode-map
- )
-
-;;; ### Flycheck ###
-;;; --- 及时拼写检查
-(lazy-load-global-keys
- '(
-   ("M-s-j" . flycheck-next-error)      ;显示下一个错误
-   ("M-s-k" . flycheck-previous-error)  ;显示上一个错误
-   )
- "init-flycheck"
- )
-
-;;; ### kill-ring-search ###
-;;; --- 删除环的递增式搜索
-(lazy-load-global-keys
- '(
-   ("M-s-y" . kill-ring-search)         ;kill ring 搜索
-   )
- "init-kill-ring-search")
-
-;;; ### Help ###
-;;; --- 帮助模式
-(lazy-load-global-keys
- '(
-   ("C-h". one-key-menu-help)           ;帮助菜单
-   )
- "init-help-mode")
-
 ;;; smart align
 (lazy-load-global-keys
  '(
    ("M-U" . smart-align)
    )
  "smart-align")
-
-;;; ### Yoaddmuse ###
-;;; --- Yet another oddmuse mode
-(lazy-load-global-keys
- '(
-   ("M-s-;" . one-key-menu-yaoddmuse)   ;yaoddmuse 菜单
-   )
- "init-yaoddmuse")
-
-;;; ### Festival ###
-;;; --- 语音阅读
-(lazy-load-global-keys
- '(
-   ("s-x r" . one-key-menu-festival)    ;语音阅读菜单
-   )
- "init-festival")
-
-;;; ### Less ###
-;;; --- 快速浏览模式
-(lazy-load-global-keys
- '(
-   ("M-s-l" . less-minor-mode)          ;打开less模式
-   )
- "init-less")
-
-;;; ### iedit ###
-;;; --- iedit
-(lazy-load-global-keys
- '(
-   ("s-o" . iedit-mode)
-   )
- "init-iedit")
-
-;;; ### Ace jump ###
-(lazy-load-global-keys
- '(
-   ("s-<" . ace-jump-word-mode)
-   ("s->" . ace-jump-char-mode)
-   ("s-?" . ace-jump-line-mode)
-   )
- "ace-jump-mode")
-
-;;; ### Python ###
-;;; --- Python mode
-(eval-after-load 'python-mode
-  '(lambda ()
-     (lazy-load-local-keys
-      '(i
-        ("C-S-j" . jump-to-import)
-        )
-      python-mode-map
-      "python-mode-utils")
-     ))
-
-;;; ### Ielm ###
-;;; --- Emacs Lisp 解释模式
-(autoload 'ielm-map "ielm")
-(lazy-load-global-keys
- '(
-   ("M-s-i" . ielm-toggle)              ;切换ielm
-   ("C-c d" . insert-standard-date)
-   )
- "lazycat-toolkit")
-(eval-after-load 'ielm-mode
-  '(lambda ()
-     (progn
-       (lazy-load-unset-keys
-        '("M-p" "M-n")
-        ielm-map)                       ;卸载按键
-       (lazy-load-set-keys
-        '(
-          ("C-s-p" . comint-previous-input) ;上一个输入
-          ("C-s-n" . comint-next-input)     ;下一个输入
-          )
-        ielm-map
-        )
-       )))
-
-;;; ### Man ###
-;;; --- Man
-(lazy-load-global-keys
- '(
-   ("<f1>" . woman))
- "init-woman")
-
-;;; ### Company en words ###
-;;; --- 英文助手
-(lazy-load-global-keys
- '(
-   ("M-r" . toggle-corfu-english-helper) ;英文助手
-   )
- "corfu-english-helper")
-
-;;; ### Ido ###
-;;; --- 交互式管理文件和缓存
-(add-hook 'ido-setup-hook
-          #'(lambda ()
-              (interactive)
-              (ido-my-keys ido-completion-map)))
-(defun ido-my-keys (keymap)
-  "Add my keybindings for ido."
-  (lazy-load-set-keys
-   '(
-     ("M-s-p" . ido-prev-match)              ;上一个匹配
-     ("M-s-n" . ido-next-match)              ;下一个匹配
-     ("M-s-h" . ido-next-work-directory)     ;下一个工作目录
-     ("M-s-l" . ido-prev-work-directory)     ;上一个工作目录
-     ("M-o" . backward-delete-char-untabify) ;向前删除字符
-     ("M-O" . ido-delete-backward-updir)     ;删除字符或进入上一级目录
-     )
-   keymap
-   ))
-
-;;; ### IRC ###
-;;; --- 聊天
-(lazy-load-global-keys
- '(
-   ("C-c o e" . switch-to-erc)            ;切换到IRC或自动登录IRC
-   ("C-c o E" . erc-nick-notify-jump-last-channel) ;自动跳转到最后收到消息的频道
-   )
- "init-erc")
-
-;;; Elisp
-(lazy-load-set-keys
- '(
-   ("RET" . comment-indent-new-line)    ;自动换行并注释
-   )
- emacs-lisp-mode-map
- )
-
-;;; ### Org ###
-;;; --- 笔记管理和组织
-(lazy-load-global-keys
- '(
-   ("s-s" . one-key-menu-org)      ;Org 文件
-   ("C-c r" . org-remember)             ;Org-remeber
-   ;; org-roam
-   ("C-c n a" . org-id-get-create)
-   ("C-c n c" . org-roam-capture)
-   ("C-c n f" . org-roam-node-find)
-   ("C-c n g" . org-roam-graph)
-   ("C-c n i" . org-roam-node-insert)
-   ("C-c n j" . org-roam-dailies-capture-today)
-   ("C-c n l" . org-roam-buffer-toggle)
-   ("C-c n r" . org-roam-ref-add)
-   ("C-c n u". org-roam-ui-open)
-   ;; org-mac-link
-   ("C-c 0" . org-mac-link-chrome-insert-frontmost-url)
-   ;; agenda
-   ("C-c a" . org-agenda)
-   )
- "init-org")
-
-;;; ### String Inflection ###
-;; --- 单词语法风格快速转换
-(lazy-load-global-keys
- '(
-   ;; ("C-c C-u" . one-key-string-inflection)
-   ("M-i" . string-inflection-toggle)
-   )
- "init-string-inflection")
-
-;;; ### Projectile Rails ###
-;; Rails 文件快速导航
-(lazy-load-global-keys
- '(
-   ("s-c p" . one-key-projectile-rails) ;projectile rails
-   )
- "init-projectile-rails")
-
-;;; ### Keyboard Macro ###
-;;; --- 键盘宏
-(lazy-load-global-keys
- '(
-   ("M-s-s" . kmacro-start-macro-or-insert-counter) ;开始键盘宏或插入
-   ("M-s-d" . kmacro-end-or-call-macro)             ;结束键盘宏或调用
-   ("M-s-c" . kmacro-delete-ring-head)              ;删除当前的键盘宏
-   ("M-s-w" . kmacro-cycle-ring-next)               ;下一个键盘宏
-   ("M-s-e" . kmacro-cycle-ring-previous)           ;上一个键盘宏
-   ("M-s-a" . kmacro-edit-macro)                    ;编辑键盘宏
-   ("M-s-v" . name-last-kbd-macro)                  ;命令当前键盘宏
-   ("M-s-f" . insert-kbd-macro)                     ;插入键盘宏
-   ("M-s-q" . apply-macro-to-region-lines) ;应用键盘宏到选择的区域
-   )
- "macros+")
-
-;;; ### auto-install ###
-(lazy-load-global-keys
- '(
-   ("C-s-x" . auto-install-from-emacswiki))
- "init-auto-install")
-
-;;; ### expand-region ###
-(lazy-load-global-keys
- '(
-   ("C-=" . er/expand-region))
- "expand-region")
-
-;; ### vdiff ###
-(lazy-load-global-keys
- '(
-   ("M-s-u" . vdiff-buffers))
- "vdiff")
-
-;; git menu
-(lazy-load-global-keys
- '(
-   ("s-x f" . one-key-menu-git))
- "init-eaf")
-
-;; 切换输入法
-(lazy-load-global-keys
- '(
-   ("s-m" . toggle-input-method)
-   )
- "init-rime")
-
-;; (lazy-load-global-keys
-;;  '(
-;;    ("M-x" . smex+)
-;;    ("C-c C-c M-x" . execute-extended-command)
-;;    )
-;;  "init-smex")
-
-;; 搜索替换
-(lazy-load-global-keys
- '(
-   ("C-M-%" . vr/query-replace))
- "init-visual-regexp")
 
 ;; snails
 (lazy-load-global-keys
@@ -705,75 +421,5 @@
    ("s-u" . snails-search-point)
    )
  "init-snails")
-
-;; lsp-bridge
-(lazy-load-global-keys
- '(
-   ("C-6" . lsp-bridge-lookup-documentation)
-   ("C-7" . lsp-bridge-jump-back)
-   ("C-8" . lsp-bridge-jump)
-   ("C-9" . lsp-bridge-find-references)
-   ("C-0" . lsp-bridge-rename)
-   )
- "init-lsp-bridge")
-
-;; 搜索引用
-(lazy-load-global-keys
- '(
-   ("C--" . recursive-search-references)
-   )
- "recursive-search-references")
-
-;; ivy
-(lazy-load-global-keys
- '(
-   ("M-x" . counsel-M-x)
-   ("C-c '" . ivy-resume)
-   )
- "init-ivy")
-
-;; window move
-(lazy-load-global-keys
- '(
-   ("s-x w" . one-key-menu-window-navigation)
-   ("C-<left>" . windmove-left)
-   ("C-<right>" . windmove-right)
-   ("C-<down>" . windmove-down)
-   ("C-<up>" . windmove-up)
-   )
- "init-window")
-
-;; vimish
-(lazy-load-global-keys
- '(
-   ;; fold
-   ("M-+" . vimish-fold)
-   ("M-`" . vimish-fold-toggle)
-   ("C-M-`" . vimish-fold-toggle-all)
-   ("C-M-n" . vimish-fold-next-fold)
-   ("C-M-p" . vimish-fold-previous-fold)
-   ("M-<backspace>" . vimish-fold-delete)
-   ("M-S-<backspace>" . vimish-fold-delete-all)
-   ;; format-all
-   ("M-F" . format-all-buffer)
-   ;; buf move
-   ("C-S-<left>" . buf-move-left)
-   ("C-S-<right>" . buf-move-right)
-   ("C-S-<up>" . buf-move-up)
-   ("C-S-<down>" . buf-move-down)
-   ;; tiny
-   ("C-c j" . tiny-expand)
-   
-   ;; emojify
-   ("C-c i e" . emojify-insert-emoji)
-   ) 
- "init-misc")
-
-;; magit
-(lazy-load-global-keys
- '(
-   ("s-x F" . one-key-menu-magit)
-   )
- "init-git")
 
 (provide 'init-key)

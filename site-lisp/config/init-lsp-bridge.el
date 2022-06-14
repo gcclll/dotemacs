@@ -1,6 +1,6 @@
 ;;; init-lsp-bridge.el --- Configuration for lsp-bridge
 ;;; Require
-(require 'orderless)
+;; (require 'orderless)
 (require 'lsp-bridge)
 ;; (require 'lsp-bridge-icon)
 ;; (require 'lsp-bridge-orderless)
