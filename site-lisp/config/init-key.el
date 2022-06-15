@@ -114,7 +114,10 @@
                          ("C-c w K" . buf-move-up) 
                          ("C-c w J" . buf-move-down)
                          ;; resize
-                         ("C-c w =" . windresize-balance-windows)) "init-window")
+                         ("C-c w =" . windresize-balance-windows)
+                         ;; buffer
+                         ("C-M-;" . kill-other-window-buffer)
+                         ) "init-window")
 ;; }}
 
 ;; {{ misc
@@ -209,15 +212,12 @@
                          ("C-:" . comment-or-uncomment-region+) ;注释当前行
                          ) "duplicate-line")
 
-;; buffer 扩展
-(lazy-load-global-keys '(("C-M-;" . kill-other-window-buffer)) "buffer-extension")
-
 ;; last change
 (lazy-load-global-keys '(("C-," . goto-last-change)) "goto-last-change")
 
 ;; newline
 (lazy-load-global-keys '(("C-o" . open-newline-above) 
-                         ("C-l" . open-newline-below) ;; recenter ???
+                         ("C-S-o" . open-newline-below) ;; recenter ???
                          ) "open-newline")
 
 ;;; ### Rect ###
