@@ -84,10 +84,12 @@
 
                                    (require 'init-cursor-chg)
                                    (require 'init-markdown-mode)
+                                   (require 'init-fold)
                                    
-                                   ;; 开发语言相关
+                                   ;; 开发相关
                                    (require 'init-c)
                                    (require 'init-web-mode)
+                                   (require 'init-git)
                                    ;; (require 'init-rjsx-mode)
 
                                    ;; (require 'init-restclient)

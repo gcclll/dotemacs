@@ -253,3 +253,18 @@
 [submodule "site-lisp/extensions/yasnippet"]
 	path = site-lisp/extensions/yasnippet
 	url = https://github.com/joaotavora/yasnippet.git
+[submodule "site-lisp/extensions/blamer.el"]
+	path = site-lisp/extensions/blamer.el
+	url = https://github.com/Artawower/blamer.el.git
+[submodule "site-lisp/extensions/git-gutter"]
+	path = site-lisp/extensions/git-gutter
+	url = https://github.com/emacsorphanage/git-gutter.git
+[submodule "site-lisp/extensions/vc-msg"]
+	path = site-lisp/extensions/vc-msg
+	url = https://github.com/redguardtoo/vc-msg.git
+[submodule "site-lisp/extensions/popup-el"]
+	path = site-lisp/extensions/popup-el
+	url = https://github.com/auto-complete/popup-el.git
+[submodule "site-lisp/extensions/vimish-fold"]
+	path = site-lisp/extensions/vimish-fold
+	url = https://github.com/matsievskiysv/vimish-fold.git

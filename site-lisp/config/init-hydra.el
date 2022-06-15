@@ -105,7 +105,6 @@ _SPC_ cancel _o_nly this     _d_elete     _=_ Balance
          (setq this-command 'winner-undo)))
   ("Z" winner-redo)
   ("SPC" nil))
-(global-set-key (kbd "C-c C-w") 'my-hydra-window/body)
 ;; }}
 
 ;; {{ git-gutter, @see https://github.com/abo-abo/hydra/wiki/Git-gutter
@@ -153,7 +152,6 @@ Git:
   ("vb" blamer-show-posframe-commit-info)
   ("ob" blamer-mode)
   ("q" nil))
-(global-set-key (kbd "C-c C-g") 'my-hydra-git/body)
 ;; }}
 
 ;; {{ search
@@ -174,29 +172,32 @@ _m_ Man
   ("s" enine/search-stack-overflow)
   ("m" woman)
   ("q" nil))
-(global-set-key (kbd "C-c C-s") 'my-hydra-search/body)
 ;; }}
 
-;; {{ TODO ranger
-;; (defhydra my-hydra-ranger ()
-;;   "
-;; Movement^^
-;; -------------------------------------------------------------------
-;; _h_ Parent
-;; _l_ Subdir
-;; _j_
-;; ")
-;; ;; }}
+;; {{ file ##
+(defhydra my-hydra-file (:columns 4)
+  "
+文件操作
+-------------------------------------------------------------------
+"
+  ("d" delete-this-file "Delete")
+  ("r" rename-this-file-and-buffer "Rename")
+  ("c" cp-filename-of-current-buffer "Filename")
+  ("p" cp-fullpath-of-current-buffer "Full Path")
+  ("f" osx-lib-find-file-in-finder "Open in finder"))
+;; }}
 
+;; {{ 各种跳转 ##
 (defhydra my-jump-hydra (:color blue :columns 3)
     "Dumb Jump"
-    ("j" dumb-jump-go "[Dumb]Go")
-    ("o" dumb-jump-go-other-window "[Dumb]Other window")
-    ("e" dumb-jump-go-prefer-external "[Dumb]Go external")
-    ("x" dumb-jump-go-prefer-external-other-window "[Dumb]Go external other window")
-    ("i" dumb-jump-go-prompt "[Dumb]Prompt")
-    ("l" dumb-jump-quick-look "[Dumb]Quick look")
-    ("b" dumb-jump-back "[Dumb]Back"))
+    ("j" dumb-jump-go "Go")
+    ("o" dumb-jump-go-other-window "Other window")
+    ("e" dumb-jump-go-prefer-external "Go external")
+    ("x" dumb-jump-go-prefer-external-other-window "Go external other window")
+    ("i" dumb-jump-go-prompt "Prompt")
+    ("l" dumb-jump-quick-look "Quick look")
+    ("b" dumb-jump-back "Back"))
+;; }}
 
 (message "> init-hydra.el")
 (provide 'init-hydra)

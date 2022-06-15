@@ -87,6 +87,9 @@
 (defun eaf-translate-text (text)
   (popweb-dict-bing-input text))
 
+;; eaf menu
+(one-key-create-menu "EAF" '((("r" . "RSS") . eaf-open-rss-reader)) t)
+
 (message "> init-eaf.el")
 (provide 'init-eaf)
 
