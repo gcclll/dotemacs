@@ -74,7 +74,7 @@ The test for presence of the car of ELT-CONS is done with `equal'."
                     ("\\.pro$" . qmake-mode)
                     ("\\.js$" . js-mode)
                     ("\\.wxs$" . js-mode)
-                    ("\\.jsx$" . web-mode)
+                    ("\\.jsx$" . js-mode)
                     ("\\.lua$" . lua-mode)
                     ("\\.swift$" . swift-mode)
                     ("\\.l$" . flex-mode)

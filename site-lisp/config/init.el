@@ -31,7 +31,6 @@
     (require 'display-line-numbers)
     (require 'init-proxy) 
     (require 'init-utils) 
-    (require 'init-file-type) 
     (require 'init-fullscreen)
     ;; (require 'init-evil)
     (require 'init-generic) 
