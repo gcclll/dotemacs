@@ -11,7 +11,7 @@
                                     "file-path"
                                     "mode-name"
                                     "battery"
-                                    ;; "date"
+                                    "date"
                                     "git"
                                     "input-method"
                                     "evil"

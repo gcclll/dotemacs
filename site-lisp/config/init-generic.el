@@ -75,6 +75,9 @@
 ;; allow remembering risky variables
 (defun risky-local-variable-p (sym &optional _ignored) nil)
 
+;; enable flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 (message "> init-generic.el")
 (provide 'init-generic)
 

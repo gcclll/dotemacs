@@ -44,7 +44,9 @@
                       ("C-c w ," . delete-other-windows) 
                       ("C-c w v" . split-window-horizontally) 
                       ("C-c w -" . split-window-vertically) 
-                      ("C-x ;" . delete-other-windows) ;关闭其它窗口
+                      ("C-c w ;" . kill-other-window-buffer)
+                      ("C-c w d" . delete-current-buffer-and-window)
+                      ;; ("C-M-;" . kill-other-window-buffer)
                       ))
 
 (lazy-load-global-keys '(
@@ -58,10 +60,6 @@
                          ("C-c w j" . windmove-down) 
                          ("C-c w k" . windmove-up)
                          ;; 交换两个窗口的buffer
-                         ("C-x C-h" . buf-move-left) 
-                         ("C-x C-l" . buf-move-right) 
-                         ("C-x C-k" . buf-move-up) 
-                         ("C-x C-j" . buf-move-down ) 
                          ("C-S-<left>" . buf-move-left) 
                          ("C-S-<right>" . buf-move-right) 
                          ("C-S-<up>" . buf-move-up) 
@@ -73,7 +71,7 @@
                          ;; resize
                          ("C-c w =" . windresize-balance-windows)
                          ;; buffer
-                         ("C-M-;" . kill-other-window-buffer)) "init-window")
+                         ) "init-window")
 
 ;; 滚动其它窗口
 (lazy-load-global-keys '(("M-J" . watch-other-window-up) ;向下滚动其他窗口
@@ -91,7 +89,7 @@
 (lazy-load-global-keys '(("s-<" . ace-jump-word-mode) 
                          ("s->" . ace-jump-char-mode) 
                          ("s-?" . ace-jump-line-mode) 
-                         ("C-c ." . ace-jump-line-mode)) "ace-jump-mode")
+                         ) "ace-jump-mode")
 
 ;; --- Cycle buffer
 (lazy-load-global-keys '(("M-C" . one-key-menu-cycle-buffer) ;特定模式切换
@@ -131,6 +129,7 @@
                       ("C-M-i" . down-list)           ;向右跳进 LIST
                       ("C-M-a" . beginning-of-defun)  ;函数开头
                       ("C-M-e" . end-of-defun)        ;函数末尾
+                      ("C-M-l" . recenter)
                       ))
 ;;
 
@@ -141,12 +140,11 @@
                       ("C-c f r" . rename-this-file-and-buffer) ;重命名文件和buffer
                       ("C-c f d" . delete-this-file) ;删除当前文件和buffer
                       ("C-c f l" . load-file)                      
+                      ("C-c f p" . cp-fullpath-of-current-buffer)
+                      ("C-c f n" . cp-filename-of-current-buffer)
                       ))
 
-(lazy-load-global-keys '(("<backspace>" . delete-this-file) 
-                         ("R" . rename-this-file-and-buffer) 
-                         ("c" . cp-filename-of-current-buffer) 
-                         ("C" . cp-fullpath-of-current-buffer)) "init-utils" "C-c")
+;; (lazy-load-global-keys '() "init-utils" "C-c")
 
 ;; osx-lib
 (lazy-load-global-keys '(("f o" . osx-lib-reveal-in-finder)) "init-osx" "C-c")
@@ -182,7 +180,9 @@
 
 ;; {{ 文本操作(标记+注释等) ##
 ;; --- iedit
-(lazy-load-global-keys '(("s-o" . iedit-mode)) "init-iedit")
+(lazy-load-global-keys '(
+                         ("s-o" . iedit-mode)
+                         ("C-c C-t i" . iedit-mode)) "init-iedit")
 
 ;; --- 增强式编辑当前光标的对象
 (lazy-load-global-keys '(("M-s-h" . one-key-menu-thing-edit) ;thing-edit 菜单
@@ -208,7 +208,7 @@
                          ) "rect-extension")
 
 (lazy-load-global-keys '(("C-o" . open-newline-above) 
-                         ("C-S-o" . open-newline-below) ;; recenter ???
+                         ("C-l" . open-newline-below) ;; recenter ???
                          ) "open-newline")
 
 ;; copy and comment
@@ -220,10 +220,10 @@
                          ) "duplicate-line")
 
 (lazy-load-set-keys '(
-                      ("M-h" . set-mark-command) ;中文输入法的时候标记
                       ("M-;" . comment-dwim)     ;在行尾添加注释
                       ("C-x C-x" . exchange-point-and-mark) ;交换当前点和标记点
                       ("C-M-S-h" . mark-paragraph)          ;选中段落                      
+                      ("C-M-S-b" . mark-whole-buffer)
 
                       ("M-o" . backward-delete-char-untabify) ;向前删除一个字符
                       ("M-SPC" . just-one-space) ;合并空格
@@ -274,14 +274,19 @@
 ;; misc
 (lazy-load-global-keys '(("C-x y" . dash-at-point) 
                          ("C-x r" . restart-emacs) 
-                         ("C-x j" . tiny-expand) 
+                         ;; ("C-x j" . tiny-expand) 
+                         ("C-c j" . tiny-expand)
                          ("M-i" . string-inflection-toggle) 
                          ("<f5>" . restart-emacs) 
                          ("M-'" . cycle-quotes)) "init-misc")
 ;; }}
 
 ;; {{ 工具函数 ##
-(lazy-load-global-keys '(("C-z m l" . display-line-numbers-mode) ;行号模式切换
+(lazy-load-set-keys '(
+                      ("C-c C-t p" . lsp-bridge-mode)
+                      ))
+
+(lazy-load-global-keys '(("C-c C-t l" . display-line-numbers-mode) ;行号模式切换
                          ("M-s-n" . comment-part-move-down) ;向下移动注释
                          ("M-s-p" . comment-part-move-up) ;向上移动注释
                          ("C-s-n" . comment-dwim-next-line) ;移动到上一行并注释
@@ -293,8 +298,8 @@
                          ("M-G" . goto-column)           ;到指定列
                          ;;("C->" . remember-init)              ;记忆初始函数
                          ;;("C-<" . remember-jump)              ;记忆跳转函数
-                         ("M-s-," . point-stack-pop)  ;buffer索引跳转
-                         ("M-s-." . point-stack-push) ;buffer索引标记
+                         ("M-s-." . point-stack-pop)  ;buffer索引跳转
+                         ("M-s-," . point-stack-push) ;buffer索引标记
                          ("s-g" . goto-percent) ;跳转到当前Buffer的文本百分比, 单位为字符
                          ("M-I" . backward-indent)    ;向后移动4个字符
                          ("s-J" . scroll-up-one-line) ;向上滚动一行
@@ -322,6 +327,9 @@
 ;; {{ 编程相关 ##
 ;; --- elisp-format
 (lazy-load-set-keys '(("M-F" . elisp-format-buffer)) emacs-lisp-mode-map)
+
+(lazy-load-global-keys '(("C-c e n" . flycheck-next-error)
+                         ("C-c e p" . flycheck-previous-error)) "flycheck")
 
 ;; --- 格式化
 (lazy-load-global-keys '(("M-F" . format-all-buffer)) "init-formatter")
@@ -392,6 +400,19 @@
                          ("C-M-<backspace>" . vimish-fold-delete)
                          ("C-M-S-<backspace>" . vimish-fold-delete-all)
                          ) "init-fold")
+;; }}
+
+;; {{ org-mode ##
+(lazy-load-set-keys '(
+                      ("C-c n f" . org-roam-node-find)
+                      ("C-c n g" . org-roam-graph)
+                      ("C-c n i" . org-roam-node-insert)
+                      ("C-c n c" . org-roam-capture)
+                      ("C-c n j" . org-roam-dailies-capture-today)
+                      ("C-c n ," . org-id-get-create)
+                      ("C-c n s" . org-roam-db-sync)
+                      ("C-c n u" . org-roam-ui-open)
+                      ))
 ;; }}
 
 (message "> init-key.el")
