@@ -157,6 +157,7 @@ C-M-i               down-list
 C-M-a               beginning-of-defun
 C-M-e               end-of-defun
 C-M-l               recenter
+C-M-s               isearch
 
 C-M-S-h             mark-paragraph
 C-M-S-b             mark-whole-buffer

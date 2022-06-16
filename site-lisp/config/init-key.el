@@ -170,6 +170,7 @@
 
 (lazy-load-set-keys '(
                       ("C-s" . swiper)                      
+                      ("C-M-s" . isearch-forward)
                       ))
 
 (lazy-load-global-keys '(("s-R" . re-builder)
