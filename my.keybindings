@@ -235,6 +235,15 @@ C-c C-t l           display-line-numbers-mode
 C-c C-t p           lsp-bridge-mode
 }}
 
+{{ C-c C-a, eaf apps ## 
+C-c C-a g               eaf-open-git
+C-c C-a t               eaf-open-terminal
+C-c C-a r               eaf-open-rss-reader
+C-c C-a f               eaf-open-file-manager
+C-c C-a b               eaf-open-browser
+C-c C-a m               eaf-open-system-monitor
+}}
+
 {{ C-x ##
 C-x 0               toggle-window-split
 C-x n               next-buffer

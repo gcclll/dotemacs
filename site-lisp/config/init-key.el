@@ -24,7 +24,13 @@
 
 ;; {{ eaf ##
 ;; git menu
-(lazy-load-global-keys '(("s-x f" . one-key-menu-git)) "init-eaf")
+(lazy-load-global-keys '(("C-c C-a g" . one-key-menu-git)
+                         ("C-c C-a t" . eaf-open-terminal )
+                         ("C-c C-a r" . eaf-open-rss-reader)
+                         ("C-c C-a f" . eaf-open-file-manager)
+                         ("C-c C-a b" . eaf-open-browser)
+                         ("C-c C-a m" . eaf-open-system-monitor)
+                         ) "init-eaf")
 
 (unless 
     (featurep 'cocoa) 
@@ -389,7 +395,9 @@
 
 ;; {{ 版本管理 ##
 ;; --- 显示当前代码的commit信息
-(lazy-load-global-keys '(("s-i" . blamer-show-posframe-commit-info)) "init-git")
+(lazy-load-global-keys '(
+                         ("C-c C-t b" . blamer-mode)
+                         ("s-i" . blamer-show-posframe-commit-info)) "init-git")
 ;; }}
 
 ;; {{ 代码折叠 ##
