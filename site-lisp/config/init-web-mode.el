@@ -7,6 +7,7 @@
 (require 'emmet-mode)
 (require 'js-doc)
 (require 'js2-mode)
+(require 'typescript-mode)
 
 ;;; Code:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; OS Config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

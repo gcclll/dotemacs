@@ -11,7 +11,7 @@
   (setq-local js-switch-indent-offset 2)
   (setq-local js-jsx-indent-level n)
   (setq-local js2-basic-offset n)
-  (setq-local typescript-indent-level n)
+  (setq-local typescript-indent-offset n)
 
   (setq-local web-mode-attr-indent-offset n)
   (setq-local web-mode-attr-value-indent-offset n)
