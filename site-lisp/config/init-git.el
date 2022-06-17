@@ -1,7 +1,6 @@
 ;;; init-git.el --- Init for git
 
 ;;; Require
-(require 'magit)
 (require 'git-gutter)
 (require 'vc-msg)
 (require 'blamer)
@@ -45,7 +44,7 @@
                        (t "HEAD^")))) 
     (git-gutter:set-start-revision parent) 
     (message "git-gutter:set-start-revision HEAD^")))
-(defvar my-prefer-lightweight-magit t)
+
 (defun git-gutter-toggle () 
   "Toggle git gutter." 
   (interactive) 
@@ -218,34 +217,6 @@ Show the diff between current working code and git head."
       (setq based (replace-regexp-in-string "^tag: +" "" (car (split-string (nth (1- i) lines) "
 +"))))) based))
 
-(defun my-git-rebase-interactive 
-    (&optional 
-     user-select-branch)
-  "Rebase interactively on the closest branch or tag in git log output.
-If USER-SELECT-BRANCH is not nil, rebase on the tag or branch selected by user." 
-  (interactive "P") 
-  (let* ((cmd "git --no-pager log --decorate --oneline -n 1024") 
-         (lines (my-lines-from-command-output cmd)) 
-         (targets (delq nil (mapcar (lambda (e) 
-                                      (when (and (string-match "^[a-z0-9]+ (\\([^()]+\\)) " e) 
-                                                 (not (string-match "^[a-z0-9]+ (HEAD " e))) 
-                                        (match-string 1 e))) lines))) based) 
-    (cond ((or 
-            (not targets) 
-            (eq (length targets) 0)) 
-           (message "No tag or branch is found to base on.")) 
-          ((or 
-            (not user-select-branch)) 
-           (eq (length targets) 1)
-           ;; select the closest/only tag or branch
-           (setq based (my-git-extract-based (nth 0 targets) lines))) 
-          (t
-           ;; select the one tag or branch
-           (setq based (my-git-extract-based (completing-read "Select based: " targets) lines))))
-
-    ;; start git rebase
-    (when based (magit-rebase-interactive based nil))))
-
 ;; }}
 
 ;; {{ git commit
@@ -267,36 +238,6 @@ If USER-SELECT-BRANCH is not nil, rebase on the tag or branch selected by user."
   (interactive) 
   (let* ((ffip-diff-backends '(("Show git commit" . my-git-show-commit-internal)))) 
     (ffip-show-diff 0)))
-
-(defun my-git-find-file-in-commit 
-    (&optional 
-     level)
-  "Find file in previous commit with LEVEL.
-If LEVEL > 0, find file in previous LEVEL commit." 
-  (interactive "P") 
-  (my-ensure 'magit) 
-  (let* ((rev (concat "HEAD" (if (and level 
-                                      (> level 0)) 
-                                 (make-string level ?^)))) 
-         (pretty (string-trim (shell-command-to-string (format
-                                                        "git --no-pager log %s --oneline --no-walk"
-                                                        rev)))) 
-         (prompt (format "Find file from commit [%s]: " pretty)) 
-         (cmd (my-git-files-in-rev-command rev level)) 
-         (default-directory (my-git-root-dir)) 
-         (file (completing-read prompt (my-lines-from-command-output cmd)))) 
-    (when file (find-file file))))
-
-(defun my-git-cherry-pick-from-reflog () 
-  "Cherry pick a commit from git reflog." 
-  (interactive) 
-  (let* ((cmd "git --no-pager reflog --date=short") 
-         (lines (my-lines-from-command-output cmd)) 
-         (selected (completing-read "Commit to cherry pick:" lines)) 
-         (commit-id (and selected 
-                         (car (split-string selected))))) 
-    (when commit-id (my-ensure 'magit) 
-          (magit-cherry-copy commit-id))))
 ;; }}
 
 ;;; Code:
@@ -306,79 +247,6 @@ If LEVEL > 0, find file in previous LEVEL commit."
   (require 'exec-path-from-shell) 
   (exec-path-from-shell-initialize))
 (load-library "with-editor")
-
-;; Magit configuration.
-(setq magit-commit-ask-to-stage nil)    ;don't ask stage question
-(setq magit-display-buffer-noselect t) ;don't select magit buffer default
-
-;; Make path column have enough space to display.
-(setq magit-submodule-list-columns '(("Path"     80 magit-modulelist-column-path   nil) 
-                                     ("Version"  30 magit-repolist-column-version  nil) 
-                                     ("Branch"   20 magit-repolist-column-branch   nil) 
-                                     ("B<U" 3 magit-repolist-column-unpulled-from-upstream   
-                                      ((:right-align t))) 
-                                     ("B>U" 3 magit-repolist-column-unpushed-to-upstream     
-                                      ((:right-align t))) 
-                                     ("B<P" 3 magit-repolist-column-unpulled-from-pushremote 
-                                      ((:right-align t))) 
-                                     ("B>P" 3 magit-repolist-column-unpushed-to-pushremote   
-                                      ((:right-align t))) 
-                                     ("B"   3 magit-repolist-column-branches                 
-                                      ((:right-align t))) 
-                                     ("S"   3 magit-repolist-column-stashes                  
-                                      ((:right-align t)))))
-
-;; (one-key-create-menu
-;;  "MAGIT"
-;;  '(
-;;    (("s" . "Magit status") . magit-status+)
-;;    (("c" . "Magit checkout") . magit-checkout)
-;;    (("C" . "Magit commit") . magit-commit)
-;;    (("u" . "Magit push to remote") . magit-push-current-to-pushremote)
-;;    (("p" . "Magit delete remote branch") . magit-delete-remote-branch)
-;;    (("i" . "Magit pull") . magit-pull-from-upstream)
-;;    (("r" . "Magit rebase") . magit-rebase)
-;;    (("e" . "Magit merge") . magit-merge)
-;;    (("l" . "Magit log") . magit-log-all)
-;;    (("L" . "Magit blame") . magit-blame+)
-;;    (("b" . "Magit branch") . magit-branch)
-;;    (("m" . "Magit submodule add") . magit-submodule-add+)
-;;    (("d" . "Magit submodule remove") . magit-submodule-remove+)
-;;    (("M" . "Magit submodule list") . magit-list-submodules)
-;;    (("D" . "Magit discarded") . magit-discard)
-;;    (("," . "Magit init") . magit-init)
-;;    (("." . "Magit add remote") . magit-remote-add)
-;;    )
-;;  t)
-
-(defun magit-submodule-add+ (url) 
-  (interactive "sURL: ") 
-  (let ((parent-dir (cadr (split-string (file-name-as-directory lazycat-emacs-extension-dir) 
-                                        (expand-file-name (cdr (project-current))))))) 
-    (magit-submodule-add url (concat parent-dir (file-name-base url)) 
-                         (file-name-base url))))
-
-(defun magit-submodule-remove+ () 
-  (interactive) 
-  (magit-submodule-remove (list (magit-read-module-path "Remove module")) "--force" nil))
-
-(defun magit-status+ () 
-  (interactive) 
-  (magit-status) 
-  (other-window 1))
-
-(defun magit-blame+ () 
-  (interactive) 
-  (setq magit-blame--style '(margin (margin-format " %s%f" " %C %a" " %H") 
-                                    (margin-width . 42) 
-                                    (margin-face . magit-blame-margin) 
-                                    (margin-body-face magit-blame-dimmed))) 
-  (magit-blame))
-
-(defun magit-delete-remote-branch () 
-  (interactive) 
-  (when (y-or-n-p (format "Delete remote branch (%s): " (magit-get-current-branch))) 
-    (magit-run-git-async "push" "origin" (format ":%s" (magit-get-current-branch)))))
 
 ;; blamer, show commit message like vscode
 ;; (global-blamer-mode 1) ; 影响操作性能，有需要使用 s-i 查看

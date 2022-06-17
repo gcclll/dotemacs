@@ -257,10 +257,9 @@
 ;; {{ my hydras ##
 (lazy-load-set-keys '(
                       ("C-c C-w" . my-hydra-window/body)
-                      ("C-c C-g" . my-hydra-git/body)
+                      ("C-c C-g" . my-hydra-git-gutter/body)
                       ("C-c C-s" . my-hydra-search/body)
                       ("C-c C-," . my-hydra-file/body)
-                      ("C-c C-u" . my-hydra-gutter/body)
                       ))
 ;; }}
 

@@ -107,53 +107,6 @@ _SPC_ cancel _o_nly this     _d_elete     _=_ Balance
   ("SPC" nil))
 ;; }}
 
-;; {{ git-gutter, @see https://github.com/abo-abo/hydra/wiki/Git-gutter
-(defhydra my-hydra-git (:body-pre
-                     (progn
-                       (git-gutter-mode 1)
-                       (setq git-link-use-commit t))
-                     :after-exit (setq git-link-use-commit nil)
-                     :color blue)
-"
-Git:
-[_dd_] Diff               [_ri_] Rebase closest             [_vs_] Show commit message
-[_dc_] Diff staged        [_s_]  Show commit                [_vb_] Blamer Commit message
-[_dr_] Diff range         [_rr_] Reset gutter               [_ob_] Blamer mode
-[_au_] Add modified       [_rh_] Gutter => HEAD
-[_cc_] Commit             [_l_]  Log selected/file
-[_ca_] Amend              [_b_]  Branches
-[_ja_] Amend silent       [_k_]  Git commit link
-[_tt_] Stash              [_Q_]  Quit gutter
-[_ta_] Apply stash        [_cr_] Cherry pick from reflog
-[_f_]  Find file in commit
-
-"
-  ("ri" my-git-rebase-interactive)
-  ("rr" git-gutter-reset-to-default)
-  ("rh" my-git-gutter-reset-to-head-parent)
-  ("s" my-git-show-commit)
-  ("l" magit-log-buffer-file)
-  ("b" magit-show-refs-popup)
-  ("k" git-link)
-  ("g" magit-status)
-  ("ta" magit-stash-apply)
-  ("tt" magit-stash)
-  ("dd" magit-diff-dwim)
-  ("dc" magit-diff-staged)
-  ("dr" (magit-diff-range (my-git-commit-id)))
-  ("cc" magit-commit-create)
-  ("ca" magit-commit-amend)
-  ("ja" (magit-commit-amend '("--reuse-message=HEAD" "--no-verify")))
-  ("au" magit-stage-modified)
-  ("Q" git-gutter-toggle)
-  ("f" my-git-find-file-in-commit)
-  ("cr" my-git-cherry-pick-from-reflog)
-  ("vs" vc-msg-show)
-  ("vb" blamer-show-posframe-commit-info)
-  ("ob" blamer-mode)
-  ("q" nil))
-;; }}
-
 ;; {{ search
 (defhydra my-hydra-search ()
   "
@@ -187,10 +140,10 @@ _m_ Man
   ("f" osx-lib-find-file-in-finder "Open in finder"))
 ;; }}
 
-(defhydra my-hydra-gutter (:columns 3 :exit nil)
+(defhydra my-hydra-git-gutter (:exit nil :columns 3)
   "
-Git Gutter
--------------------------------------------------------------------
+Git & Gutter
+------------------------------------------------------------------
 "
   ("o" git-gutter:popup-hunk "Popup hunk")
   ("p" git-gutter:previous-hunk "Previous hunk")
@@ -198,6 +151,7 @@ Git Gutter
   ("s" git-gutter:stage-hunk "Stage hunk")
   ("r" git-gutter:revert-hunk "Revert hunk")
   ("m" git-gutter:mark-hunk "Mark hunk")
+  ("v" vc-msg-show "Show commit message")
   ("q" nil "Quit"))
 
 ;; {{ 各种跳转 ##
