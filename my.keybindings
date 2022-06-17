@@ -183,6 +183,7 @@ C-c C-s           my-hydra-search/body
 C-c C-,           my-hydra-file/body
 
 C-c i e           emoji-insert
+C-c i y           yas-insert-snippets
 
 ;; org-roam
 C-c n f           org-roam-node-find

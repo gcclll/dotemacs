@@ -271,6 +271,7 @@
 (lazy-load-set-keys '(
                       ("s-[" . eval-expression) ;执行表达式
                       ("C-c i e" . emoji-insert) ;插入Emacs内置表情包
+                      ("C-c i y" . yas-insert-snippet)
 
                       ("s--" . text-scale-decrease) ;减小字体
                       ("s-=" . text-scale-increase) ;增大字体
