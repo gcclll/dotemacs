@@ -54,7 +54,8 @@
                       ("C-c w -" . split-window-vertically) 
                       ("C-c w ;" . kill-other-window-buffer)
                       ("C-c w d" . delete-current-buffer-and-window)
-                      ;; ("C-M-;" . kill-other-window-buffer)
+                      ("C-c w b" . counsel-switch-buffer-other-window)
+                      ("C-M-;" . kill-other-window-buffer)
                       ))
 
 (lazy-load-global-keys '(
@@ -259,6 +260,7 @@
                       ("C-c C-g" . my-hydra-git/body)
                       ("C-c C-s" . my-hydra-search/body)
                       ("C-c C-," . my-hydra-file/body)
+                      ("C-c C-u" . my-hydra-gutter/body)
                       ))
 ;; }}
 
@@ -400,6 +402,7 @@
 ;; --- 显示当前代码的commit信息
 (lazy-load-global-keys '(
                          ("C-c C-t b" . blamer-mode)
+                         ("C-c g u" . my-goto-git-gutter)
                          ("s-i" . blamer-show-posframe-commit-info)) "init-git")
 ;; }}
 

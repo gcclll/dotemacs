@@ -89,6 +89,7 @@
                                    (require 'init-c)
                                    (require 'init-web-mode)
                                    (require 'init-git)
+                                   (require 'init-lua)
                                    ;; (require 'init-rjsx-mode)
 
                                    ;; (require 'init-restclient)

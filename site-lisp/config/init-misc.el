@@ -21,6 +21,8 @@
 (require 'org-mac-link)
 (require 'cycle-quotes)
 
+(require 'find-file-in-project)
+
 ;; 英文和中文之间自动插入空格
 (global-pangu-spacing-mode 1)
 

@@ -117,15 +117,15 @@ _SPC_ cancel _o_nly this     _d_elete     _=_ Balance
 "
 Git:
 [_dd_] Diff               [_ri_] Rebase closest             [_vs_] Show commit message
-[_dc_] Diff staged        [_s_] Show commit                 [_vb_] Blamer Commit message
+[_dc_] Diff staged        [_s_]  Show commit                [_vb_] Blamer Commit message
 [_dr_] Diff range         [_rr_] Reset gutter               [_ob_] Blamer mode
 [_au_] Add modified       [_rh_] Gutter => HEAD
-[_cc_] Commit             [_l_] Log selected/file
-[_ca_] Amend              [_b_] Branches
-[_ja_] Amend silent       [_k_] Git commit link
-[_tt_] Stash              [_Q_] Quit gutter
+[_cc_] Commit             [_l_]  Log selected/file
+[_ca_] Amend              [_b_]  Branches
+[_ja_] Amend silent       [_k_]  Git commit link
+[_tt_] Stash              [_Q_]  Quit gutter
 [_ta_] Apply stash        [_cr_] Cherry pick from reflog
-[_f_] Find file in commit
+[_f_]  Find file in commit
 
 "
   ("ri" my-git-rebase-interactive)
@@ -186,6 +186,19 @@ _m_ Man
   ("p" cp-fullpath-of-current-buffer "Full Path")
   ("f" osx-lib-find-file-in-finder "Open in finder"))
 ;; }}
+
+(defhydra my-hydra-gutter (:columns 3 :exit nil)
+  "
+Git Gutter
+-------------------------------------------------------------------
+"
+  ("o" git-gutter:popup-hunk "Popup hunk")
+  ("p" git-gutter:previous-hunk "Previous hunk")
+  ("n" git-gutter:next-hunk "Next hunk")
+  ("s" git-gutter:stage-hunk "Stage hunk")
+  ("r" git-gutter:revert-hunk "Revert hunk")
+  ("m" git-gutter:mark-hunk "Mark hunk")
+  ("q" nil "Quit"))
 
 ;; {{ 各种跳转 ##
 (defhydra my-jump-hydra (:color blue :columns 3)

@@ -283,3 +283,9 @@
 [submodule "site-lisp/extensions/modus-themes"]
 	path = site-lisp/extensions/modus-themes
 	url = https://github.com/protesilaos/modus-themes.git
+[submodule "site-lisp/extensions/lua-mode"]
+	path = site-lisp/extensions/lua-mode
+	url = https://github.com/immerrr/lua-mode.git
+[submodule "site-lisp/extensions/find-file-in-project"]
+	path = site-lisp/extensions/find-file-in-project
+	url = https://github.com/redguardtoo/find-file-in-project.git
