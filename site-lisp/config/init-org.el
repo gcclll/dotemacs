@@ -86,7 +86,7 @@
                              template-file
                              ))
       (message "Convert finish: %s" docx-file)))
-  
+
   (defun org-buffer-face-mode-variable ()
     (interactive)
     (make-face 'width-font-face)
@@ -99,7 +99,7 @@
   ;; requires
   (require 'org-special-block-extras)
   (add-hook #'org-mode-hook #'org-special-block-extras-mode)
-  
+
   (require 'org-mac-link)
   (require 'org-protocol)
   (require 'org-download)
@@ -109,7 +109,46 @@
   (require 'org-bullets)
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (require 'org-super-agenda)
-  
+  (require 'org-superstar)
+  (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+  (setq org-superstar-leading-bullet ?\s)
+  (setq org-indent-mode-turns-on-hiding-stars nil)
+  (require 'org-modern)
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
+  ;; Add frame borders and window dividers
+  (modify-all-frames-parameters
+   '((right-divider-width . 40)
+     (internal-border-width . 40)))
+  (dolist (face '(window-divider
+                  window-divider-first-pixel
+                  window-divider-last-pixel))
+    (face-spec-reset-face face)
+    (set-face-foreground face (face-attribute 'default :background)))
+  (set-face-background 'fringe (face-attribute 'default :background))
+  (setq
+   ;; Edit settings
+   org-auto-align-tags nil
+   org-tags-column 0
+   org-catch-invisible-edits 'show-and-error
+   org-special-ctrl-a/e t
+   org-insert-heading-respect-content t
+
+   ;; Org styling, hide markup etc.
+   org-hide-emphasis-markers t
+   org-pretty-entities t
+   org-ellipsis "…"
+
+   ;; Agenda styling
+   org-agenda-tags-column 0
+   org-agenda-block-separator ?─
+   org-agenda-time-grid
+   '((daily today require-timed)
+     (800 1000 1200 1400 1600 1800 2000)
+     " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+   org-agenda-current-time-string
+   "⭠ now ─────────────────────────────────────────────────")
 
   ;; org-roam packages
   (require 'websocket)
@@ -143,7 +182,7 @@
           ))
   )
 
-;; 当org文件有变动时自动保存
+;; org agenda 当org文件有变动时自动保存
 (with-eval-after-load 'org-agenda
   (advice-add #'org-agenda-archive :after #'org-save-all-org-buffers)
   (advice-add #'org-agenda-archive-default :after #'org-save-all-org-buffers)

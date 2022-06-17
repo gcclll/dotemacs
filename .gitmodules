@@ -274,3 +274,12 @@
 [submodule "site-lisp/extensions/lazycat-theme"]
 	path = site-lisp/extensions/lazycat-theme
 	url = https://github.com/manateelazycat/lazycat-theme.git
+[submodule "site-lisp/extensions/org-modern"]
+	path = site-lisp/extensions/org-modern
+	url = https://github.com/minad/org-modern.git
+[submodule "site-lisp/extensions/org-superstar-mode"]
+	path = site-lisp/extensions/org-superstar-mode
+	url = https://github.com/integral-dw/org-superstar-mode.git
+[submodule "site-lisp/extensions/modus-themes"]
+	path = site-lisp/extensions/modus-themes
+	url = https://github.com/protesilaos/modus-themes.git
