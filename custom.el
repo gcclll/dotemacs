@@ -3,7 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values '((after-save-hook . gcl/org-html-export-to-html)))
+ '(git-gutter:ask-p nil)
+ '(git-gutter:hide-gutter t)
+ '(safe-local-variable-values
+   '((git-commit-major-mode . git-commit-elisp-text-mode)
+     (after-save-hook . gcl/org-html-export-to-html)))
  '(tramp-verbose 0))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

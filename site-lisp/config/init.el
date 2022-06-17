@@ -49,9 +49,9 @@
     (require 'init-indent)
 
     ;; (require 'init-theme)
-    ;; (require 'lazycat-theme)
+    (require 'lazycat-theme)
     ;; (lazycat-theme-load-with-sunrise)
-    ;; (lazycat-theme-load-dark)
+    (lazycat-theme-load-dark)
 
     ;; 可以延后加载的
     (run-with-idle-timer 1 nil #'(lambda ()
