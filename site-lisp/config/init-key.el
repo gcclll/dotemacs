@@ -13,6 +13,8 @@
 ;; {{ 各种模式切换 ##
 (lazy-load-set-keys '(
                       ("C-c C-t e" . acm-toggle-english-helper)
+                      ("C-c C-t p" . lsp-bridge-mode)
+                      ("C-c C-t g" . git-gutter-toggle)
                       ))
 ;; }}
 
@@ -24,7 +26,7 @@
 
 ;; {{ eaf ##
 ;; git menu
-(lazy-load-global-keys '(("C-c C-a g" . one-key-menu-git)
+(lazy-load-global-keys '(("C-c C-a g" . eaf-open-git)
                          ("C-c C-a t" . eaf-open-terminal )
                          ("C-c C-a r" . eaf-open-rss-reader)
                          ("C-c C-a f" . eaf-open-file-manager)
@@ -235,6 +237,8 @@
                       ("M-o" . backward-delete-char-untabify) ;向前删除一个字符
                       ("M-SPC" . just-one-space) ;合并空格
                       ("C-/" . undo)             ;回退
+
+                      ("C-=" . er/expand-region)
                       ))
 
 ;; delete block
@@ -289,9 +293,6 @@
 ;; }}
 
 ;; {{ 工具函数 ##
-(lazy-load-set-keys '(
-                      ("C-c C-t p" . lsp-bridge-mode)
-                      ))
 
 (lazy-load-global-keys '(("C-c C-t l" . display-line-numbers-mode) ;行号模式切换
                          ("M-s-n" . comment-part-move-down) ;向下移动注释

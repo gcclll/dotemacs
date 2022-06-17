@@ -14,6 +14,27 @@
                       (setq git-gutter:disabled-modes '(asm-mode org-mode outline-mode markdown-mode
                                                                  image-mode)))
 
+(custom-set-variables
+ ;; '(git-gutter:window-width 2)
+ ;; '(git-gutter:modified-sign "☁")
+ ;; '(git-gutter:added-sign "☀")
+ ;; '(git-gutter:deleted-sign "☂")
+ ;; '(git-gutter:separator-sign "|")
+ '(git-gutter:hide-gutter t)       ;没有变更的时候不显示gutter
+ ;; '(git-gutter:diff-option "-w")    ;忽略所有空格
+ '(git-gutter:ask-p nil)           ;总是提示commit/revert ?
+ ;; '(git-gutter:verbosity 0)         ;不需要log/message
+ ;; '(git-gutter:unchanged-sign " ")
+ )
+;; (set-face-background 'git-gutter:unchanged "yellow")
+;; (set-face-foreground 'git-gutter:separator "yellow")
+
+;; diff information is updated at hooks in git-gutter:update-hooks.
+;; (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+;; diff information is updated after command in git-gutter:update-commands executed. 
+;; (add-to-list 'git-gutter:update-commands 'other-window)
+
+
 (defun my-git-gutter-reset-to-head-parent () 
   "Reset gutter to HEAD^." 
   (interactive) 

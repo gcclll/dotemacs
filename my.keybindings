@@ -1,4 +1,4 @@
-
+g
 {{ Fn, 功能键 ##
 f2                refresh-file
 f5                emacs-session-save
@@ -118,6 +118,7 @@ C-:                 comment-or-uncomment-region+
 C-/                 undo
 C-;                 sort-tab-close-current-tab
 C--                 recursive-search-references
+C-=                 er/expand-region
 
 C-<left>            windmove-left
 C-<right>           windmove-right
@@ -234,6 +235,7 @@ C-c C-t i           iedit-mode
 C-c C-t e           acm-enable-english-helper ;打开实例英语字典支持，比较卡
 C-c C-t l           display-line-numbers-mode
 C-c C-t p           lsp-bridge-mode
+C-c C-t g           git-gutter-toggle
 }}
 
 {{ C-c C-a, eaf apps ## 
