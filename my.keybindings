@@ -237,6 +237,11 @@ C-c f p               cp-fullpath-of-current-buffer
 C-c f o               osx-lib-reveal-in-finder
 }}
 
+{{ C-c o, open ??? ##
+;; https://blog.cheng92.com
+C-c o o               osx-open-url-at-point
+}}
+
 {{ C-c s, 搜索 ## 
 
 }}

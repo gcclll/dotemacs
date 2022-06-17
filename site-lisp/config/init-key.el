@@ -156,7 +156,9 @@
 ;; (lazy-load-global-keys '() "init-utils" "C-c")
 
 ;; osx-lib
-(lazy-load-global-keys '(("f o" . osx-lib-reveal-in-finder)) "init-osx" "C-c")
+(lazy-load-global-keys '(
+                         ("o o" . osx-open-url-at-point)
+                         ("f o" . osx-lib-reveal-in-finder)) "init-osx" "C-c")
 ;; }}
 
 ;; {{ 搜索 ##
