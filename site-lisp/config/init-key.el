@@ -8,7 +8,7 @@
 
 ;;; unset keys
 (lazy-load-unset-keys '("C-x C-f" "C-z" "C-q" "s-W" "M-h" "C-x C-c" "C-\\" "s-c" "s-x" "s-v" "s-p"
-                        "C-6" "C-c i" "C-c w" "C-c v"))
+                        "C-6" "C-c i" "C-c w" "C-c v" "C-x b" "M-,"))
 
 ;; {{ 各种模式切换 ##
 (lazy-load-set-keys '(
@@ -121,7 +121,7 @@
                       ("C-x p" . previous-buffer) ;前一个buffer
                       ("C-x k" . kill-this-buffer) 
                       ("C-x K" . kill-buffer) 
-                      ("C-x b" . ido-switch-buffer) ;切换buffer
+                      ;; ("C-x b" . ido-switch-buffer) ;切换buffer
                       ("C-x i" . ido-insert-buffer) ;插入buffer内容到当前buffer
                       ("C-x I" . ido-insert-file) ;插入文件内容到当前buffer
                       ("C-<" . beginning-of-buffer) ;当前buffer最开始位置
@@ -141,7 +141,46 @@
                       ("C-M-e" . end-of-defun)        ;函数末尾
                       ("C-M-l" . recenter)
                       ))
-;;
+
+;; consult
+(lazy-load-global-keys '(
+                         ("C-x b b" . consult-buffer)
+                         ("C-x b o" . consult-buffer-other-window)
+                         ("C-x b f" . consult-buffer-other-frame)
+                         ("C-x b m" . consult-bookmark)
+                         ("C-x b p" . consult-project-buffer)
+                         ("C-x b r" . consult-recent-file)
+                         ("C-x b y" . consult-yank-pop)
+                         ("C-x b h" . consult-apropos)
+                         
+                         ;; M-, g goto-map
+                         ("M-, o" . consult-outline) ;定位标题
+                         ("M-, m" . consult-mark)
+                         ;; ("M-, k" . consult-global-mark)
+                         ;; ("M-, i" . consult-imenu)
+                         ;; ("M-, I" . consult-imenu-multi)
+                         ("M-, f" . consult-find)
+                         ("M-, l" . consult-line) ;当前buffer里面搜索
+                         ("M-, L" . consult-line-multi) ;在多个buffer里面搜索
+                         ("M-, r" . consult-ripgrep)
+                         ("M-, o" . consult-multi-occur) ;在指定buffer中搜索(正则)
+                         ("M-, k" . consult-keep-lines)  ;搜索并只显示匹配的所有行
+                         ("M-, K" . consult-focus-lines) ;将焦点定位到(只显示)匹配的行
+                         ("M-, h" . consult-isearch-history) ;搜索历史
+                         ) "init-consult")
+
+(lazy-load-set-keys '(
+                      ("M-e" . consult-isearch-history) ;进入isearch之后按下重新打开历史记录
+                      ("M-, l" . consult-line)          ;从搜索记录中找
+                      ("M-, L" . consult-line-multi)    ;从搜索记录中找
+                      ) isearch-mode-map)
+
+(lazy-load-set-keys '(
+                      ("M-s" . consult-history)
+                      ("M-r" . consult-history)
+                      ) minibuffer-local-map)
+
+;; }}
 
 ;; {{ file 文件操作 ##
 (lazy-load-set-keys '(

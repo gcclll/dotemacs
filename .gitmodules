@@ -394,3 +394,6 @@ url = https://github.com/emacs-typescript/typescript.el.git
 path = site-lisp/extensions/consult
 url = https://github.com/minad/consult.git
 
+[submodule "site-lisp/extensions/vertico"]
+	path = site-lisp/extensions/vertico
+	url = https://github.com/minad/vertico.git

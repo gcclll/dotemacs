@@ -280,6 +280,17 @@ C-x u               mark-line
 C-x C-x             exchange-point-and-mark
 }}
 
+{{ C-x b, consult ##
+C-x b b          consult-buffer
+C-x b o          consult-buffer-other-window
+C-x b f          consult-buffer-other-frame
+C-x b m          consult-bookmark
+C-x b p          consult-project-buffer
+C-x b r          consult-recent-file
+C-x b y          consult-yank-pop
+C-x b h          consult-apropos
+}}
+
 {{ C-z ## 
 C-z k               beginning-of-buffer
 C-z j               end-of-buffer 
