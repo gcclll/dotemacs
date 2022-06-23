@@ -15,6 +15,7 @@ M-=               shift-number-up
 M-%               vr/query-replace
 M-SPC             just-one-space
 M-'               cycle-quotes
+M-,               persp-mode-prefix-key
 
 M-C               one-key-menu-cycle-buffer ;特定模式切换
 ;; 滚动其它窗口
