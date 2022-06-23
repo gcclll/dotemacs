@@ -2,16 +2,16 @@
 ;; https://github.com/minad/consult/wiki
 
 (require 'consult)
-;; (require 'consult-imenu)
+(require 'consult-imenu)
 ;; (require 'consult-xref)
-;; (require 'consult-register)
+(require 'consult-register)
 ;; (require 'consult-org)
 
 (require 'selectrum)
 (require 'orderless)
 
 ;; (require 'consult-selectrum)
-;; (require 'marginalia)
+(require 'marginalia)
 ;; (require 'vertico)
 ;; (require 'consult-org-roam)
 ;; (require 'prescient)
@@ -20,8 +20,10 @@
 
 (selectrum-mode +1)
 (setq completion-styles '(substring orderless))
+(setq selectrum-refine-candidates-function #'orderless-filter)
+(setq selectrum-highlight-candidates-function #'orderless-highlight-matches)
 ;; (vertico-mode)
-;; (marginalia-mode)
+(marginalia-mode)
 ;; (consult-org-roam-mode 1)
 ;; to make sorting and filtering more intelligent
 ;; (selectrum-prescient-mode +1)

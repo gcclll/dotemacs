@@ -162,7 +162,12 @@
                          ("M-, s" . consult-ripgrep)
 
                          ;; marginalia
-                         ("M-A" . marginalia-cycle)) "init-consult")
+                         ("M-A" . marginalia-cycle)
+                         
+                         ;; selectrum
+                         ("C-c '" . selectrum-repeat) ;和 ivy-resume 一样的功能
+                         
+                         ) "init-consult")
 
 (lazy-load-set-keys '(("M-e" . consult-isearch-history) ;进入isearch之后按下重新打开历史记录
                       ("M-, l" . consult-line)       ;从搜索记录中找
@@ -181,7 +186,7 @@
 ;; }}
 
 ;; {{ file 文件操作 ##
-(lazy-load-set-keys '(("C-c C-f" . ido-find-file) ;打开文件
+(lazy-load-set-keys '(("C-c C-f" . find-file) ;打开文件
                       ("C-c f f" . find-file)     ;打开文件
                       ("C-c f r" . rename-this-file-and-buffer) ;重命名文件和buffer
                       ("C-c f d" . delete-this-file) ;删除当前文件和buffer
