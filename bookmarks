@@ -8,8 +8,8 @@
  (rear-context-string . "n-system-monitor")
  (position . 8146))
 ("org-capture-last-stored"
- (filename . "~/github/mine/blog.cheng92.com/org/emacs_all_keybindings.org")
+ (filename . "~/github/mine/blog.cheng92.com/org/org_file_parser_with_javascript.org")
  (front-context-string . "\n* COMMENT Local")
  (rear-context-string . "macs | tinder>\n\n")
- (position . 316))
+ (position . 338))
 )

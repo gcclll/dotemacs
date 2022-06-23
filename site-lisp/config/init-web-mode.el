@@ -8,6 +8,7 @@
 (require 'js-doc)
 (require 'js2-mode)
 (require 'typescript-mode)
+;; (require 'typescript-mode)
 
 ;;; Code:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; OS Config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -25,6 +26,9 @@
 ;; Emmit.
 (setq web-mode-tag-auto-close-style 2) ;2 mean auto-close with > and </.
 (setq web-mode-markup-indent-offset 2)
+
+(setq typescript-indent-level 2)
+(setq typescript-indent-offset 2)
 
 ;; emmet-mode
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes

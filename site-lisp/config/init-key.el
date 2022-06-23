@@ -14,6 +14,7 @@
 (lazy-load-set-keys '(
                       ("C-c C-t e" . acm-toggle-english-helper)
                       ("C-c C-t p" . lsp-bridge-mode)
+                      ("C-c C-t r" . lsp-bridge-restart-process)
                       ("C-c C-t g" . git-gutter-toggle)
                       ))
 ;; }}

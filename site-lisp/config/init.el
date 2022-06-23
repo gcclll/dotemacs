@@ -47,6 +47,7 @@
     (require 'init-mode) 
     (require 'init-grammatical-edit) 
     (require 'init-indent)
+    (require 'init-workspace)
 
     ;; (require 'init-theme)
     (require 'lazycat-theme)

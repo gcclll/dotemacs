@@ -289,3 +289,9 @@
 [submodule "site-lisp/extensions/find-file-in-project"]
 	path = site-lisp/extensions/find-file-in-project
 	url = https://github.com/redguardtoo/find-file-in-project.git
+[submodule "site-lisp/extensions/typescript.el"]
+	path = site-lisp/extensions/typescript.el
+	url = https://github.com/emacs-typescript/typescript.el.git
+[submodule "site-lisp/extensions/perspective-el"]
+	path = site-lisp/extensions/perspective-el
+	url = https://github.com/nex3/perspective-el.git

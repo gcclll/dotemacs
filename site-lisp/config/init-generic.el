@@ -8,6 +8,8 @@
 (setq warning-minimum-log-level :error)
 (setq log-warning-minimum-level :error)
 
+(delete-selection-mode 1)
+
 ;; 增加长行处理性能
 (setq bidi-inhibit-bpa t)
 (setq-default bidi-paragraph-direction 'left-to-right)
