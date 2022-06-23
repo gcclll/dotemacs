@@ -2,15 +2,18 @@
 ;; https://github.com/minad/consult/wiki
 
 (require 'consult)
-(require 'consult-imenu)
-(require 'consult-xref)
-(require 'consult-register)
-(require 'consult-org)
-(require 'consult-selectrum)
+;; (require 'consult-imenu)
+;; (require 'consult-xref)
+;; (require 'consult-register)
+;; (require 'consult-org)
+
+(require 'selectrum)
+(require 'orderless)
+
+;; (require 'consult-selectrum)
 ;; (require 'marginalia)
 ;; (require 'vertico)
-(require 'consult-org-roam)
-;; (require 'selectrum)
+;; (require 'consult-org-roam)
 ;; (require 'prescient)
 ;; (require 'selectrum-prescient)
 
