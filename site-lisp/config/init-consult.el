@@ -14,7 +14,8 @@
 (require 'marginalia)
 (require 'embark)
 (require 'embark-consult)
-;; (require 'vertico)
+(require 'vertico)
+(require 'vertico-reverse)
 
 ;; (require 'prescient)
 ;; (require 'selectrum-prescient)
@@ -23,7 +24,7 @@
 (setq completion-styles '(substring orderless))
 (setq selectrum-refine-candidates-function #'orderless-filter)
 (setq selectrum-highlight-candidates-function #'orderless-highlight-matches)
-;; (vertico-mode)
+(vertico-mode)
 (marginalia-mode)
 (consult-org-roam-mode 1)
 
@@ -107,19 +108,74 @@ When the number of characters in a buffer exceeds this threshold,
                        (if transform (substring cand (1+ (length name))) name))))
 ;; }}
 
-;; {{ org-capture ##
-(defun consult-org-capture-target (scope)
-  "Choose a capture target interactively.
-This function returns a value suitable for use as the `target'
-entry of `org-capture-templates'.  SCOPE is as in `org-map-entries'."
-  (list 'function
-        (lambda ()
-          (let ((consult--read-config `((,this-command
-                                         :prompt "Capture target: "
-                                         :preview-key ,(kbd "M-.")))))
-            (set-buffer (save-window-excursion
-                          (consult-org-heading nil scope)
-                          (current-buffer)))))))
+;; {{ isearch-like ##
+(defun my/consult-line-forward ()
+  "Search for a matching line forward."
+  (interactive)
+  (consult-line))
+
+(defun my/consult-line-backward ()
+  "Search for a matching line backward."
+  (interactive)
+  (advice-add 'consult--line-candidates :filter-return 'reverse)
+  (vertico-reverse-mode +1)
+  (unwind-protect (consult-line)
+    (vertico-reverse-mode -1)
+    (advice-remove 'consult--line-candidates 'reverse)))
+
+(with-eval-after-load 'consult
+  (consult-customize my/consult-line-backward
+                     :prompt "Go to line backward: ")
+  (consult-customize my/consult-line-forward
+                     :prompt "Go to line forward: "))
+
+;; isearch 就够了啊
+;; (global-set-key (kbd "C-s") 'my/consult-line-forward)
+;; (global-set-key (kbd "C-r") 'my/consult-line-backward)
+;; }}
+
+;; {{ color funcs ##
+(defvar consult-colors-history nil
+  "History for `consult-colors-emacs' and `consult-colors-web'.")
+
+;; No longer preloaded in Emacs 28.
+(autoload 'list-colors-duplicates "facemenu")
+;; No preloaded in consult.el
+(autoload 'consult--read "consult")
+
+(defun consult-colors-emacs (color)
+  "Show a list of all supported colors for a particular frame.\
+
+You can insert the name (default), or insert or kill the hexadecimal or RGB value of the
+selected color."
+  (interactive
+   (list (consult--read (list-colors-duplicates (defined-colors))
+                        :prompt "Emacs color: "
+                        :require-match t
+                        :category 'color
+                        :history '(:input consult-colors-history)
+                        )))
+  (insert color))
+
+;; Adapted from counsel.el to get web colors.
+(defun counsel-colors--web-list nil
+  "Return list of CSS colors for `counsult-colors-web'."
+  (require 'shr-color)
+  (sort (mapcar #'downcase (mapcar #'car shr-color-html-colors-alist)) #'string-lessp))
+
+(defun consult-colors-web (color)
+  "Show a list of all CSS colors.\
+
+You can insert the name (default), or insert or kill the hexadecimal or RGB value of the
+selected color."
+  (interactive
+   (list (consult--read (counsel-colors--web-list)
+                        :prompt "Color: "
+                        :require-match t
+                        :category 'color
+                        :history '(:input consult-colors-history)
+                        )))
+  (insert color))
 ;; }}
 
 (message "> init-consult.el")

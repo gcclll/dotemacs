@@ -175,6 +175,10 @@
                          
                          ;; for org-mode
                          ("M-, M-, i" . consult-clock-in) ;选择一个header插入clock
+
+                         ;; colors
+                         ("M-, M-, c" . consult-colors-web)
+                         ("M-, M-, e" . consult-colors-emacs)
                          
                          ) "init-consult")
 
@@ -222,7 +226,8 @@
 (lazy-load-global-keys '(("s-y" . snails) 
                          ("s-u" . snails-search-point)) "init-snails")
 
-(lazy-load-set-keys '(("C-s" . swiper) 
+(lazy-load-set-keys '(
+                      ("C-s" . swiper) 
                       ("C-M-s" . isearch-forward)))
 
 (lazy-load-global-keys '(("s-R" . re-builder)

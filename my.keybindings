@@ -79,6 +79,10 @@ M-e               consult-isearch-history
 
 ;; org-mode
 M-, M-, i         consult-clock-in
+
+;; colors
+M-, M-, c         consult-colors-web
+M-, M-, e         consult-colors-emacs
 }}
 
 -------------------------------- Command ---------------------------------------
