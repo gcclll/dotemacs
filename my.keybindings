@@ -76,6 +76,9 @@ M-r               consult-history(minibuffer-local-map)
 
 M-A               marginalia-cycle
 M-e               consult-isearch-history
+
+;; org-mode
+M-, M-, i         consult-clock-in
 }}
 
 -------------------------------- Command ---------------------------------------

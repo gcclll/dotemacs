@@ -107,6 +107,21 @@ When the number of characters in a buffer exceeds this threshold,
                        (if transform (substring cand (1+ (length name))) name))))
 ;; }}
 
+;; {{ org-capture ##
+(defun consult-org-capture-target (scope)
+  "Choose a capture target interactively.
+This function returns a value suitable for use as the `target'
+entry of `org-capture-templates'.  SCOPE is as in `org-map-entries'."
+  (list 'function
+        (lambda ()
+          (let ((consult--read-config `((,this-command
+                                         :prompt "Capture target: "
+                                         :preview-key ,(kbd "M-.")))))
+            (set-buffer (save-window-excursion
+                          (consult-org-heading nil scope)
+                          (current-buffer)))))))
+;; }}
+
 (message "> init-consult.el")
 (provide 'init-consult)
 ;;; init-consult.el ends here

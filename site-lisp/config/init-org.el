@@ -135,7 +135,8 @@
            (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
            :unnarrowed t)
           ))
+  
   )
 
-
 (provide 'init-org)
+;;; init-org.el ends here

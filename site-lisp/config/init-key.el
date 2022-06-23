@@ -173,6 +173,9 @@
                          ;; embark
                          ("C-." . embark-act)
                          
+                         ;; for org-mode
+                         ("M-, M-, i" . consult-clock-in) ;选择一个header插入clock
+                         
                          ) "init-consult")
 
 (lazy-load-set-keys '(("M-e" . consult-isearch-history) ;进入isearch之后按下重新打开历史记录
