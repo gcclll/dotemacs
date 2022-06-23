@@ -402,7 +402,3 @@ url = https://github.com/minad/marginalia.git
 path = site-lisp/extensions/consult-org-roam
 url = https://github.com/jgru/consult-org-roam.git
 
-[submodule "site-lisp/extensions/consult-projectile"]
-path = site-lisp/extensions/consult-projectile
-url = https://gitlab.com/OlMon/consult-projectile.git
-
