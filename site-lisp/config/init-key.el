@@ -11,29 +11,25 @@
                         "C-6" "C-c i" "C-c w" "C-c v" "C-x b" "M-,"))
 
 ;; {{ 各种模式切换 ##
-(lazy-load-set-keys '(
-                      ("C-c C-t e" . acm-toggle-english-helper)
-                      ("C-c C-t p" . lsp-bridge-mode)
-                      ("C-c C-t r" . lsp-bridge-restart-process)
-                      ("C-c C-t g" . git-gutter-toggle)
-                      ))
+(lazy-load-set-keys '(("C-c C-t e" . acm-toggle-english-helper) 
+                      ("C-c C-t p" . lsp-bridge-mode) 
+                      ("C-c C-t r" . lsp-bridge-restart-process) 
+                      ("C-c C-t g" . git-gutter-toggle)))
 ;; }}
 
 ;; {{ 功能键 ##
-(lazy-load-set-keys '(
-                      ("<f5>" . emacs-session-save) ;退出 Emacs
+(lazy-load-set-keys '(("<f5>" . emacs-session-save) ;退出 Emacs
                       ))
 ;; }}
 
 ;; {{ eaf ##
 ;; git menu
-(lazy-load-global-keys '(("C-c C-a g" . eaf-open-git)
-                         ("C-c C-a t" . eaf-open-terminal )
-                         ("C-c C-a r" . eaf-open-rss-reader)
-                         ("C-c C-a f" . eaf-open-file-manager)
-                         ("C-c C-a b" . eaf-open-browser)
-                         ("C-c C-a m" . eaf-open-system-monitor)
-                         ) "init-eaf")
+(lazy-load-global-keys '(("C-c C-a g" . eaf-open-git) 
+                         ("C-c C-a t" . eaf-open-terminal ) 
+                         ("C-c C-a r" . eaf-open-rss-reader) 
+                         ("C-c C-a f" . eaf-open-file-manager) 
+                         ("C-c C-a b" . eaf-open-browser) 
+                         ("C-c C-a m" . eaf-open-system-monitor)) "init-eaf")
 
 (unless 
     (featurep 'cocoa) 
@@ -53,14 +49,12 @@
                       ("C-c w ," . delete-other-windows) 
                       ("C-c w v" . split-window-horizontally) 
                       ("C-c w -" . split-window-vertically) 
-                      ("C-c w ;" . kill-other-window-buffer)
-                      ("C-c w d" . delete-current-buffer-and-window)
-                      ("C-c w b" . counsel-switch-buffer-other-window)
-                      ("C-M-;" . kill-other-window-buffer)
-                      ))
+                      ("C-c w ;" . kill-other-window-buffer) 
+                      ("C-c w d" . delete-current-buffer-and-window) 
+                      ("C-c w b" . counsel-switch-buffer-other-window) 
+                      ("C-M-;" . kill-other-window-buffer)))
 
-(lazy-load-global-keys '(
-                         ("C-<left>" . windmove-left) 
+(lazy-load-global-keys '(("C-<left>" . windmove-left) 
                          ("C-<right>" . windmove-right) 
                          ("C-<up>" . windmove-up) 
                          ("C-<down>" . windmove-down)
@@ -98,8 +92,7 @@
 ;; --- ace jump
 (lazy-load-global-keys '(("s-<" . ace-jump-word-mode) 
                          ("s->" . ace-jump-char-mode) 
-                         ("s-?" . ace-jump-line-mode) 
-                         ) "ace-jump-mode")
+                         ("s-?" . ace-jump-line-mode)) "ace-jump-mode")
 
 ;; --- Cycle buffer
 (lazy-load-global-keys '(("M-C" . one-key-menu-cycle-buffer) ;特定模式切换
@@ -120,7 +113,7 @@
                       ("C-x n" . next-buffer)     ;下一个buffer
                       ("C-x p" . previous-buffer) ;前一个buffer
                       ("C-x k" . kill-this-buffer) 
-                      ("C-x K" . kill-buffer) 
+                      ("C-x K" . kill-buffer)
                       ;; ("C-x b" . ido-switch-buffer) ;切换buffer
                       ("C-x i" . ido-insert-buffer) ;插入buffer内容到当前buffer
                       ("C-x I" . ido-insert-file) ;插入文件内容到当前buffer
@@ -139,65 +132,67 @@
                       ("C-M-i" . down-list)           ;向右跳进 LIST
                       ("C-M-a" . beginning-of-defun)  ;函数开头
                       ("C-M-e" . end-of-defun)        ;函数末尾
-                      ("C-M-l" . recenter)
-                      ))
+                      ("C-M-l" . recenter)))
 
 ;; consult
-(lazy-load-global-keys '(
-                         ("C-x b b" . consult-buffer)
-                         ("C-x b o" . consult-buffer-other-window)
-                         ("C-x b f" . consult-buffer-other-frame)
-                         ("C-x b m" . consult-bookmark)
-                         ("C-x b p" . consult-project-buffer)
-                         ("C-x b r" . consult-recent-file)
-                         ("C-x b y" . consult-yank-pop)
+(lazy-load-global-keys '(("C-x b b" . consult-buffer) 
+                         ("C-x b o" . consult-buffer-other-window) 
+                         ("C-x b f" . consult-buffer-other-frame) 
+                         ("C-x b m" . consult-bookmark) 
+                         ("C-x b p" . consult-project-buffer) 
+                         ("C-x b r" . consult-recent-file) 
+                         ("C-x b y" . consult-yank-pop) 
                          ("C-x b h" . consult-apropos)
-                         
-                         ;; M-, g goto-map
-                         ("M-, o" . consult-outline) ;定位标题
-                         ("M-, m" . consult-mark)
-                         ;; ("M-, k" . consult-global-mark)
-                         ;; ("M-, i" . consult-imenu)
-                         ;; ("M-, I" . consult-imenu-multi)
-                         ("M-, f" . consult-find)
+                         ("M-, <f1>" . consult-man) 
+                         ("M-, ," . consult-file-externally) 
+                         ("M-, c" . consult-multi-occur) ;在指定buffer中搜索(正则)
+                         ("M-, f" . consult-find) 
+                         ("M-, h" . consult-isearch-history) ;搜索历史
+                         ("M-, i" . consult-imenu) 
+                         ("M-, I" . consult-imenu-multi) 
+                         ("M-, k" . consult-keep-lines) ;搜索并只显示匹配的所有行
+                         ("M-, K" . consult-focus-lines) ;将焦点定位到(只显示)匹配的行
                          ("M-, l" . consult-line) ;当前buffer里面搜索
                          ("M-, L" . consult-line-multi) ;在多个buffer里面搜索
-                         ("M-, r" . consult-ripgrep)
-                         ("M-, o" . consult-multi-occur) ;在指定buffer中搜索(正则)
-                         ("M-, k" . consult-keep-lines)  ;搜索并只显示匹配的所有行
-                         ("M-, K" . consult-focus-lines) ;将焦点定位到(只显示)匹配的行
-                         ("M-, h" . consult-isearch-history) ;搜索历史
-                         ) "init-consult")
+                         ("M-, m" . consult-mark) 
+                         ("M-, o" . consult-outline) ;定位标题
+                         ("M-, t" . consult-theme) 
+                         ("M-, r" . consult-register-store) ;保存到指定的字符代表的序列
+                         ("M-, R" . consult-register-load) ;加载之前保存的序列
+                         ("M-, s" . consult-ripgrep)
 
-(lazy-load-set-keys '(
-                      ("M-e" . consult-isearch-history) ;进入isearch之后按下重新打开历史记录
-                      ("M-, l" . consult-line)          ;从搜索记录中找
-                      ("M-, L" . consult-line-multi)    ;从搜索记录中找
+                         ;; marginalia
+                         ("M-A" . marginalia-cycle)) "init-consult")
+
+(lazy-load-set-keys '(("M-e" . consult-isearch-history) ;进入isearch之后按下重新打开历史记录
+                      ("M-, l" . consult-line)       ;从搜索记录中找
+                      ("M-, L" . consult-line-multi) ;从搜索记录中找
                       ) isearch-mode-map)
 
-(lazy-load-set-keys '(
-                      ("M-s" . consult-history)
+;; (lazy-load-set-keys '(("M-, o" . consult-org-heading) 
+;;                       ("M-, a" . consult-org-agenda)) org-mode-map)
+
+(lazy-load-set-keys '(("M-s" . consult-history) 
                       ("M-r" . consult-history)
+                      ;; marginalia
+                      ("M-A" . marginalia-cycle) ;显示更多信息(文件权限大小，函数说明)
                       ) minibuffer-local-map)
 
 ;; }}
 
 ;; {{ file 文件操作 ##
-(lazy-load-set-keys '(
-                      ("C-c C-f" . ido-find-file) ;打开文件
+(lazy-load-set-keys '(("C-c C-f" . ido-find-file) ;打开文件
                       ("C-c f f" . find-file)     ;打开文件
                       ("C-c f r" . rename-this-file-and-buffer) ;重命名文件和buffer
                       ("C-c f d" . delete-this-file) ;删除当前文件和buffer
-                      ("C-c f l" . load-file)                      
-                      ("C-c f p" . cp-fullpath-of-current-buffer)
-                      ("C-c f n" . cp-filename-of-current-buffer)
-                      ))
+                      ("C-c f l" . load-file) 
+                      ("C-c f p" . cp-fullpath-of-current-buffer) 
+                      ("C-c f n" . cp-filename-of-current-buffer)))
 
 ;; (lazy-load-global-keys '() "init-utils" "C-c")
 
 ;; osx-lib
-(lazy-load-global-keys '(
-                         ("o o" . osx-open-url-at-point)
+(lazy-load-global-keys '(("o o" . osx-open-url-at-point) 
                          ("f o" . osx-lib-reveal-in-finder)) "init-osx" "C-c")
 ;; }}
 
@@ -213,10 +208,8 @@
 (lazy-load-global-keys '(("s-y" . snails) 
                          ("s-u" . snails-search-point)) "init-snails")
 
-(lazy-load-set-keys '(
-                      ("C-s" . swiper)                      
-                      ("C-M-s" . isearch-forward)
-                      ))
+(lazy-load-set-keys '(("C-s" . swiper) 
+                      ("C-M-s" . isearch-forward)))
 
 (lazy-load-global-keys '(("s-R" . re-builder)
                          ;; color-rg
@@ -232,8 +225,7 @@
 
 ;; {{ 文本操作(标记+注释等) ##
 ;; --- iedit
-(lazy-load-global-keys '(
-                         ("s-o" . iedit-mode)
+(lazy-load-global-keys '(("s-o" . iedit-mode) 
                          ("C-c C-t i" . iedit-mode)) "init-iedit")
 
 ;; --- 增强式编辑当前光标的对象
@@ -271,18 +263,14 @@
                          ("C-:" . comment-or-uncomment-region+) ;注释当前行
                          ) "duplicate-line")
 
-(lazy-load-set-keys '(
-                      ("M-;" . comment-dwim)     ;在行尾添加注释
+(lazy-load-set-keys '(("M-;" . comment-dwim) ;在行尾添加注释
                       ("C-x C-x" . exchange-point-and-mark) ;交换当前点和标记点
-                      ("C-M-S-h" . mark-paragraph)          ;选中段落                      
+                      ("C-M-S-h" . mark-paragraph)          ;选中段落
                       ("C-M-S-b" . mark-whole-buffer)
-
                       ("M-o" . backward-delete-char-untabify) ;向前删除一个字符
                       ("M-SPC" . just-one-space) ;合并空格
                       ("C-/" . undo)             ;回退
-
-                      ("C-=" . er/expand-region)
-                      ))
+                      ("C-=" . er/expand-region)))
 
 ;; delete block
 (lazy-load-global-keys '(("M-N" . delete-block-backward) 
@@ -297,12 +285,10 @@
 ;; }}
 
 ;; {{ my hydras ##
-(lazy-load-set-keys '(
-                      ("C-c C-w" . my-hydra-window/body)
-                      ("C-c C-g" . my-hydra-git-gutter/body)
-                      ("C-c C-s" . my-hydra-search/body)
-                      ("C-c C-," . my-hydra-file/body)
-                      ))
+(lazy-load-set-keys '(("C-c C-w" . my-hydra-window/body) 
+                      ("C-c C-g" . my-hydra-git-gutter/body) 
+                      ("C-c C-s" . my-hydra-search/body) 
+                      ("C-c C-," . my-hydra-file/body)))
 ;; }}
 
 ;; {{ 其它 ##
@@ -311,11 +297,9 @@
                          ("s-h" . aweshell-toggle) 
                          ("s-x s-x" . aweshell-dedicated-toggle)) "aweshell")
 
-(lazy-load-set-keys '(
-                      ("s-[" . eval-expression) ;执行表达式
+(lazy-load-set-keys '(("s-[" . eval-expression)  ;执行表达式
                       ("C-c i e" . emoji-insert) ;插入Emacs内置表情包
                       ("C-c i y" . yas-insert-snippet)
-
                       ("s--" . text-scale-decrease) ;减小字体
                       ("s-=" . text-scale-increase) ;增大字体
                       ))
@@ -328,9 +312,9 @@
 
 ;; misc
 (lazy-load-global-keys '(("C-x y" . dash-at-point) 
-                         ("C-x r" . restart-emacs) 
-                         ;; ("C-x j" . tiny-expand) 
-                         ("C-c j" . tiny-expand)
+                         ("C-x r" . restart-emacs)
+                         ;; ("C-x j" . tiny-expand)
+                         ("C-c j" . tiny-expand) 
                          ("M-i" . string-inflection-toggle) 
                          ("<f5>" . restart-emacs) 
                          ("M-'" . cycle-quotes)) "init-misc")
@@ -380,7 +364,7 @@
 ;; --- elisp-format
 (lazy-load-set-keys '(("M-F" . elisp-format-buffer)) emacs-lisp-mode-map)
 
-(lazy-load-global-keys '(("C-c e n" . flycheck-next-error)
+(lazy-load-global-keys '(("C-c e n" . flycheck-next-error) 
                          ("C-c e p" . flycheck-previous-error)) "flycheck")
 
 ;; --- 格式化
@@ -441,33 +425,32 @@
 
 ;; {{ 版本管理 ##
 ;; --- 显示当前代码的commit信息
-(lazy-load-global-keys '(
-                         ("C-c C-t b" . blamer-mode)
-                         ("C-c g u" . my-goto-git-gutter)
+(lazy-load-global-keys '(("C-c C-t b" . blamer-mode) 
+                         ("C-c g u" . my-goto-git-gutter) 
                          ("s-i" . blamer-show-posframe-commit-info)) "init-git")
 ;; }}
 
 ;; {{ 代码折叠 ##
 ;; fold, vimish
 (lazy-load-global-keys '(("C-M-+" . vimish-fold) 
-                         ("C-M--" . vimish-fold-unfold-all)
-                         ("C-M-=" . vimish-fold-refold-all)
-                         ("C-M-<backspace>" . vimish-fold-delete)
-                         ("C-M-S-<backspace>" . vimish-fold-delete-all)
-                         ) "init-fold")
+                         ("C-M--" . vimish-fold-unfold-all) 
+                         ("C-M-=" . vimish-fold-refold-all) 
+                         ("C-M-<backspace>" . vimish-fold-delete) 
+                         ("C-M-S-<backspace>" . vimish-fold-delete-all)) "init-fold")
 ;; }}
 
 ;; {{ org-mode ##
-(lazy-load-set-keys '(
-                      ("C-c n f" . org-roam-node-find)
-                      ("C-c n g" . org-roam-graph)
-                      ("C-c n i" . org-roam-node-insert)
-                      ("C-c n c" . org-roam-capture)
-                      ("C-c n j" . org-roam-dailies-capture-today)
-                      ("C-c n ," . org-id-get-create)
-                      ("C-c n s" . org-roam-db-sync)
-                      ("C-c n u" . org-roam-ui-open)
-                      ))
+(lazy-load-set-keys '(("C-c n f" . org-roam-node-find) 
+                      ("C-c n g" . org-roam-graph) 
+                      ("C-c n i" . org-roam-node-insert) 
+                      ("C-c n c" . org-roam-capture) 
+                      ("C-c n j" . org-roam-dailies-capture-today) 
+                      ("C-c n ," . org-id-get-create) 
+                      ("C-c n s" . org-roam-db-sync) 
+                      ("C-c n u" . org-roam-ui-open) 
+                      ("C-c n e" . consult-org-roam-file-find) 
+                      ("C-c n b" . consult-org-roam-backlinks) 
+                      ("C-c n r" . consult-org-roam-search)))
 ;; }}
 
 ;; {{ init-workspace ##

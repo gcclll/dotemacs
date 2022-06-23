@@ -10,4 +10,12 @@ s="$1"
 arr=(${s//\// })
 user=${arr[0]}
 repo=${arr[1]}
-git submodule add -f https://github.com/$user/$repo.git site-lisp/extensions/$repo
+
+host="https://github.com"
+
+case "${2-}" in
+    -l) host="https://gitlab.com" ;;
+     *) echo "use default: $host"
+esac
+
+git submodule add -f $host/$user/$repo.git site-lisp/extensions/$repo
