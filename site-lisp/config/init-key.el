@@ -145,6 +145,7 @@
                          ("C-x b h" . consult-apropos)
                          ("M-, <f1>" . consult-man) 
                          ("M-, ," . consult-file-externally) 
+                         ("M-, b" . embark-bindings) ;查看命令绑了什么按键
                          ("M-, c" . consult-multi-occur) ;在指定buffer中搜索(正则)
                          ("M-, f" . consult-find) 
                          ("M-, h" . consult-isearch-history) ;搜索历史
@@ -156,16 +157,20 @@
                          ("M-, L" . consult-line-multi) ;在多个buffer里面搜索
                          ("M-, m" . consult-mark) 
                          ("M-, o" . consult-outline) ;定位标题
-                         ("M-, t" . consult-theme) 
                          ("M-, r" . consult-register-store) ;保存到指定的字符代表的序列
                          ("M-, R" . consult-register-load) ;加载之前保存的序列
                          ("M-, s" . consult-ripgrep)
+                         ("M-, t" . consult-theme) 
+                         ("M-, v" . my-consult-ripgrep-or-line)
 
                          ;; marginalia
                          ("M-A" . marginalia-cycle)
                          
                          ;; selectrum
                          ("M-, '" . selectrum-repeat) ;和 ivy-resume 一样的功能
+
+                         ;; embark
+                         ("C-." . embark-act)
                          
                          ) "init-consult")
 

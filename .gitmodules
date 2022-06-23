@@ -410,3 +410,6 @@ url = https://github.com/radian-software/selectrum.git
 path = site-lisp/extensions/counsel-projectile
 url = https://github.com/ericdanan/counsel-projectile.git
 
+[submodule "site-lisp/extensions/embark"]
+	path = site-lisp/extensions/embark
+	url = https://github.com/oantolin/embark.git
