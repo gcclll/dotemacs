@@ -133,8 +133,9 @@
                       ("C-M-a" . beginning-of-defun)  ;函数开头
                       ("C-M-e" . end-of-defun)        ;函数末尾
                       ("C-M-l" . recenter)))
+;; }}
 
-;; consult
+;; {{ consult ##
 (lazy-load-global-keys '(("C-x b b" . consult-buffer) 
                          ("C-x b o" . consult-buffer-other-window) 
                          ("C-x b f" . consult-buffer-other-frame) 

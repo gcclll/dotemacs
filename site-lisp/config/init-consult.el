@@ -26,23 +26,11 @@
 ;; (vertico-mode)
 (marginalia-mode)
 (consult-org-roam-mode 1)
-;; to make sorting and filtering more intelligent
-
-;; (setq register-preview-delay 0.5 register-preview-function #'consult-register-format
-;;       xref-show-xrefs-function #'consult-xref)
-
-;; (consult-customize consult-theme 
-;;                    :preview-key '(:debounce 0.2
-;;                                             any) 
-;;                    consult-ripgrep consult-git-grep consult-grep consult-bookmark
-;;                    consult-recent-file consult-xref consult--source-bookmark
-;;                    consult--source-recent-file consult--source-project-recent-file 
-;;                    consult-org-roam-forward-links
-;;                    :preview-key (kbd "M-."))
 
 ;; replace the key help with a completing-read interface
 (setq prefix-help-command #'embark-prefix-help-command)
 
+;; {{ 大文件用line小文件用 ripgrep
 (defcustom my-consult-ripgrep-or-line-limit 300000
   "Buffer size threshold for `my-consult-ripgrep-or-line'.
 When the number of characters in a buffer exceeds this threshold,
@@ -81,6 +69,43 @@ When the number of characters in a buffer exceeds this threshold,
                    "-e ARG OPTS "
                    (shell-quote-argument buffer-file-name))))
       (consult-ripgrep))))
+;; }}
+
+;; {{ org-clock ##
+(setq org-clock-persist t)
+(with-eval-after-load 'org
+  (org-clock-persistence-insinuate))
+
+(defun consult-clock-in (&optional match scope resolve)
+  "Clock into an Org heading."
+  (interactive (list nil nil current-prefix-arg))
+  (require 'org-clock)
+  (org-clock-load)
+  (save-window-excursion
+    (consult-org-heading
+     match
+     (or scope
+         (thread-last org-clock-history
+           (mapcar 'marker-buffer)
+           (mapcar 'buffer-file-name)
+           (delete-dups)
+           (delq nil))
+         (user-error "No recent clocked tasks")))
+    (org-clock-in nil (when resolve
+                        (org-resolve-clocks)
+                        (org-read-date t t)))))
+
+(consult-customize consult-clock-in
+                   :prompt "Clock in: "
+                   :preview-key (kbd "M-.")
+                   :group
+                   (lambda (cand transform)
+                     (let* ((marker (get-text-property 0 'consult--candidate cand))
+                            (name (if (member marker org-clock-history)
+                                      "*Recent*"
+                                    (buffer-name (marker-buffer marker)))))
+                       (if transform (substring cand (1+ (length name))) name))))
+;; }}
 
 (message "> init-consult.el")
 (provide 'init-consult)
