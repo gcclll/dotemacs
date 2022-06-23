@@ -403,11 +403,10 @@ path = site-lisp/extensions/consult-org-roam
 url = https://github.com/jgru/consult-org-roam.git
 
 [submodule "site-lisp/extensions/selectrum"]
-	path = site-lisp/extensions/selectrum
-	url = https://github.com/radian-software/selectrum.git
+path = site-lisp/extensions/selectrum
+url = https://github.com/radian-software/selectrum.git
+
 [submodule "site-lisp/extensions/counsel-projectile"]
-	path = site-lisp/extensions/counsel-projectile
-	url = https://github.com/ericdanan/counsel-projectile.git
-[submodule "site-lisp/extensions/prescient.el"]
-	path = site-lisp/extensions/prescient.el
-	url = https://github.com/radian-software/prescient.el.git
+path = site-lisp/extensions/counsel-projectile
+url = https://github.com/ericdanan/counsel-projectile.git
+

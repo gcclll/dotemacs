@@ -19,6 +19,7 @@
 
 
 ;; (selectrum-mode +1)
+(setq completion-styles '(substring orderless))
 ;; (vertico-mode)
 ;; (marginalia-mode)
 ;; (consult-org-roam-mode 1)

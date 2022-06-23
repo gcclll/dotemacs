@@ -48,7 +48,6 @@
     (require 'init-grammatical-edit) 
     (require 'init-indent)
     ;; (require 'init-workspace)
-    (require 'init-consult)
 
     ;; (require 'init-theme)
     (require 'lazycat-theme)
@@ -87,6 +86,7 @@
                                    (require 'init-markdown-mode)
                                    (require 'init-fold)
                                    
+                                   (require 'init-consult)
                                    ;; 开发相关
                                    (require 'init-c)
                                    (require 'init-web-mode)
