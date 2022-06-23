@@ -165,7 +165,7 @@
                          ("M-A" . marginalia-cycle)
                          
                          ;; selectrum
-                         ("C-c '" . selectrum-repeat) ;和 ivy-resume 一样的功能
+                         ("M-, '" . selectrum-repeat) ;和 ivy-resume 一样的功能
                          
                          ) "init-consult")
 
