@@ -175,6 +175,8 @@
                          
                          ;; for org-mode
                          ("M-, M-, i" . consult-clock-in) ;选择一个header插入clock
+                         ("M-, M-, h" . consult-org-heading)
+                         ("M-, M-, a" . consult-org-agenda)
 
                          ;; colors
                          ("M-, M-, c" . consult-colors-web)
@@ -469,6 +471,7 @@
                       ("C-c n u" . org-roam-ui-open) 
                       ("C-c n e" . consult-org-roam-file-find) 
                       ("C-c n b" . consult-org-roam-backlinks) 
+                      ("C-c n w" . consult-org-roam-forward-links)
                       ("C-c n r" . consult-org-roam-search)))
 ;; }}
 
