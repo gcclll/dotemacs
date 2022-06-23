@@ -62,7 +62,7 @@
                                    (require 'elf-mode) 
                                    (require 'init-popweb) 
                                    (require 'init-eaf) 
-                                   (require 'init-ivy) 
+                                   ;; (require 'init-ivy) 
                                    (require 'init-window) 
                                    (require 'init-search) 
                                    (require 'init-which-key) 

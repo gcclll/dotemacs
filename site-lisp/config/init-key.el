@@ -201,8 +201,8 @@
 (lazy-load-global-keys '(("C-M-%" . vr/query-replace)) "init-visual-regexp")
 
 ;; --- ivy
-(lazy-load-global-keys '(("M-x" . counsel-M-x) 
-                         ("C-c '" . ivy-resume)) "init-ivy")
+;; (lazy-load-global-keys '(("M-x" . counsel-M-x) 
+;;                          ("C-c '" . ivy-resume)) "init-ivy")
 
 ;; --- snails
 (lazy-load-global-keys '(("s-y" . snails) 
