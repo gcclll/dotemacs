@@ -18,7 +18,7 @@
 ;; (require 'selectrum-prescient)
 
 
-;; (selectrum-mode +1)
+(selectrum-mode +1)
 (setq completion-styles '(substring orderless))
 ;; (vertico-mode)
 ;; (marginalia-mode)
