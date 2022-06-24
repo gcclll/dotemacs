@@ -19,6 +19,9 @@
                                     ;; "flymake"
                                     ))
 
+;; (setq awesome-tray-mode-line-default-height 0.1)
+;; (setq awesome-tray-mode-line-height 0.1)
+
 (message "> init-awesome-tray.el")
 
 (provide 'init-awesome-tray)
