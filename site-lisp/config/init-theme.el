@@ -6,6 +6,9 @@
   
   (all-the-icons-completion-mode))
 
+;; (defface font-lock-negation-char-face '((:weight bold)))
+;; (face-remap-add-relative 'font-lock-negation-char-face '((:weight bold)))
+
 (provide 'init-theme)
 ;;; init-theme.el ends here
 

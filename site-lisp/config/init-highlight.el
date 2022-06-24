@@ -2,15 +2,15 @@
 
 ;;; Require
 ;; (require 'highlight-parentheses)
-;; (require 'highlight-indentation)
+(require 'indent-guide)
 
 ;;; Code:
 ;; (setq hl-paren-colors '("DarkOrange" "DeepSkyBlue" "DarkRed"))
 
-;; highlight colors
-;; (highlight-indentation-mode)
-;; (set-face-background 'highlight-indentation-face "#e3e3d3")
-;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+(indent-guide-global-mode)
+(setq indent-guide-delay 0.1)
+
+;; (face-remap-add-relative 'font-lock-keyword-face '((:weight bold)))
 
 (message "> init-highlight.el")
 (provide 'init-highlight)

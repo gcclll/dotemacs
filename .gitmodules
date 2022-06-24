@@ -429,3 +429,6 @@ url = https://github.com/domtronn/all-the-icons.el.git
 [submodule "site-lisp/extensions/indent-guide"]
 	path = site-lisp/extensions/indent-guide
 	url = https://github.com/zk-phi/indent-guide.git
+[submodule "site-lisp/extensions/whitespace-cleanup-mode"]
+	path = site-lisp/extensions/whitespace-cleanup-mode
+	url = https://github.com/purcell/whitespace-cleanup-mode.git
