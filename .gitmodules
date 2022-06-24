@@ -435,3 +435,12 @@ url = https://github.com/domtronn/all-the-icons.el.git
 [submodule "site-lisp/extensions/rainbow-delimiters"]
 	path = site-lisp/extensions/rainbow-delimiters
 	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "site-lisp/extensions/elpy"]
+	path = site-lisp/extensions/elpy
+	url = https://github.com/jorgenschaefer/elpy.git
+[submodule "site-lisp/extensions/pyvenv"]
+	path = site-lisp/extensions/pyvenv
+	url = https://github.com/jorgenschaefer/pyvenv.git
+[submodule "site-lisp/extensions/sdcv"]
+	path = site-lisp/extensions/sdcv
+	url = https://github.com/manateelazycat/sdcv.git
