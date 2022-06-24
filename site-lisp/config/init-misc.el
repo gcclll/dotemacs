@@ -19,15 +19,13 @@
 (require 'pangu-spacing)
 (require 'delete-block)
 (require 'aweshell)
-
 (require 'rect-mark)
 (require 'rect-extension)
 (require 'org-mac-link)
 (require 'cycle-quotes)
-
 (require 'find-file-in-project)
-
 (require 'whitespace-cleanup-mode)
+(require 'rainbow-delimiters)
 
 ;;; Code:
 (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
@@ -35,6 +33,9 @@
 
 ;; 英文和中文之间自动插入空格
 (global-pangu-spacing-mode 1)
+
+;;括号显示各种着色
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (message "> init-misc.el")
 (provide 'init-misc)

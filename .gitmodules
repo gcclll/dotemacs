@@ -432,3 +432,6 @@ url = https://github.com/domtronn/all-the-icons.el.git
 [submodule "site-lisp/extensions/whitespace-cleanup-mode"]
 	path = site-lisp/extensions/whitespace-cleanup-mode
 	url = https://github.com/purcell/whitespace-cleanup-mode.git
+[submodule "site-lisp/extensions/rainbow-delimiters"]
+	path = site-lisp/extensions/rainbow-delimiters
+	url = https://github.com/Fanael/rainbow-delimiters.git
