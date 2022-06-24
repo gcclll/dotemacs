@@ -49,7 +49,7 @@
     (require 'init-indent)
     ;; (require 'init-workspace)
 
-    ;; (require 'init-theme)
+    (require 'init-theme)
     (require 'lazycat-theme)
     (lazycat-theme-load-with-sunrise)
     ;; (lazycat-theme-load-dark)
@@ -92,6 +92,7 @@
                                    (require 'init-web-mode)
                                    (require 'init-git)
                                    (require 'init-lua)
+                                   (require 'init-highlight)
                                    ;; (require 'init-rjsx-mode)
 
                                    ;; (require 'init-restclient)
