@@ -9,6 +9,7 @@
 (require 'consult-org-roam)
 (require 'selectrum)
 (require 'orderless)
+(require 'consult-projectile)
 
 ;; (require 'consult-selectrum)
 (require 'marginalia)
@@ -30,6 +31,13 @@
 
 ;; replace the key help with a completing-read interface
 (setq prefix-help-command #'embark-prefix-help-command)
+
+;; projectile
+(define-key projectile-mode-map [remap projectile-find-file] 'consult-projectile-find-file)
+(define-key projectile-mode-map [remap projectile-switch-project] 'consult-projectile-switch-project)
+(define-key projectile-mode-map [remap projectile-switch-to-buffer] 'consult-projectile-switch-to-buffer)
+(define-key projectile-mode-map [remap projectile-find-dir] 'consult-projectile-find-dir)
+(define-key projectile-mode-map [remap projectile-recentf] 'consult-projectile-recentf)
 
 ;; {{ 大文件用line小文件用 ripgrep
 (defcustom my-consult-ripgrep-or-line-limit 300000
