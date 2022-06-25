@@ -354,10 +354,6 @@ url = https://github.com/auto-complete/popup-el.git
 path = site-lisp/extensions/vimish-fold
 url = https://github.com/matsievskiysv/vimish-fold.git
 
-[submodule "site-lisp/extensions/typescript-mode"]
-path = site-lisp/extensions/typescript-mode
-url = https://github.com/euske/typescript-mode.git
-
 [submodule "site-lisp/extensions/lazycat-theme"]
 path = site-lisp/extensions/lazycat-theme
 url = https://github.com/manateelazycat/lazycat-theme.git
@@ -427,20 +423,34 @@ path = site-lisp/extensions/all-the-icons.el
 url = https://github.com/domtronn/all-the-icons.el.git
 
 [submodule "site-lisp/extensions/indent-guide"]
-	path = site-lisp/extensions/indent-guide
-	url = https://github.com/zk-phi/indent-guide.git
+path = site-lisp/extensions/indent-guide
+url = https://github.com/zk-phi/indent-guide.git
+
 [submodule "site-lisp/extensions/whitespace-cleanup-mode"]
-	path = site-lisp/extensions/whitespace-cleanup-mode
-	url = https://github.com/purcell/whitespace-cleanup-mode.git
+path = site-lisp/extensions/whitespace-cleanup-mode
+url = https://github.com/purcell/whitespace-cleanup-mode.git
+
 [submodule "site-lisp/extensions/rainbow-delimiters"]
-	path = site-lisp/extensions/rainbow-delimiters
-	url = https://github.com/Fanael/rainbow-delimiters.git
+path = site-lisp/extensions/rainbow-delimiters
+url = https://github.com/Fanael/rainbow-delimiters.git
+
 [submodule "site-lisp/extensions/elpy"]
-	path = site-lisp/extensions/elpy
-	url = https://github.com/jorgenschaefer/elpy.git
+path = site-lisp/extensions/elpy
+url = https://github.com/jorgenschaefer/elpy.git
+
 [submodule "site-lisp/extensions/pyvenv"]
-	path = site-lisp/extensions/pyvenv
-	url = https://github.com/jorgenschaefer/pyvenv.git
+path = site-lisp/extensions/pyvenv
+url = https://github.com/jorgenschaefer/pyvenv.git
+
 [submodule "site-lisp/extensions/sdcv"]
-	path = site-lisp/extensions/sdcv
-	url = https://github.com/manateelazycat/sdcv.git
+path = site-lisp/extensions/sdcv
+url = https://github.com/manateelazycat/sdcv.git
+
+[submodule "site-lisp/extensions/go-mode.el"]
+path = site-lisp/extensions/go-mode.el
+url = https://github.com/dominikh/go-mode.el.git
+
+[submodule "site-lisp/extensions/gotest.el"]
+path = site-lisp/extensions/gotest.el
+url = https://github.com/nlamirault/gotest.el.git
+

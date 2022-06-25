@@ -37,6 +37,7 @@
 (setq async-bytecomp-allowed-packages nil) ;避免magit报错
 (setq word-wrap-by-category t)             ;按照中文折行
 (setq electric-pair-mode +1)                ;自动插入右括号
+;; (setq standard-input 2)
 (setq profiler-report-cpu-line-format ;让 profiler-report 第一列宽一点
       '((100 left)
         (24 right ((19 right)

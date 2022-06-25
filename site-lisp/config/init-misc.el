@@ -28,8 +28,8 @@
 (require 'rainbow-delimiters)
 
 ;;; Code:
-(add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
-(add-hook 'after-save-hook 'whitespace-cleanup)
+;; (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)
+;; (add-hook 'after-save-hook 'whitespace-cleanup)
 
 ;; 英文和中文之间自动插入空格
 (global-pangu-spacing-mode 1)
