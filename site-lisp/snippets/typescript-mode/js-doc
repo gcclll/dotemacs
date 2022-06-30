@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: js-doc
+# key: /**
+# --
+/**
+ * $1
+ * @param {$2} $3
+ * @returns $4
+ */
+ 

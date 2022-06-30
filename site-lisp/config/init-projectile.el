@@ -11,6 +11,7 @@
       projectile-globally-ignored-files '(".DS_Store" "Icon" "TAGS")
       projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".lo" ".la" ".out" ".sock"))
 (add-to-list 'projectile-globally-ignored-directories "elpa")
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
 
 (with-eval-after-load 'projectile
   (require 'counsel-projectile)

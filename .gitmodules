@@ -454,3 +454,12 @@ url = https://github.com/dominikh/go-mode.el.git
 path = site-lisp/extensions/gotest.el
 url = https://github.com/nlamirault/gotest.el.git
 
+[submodule "site-lisp/extensions/crux"]
+	path = site-lisp/extensions/crux
+	url = https://github.com/bbatsov/crux.git
+[submodule "site-lisp/extensions/org-extra-emphasis"]
+	path = site-lisp/extensions/org-extra-emphasis
+	url = https://github.com/QiangF/org-extra-emphasis.git
+[submodule "site-lisp/extensions/org-mode-ox-odt"]
+	path = site-lisp/extensions/org-mode-ox-odt
+	url = https://github.com/kjambunathan/org-mode-ox-odt.git

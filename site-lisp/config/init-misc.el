@@ -26,6 +26,7 @@
 (require 'find-file-in-project)
 (require 'whitespace-cleanup-mode)
 (require 'rainbow-delimiters)
+(require 'crux)
 
 ;;; Code:
 ;; (add-hook 'prog-mode-hook 'whitespace-cleanup-mode)

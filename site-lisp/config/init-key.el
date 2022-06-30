@@ -203,15 +203,18 @@
 ;; {{ file 文件操作 ##
 (lazy-load-set-keys '(("C-c C-f" . find-file) ;打开文件
                       ("C-c f f" . find-file)     ;打开文件
-                      ("C-c f r" . rename-this-file-and-buffer) ;重命名文件和buffer
-                      ("C-c f d" . delete-this-file) ;删除当前文件和buffer
+                      ("C-c f r" . crux-rename-buffer-and-file) ;重命名文件和buffer
+                      ("C-c f d" . crux-delete-buffer-and-file) ;删除当前文件和buffer
+                      ("C-c f ," . crux-open-with)
                       ("C-c f l" . load-file) 
                       ("C-c f p" . cp-fullpath-of-current-buffer) 
-                      ("C-c f n" . cp-filename-of-current-buffer)))
+                      ("C-c f n" . cp-filename-of-current-buffer)
+                      )
+                    )
 
 ;; (lazy-load-global-keys '() "init-utils" "C-c")
 
-;; osx-lib
+;; osx-lib https://www.baidu.com
 (lazy-load-global-keys '(("o o" . osx-open-url-at-point) 
                          ("f o" . osx-lib-reveal-in-finder)) "init-osx" "C-c")
 ;; }}
@@ -472,7 +475,11 @@
                       ("C-c n e" . consult-org-roam-file-find) 
                       ("C-c n b" . consult-org-roam-backlinks) 
                       ("C-c n w" . consult-org-roam-forward-links)
-                      ("C-c n r" . consult-org-roam-search)))
+                      ("C-c n r" . consult-org-roam-search)
+                      ("C-c n t" . counsel-org-tag)
+                      )
+                    )
+
 ;; }}
 
 ;; {{ init-workspace ##

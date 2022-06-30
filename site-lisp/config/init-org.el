@@ -6,6 +6,8 @@
 (require 'websocket)
 (require 'org-roam)
 (require 'org-roam-ui)
+(require 'org-extra-emphasis)
+(require 'ox-odt)
 
 
 (defun gcl/indent-org-block-automatically ()
@@ -137,6 +139,69 @@
           ))
   
   )
+
+
+;; ox-odt + org-extra-emphasis
+(custom-set-faces
+ '(org-default ((t ( 
+                    :background "#fff8ca"
+                    :inherit default
+                    ))))
+ '(org-extra-emphasis ((t ( 
+                           :background "#fff8ca"
+                           :height 1.5
+                           :inherit default
+                           :weight bold
+                           :width normal
+                           ))))
+ '(org-extra-emphasis-01 ((t ( 
+                              :family "CherryBomb"
+                              :foreground "#A53E2D"
+                              :inherit org-extra-emphasis
+                              :underline t
+                              ))))
+ '(org-extra-emphasis-02 ((t ( 
+                              :family "Eater"
+                              :foreground "#EEB97E"
+                              :inherit org-extra-emphasis
+                              :weight heavy
+                              ))))
+ '(org-extra-emphasis-03 ((t ( 
+                              :family "Diplomata"
+                              :foreground "#683231"
+                              :inherit org-extra-emphasis
+                              ))))
+ '(org-extra-emphasis-04 ((t ( 
+                              :family "Linux Biolinum Keyboard O"
+                              :foreground "#353D8B"
+                              :inherit org-extra-emphasis
+                              ))))
+ '(org-extra-emphasis-05 ((t ( 
+                              :family "Finger Paint"
+                              :foreground "#54436E"
+                              :inherit org-extra-emphasis
+                              ))))
+ '(org-extra-emphasis-06 ((t ( 
+                              :family "Fuzzy Bubbles"
+                              :foreground "#D65D8F"
+                              :inherit org-extra-emphasis
+                              ))))
+ '(org-extra-emphasis-07 ((t ( 
+                              :family "Gloria Hallelujah"
+                              :foreground "#E5C494"
+                              :inherit org-extra-emphasis
+                              :weight extra-bold
+                              ))))
+ '(org-extra-emphasis-08 ((t ( 
+                              :family "Henny Penny"
+                              :foreground "#0B9FCF"
+                              :inherit org-extra-emphasis
+                              ))))
+ '(org-extra-emphasis-09 ((t ( 
+                              :family "Humor Sans"
+                              :foreground "#C9564C"
+                              :inherit org-extra-emphasis
+                              )))))
 
 (provide 'init-org)
 ;;; init-org.el ends here

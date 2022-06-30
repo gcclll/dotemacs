@@ -268,12 +268,13 @@ C-c w K               buf-move-up
 
 {{ C-c f, 文件管理 ## 
 C-c f f               find-file
-C-c f r               rename-this-file-and-buffer
-C-c f d               delete-this-file
+C-c f r               crux-rename-buffer-and-file
+C-c f d               crux-delete-buffer-and-file
 C-c f l               load-file
 C-c f n               cp-filename-of-current-buffer
 C-c f p               cp-fullpath-of-current-buffer
 C-c f o               osx-lib-reveal-in-finder
+C-c f ,               crux-open-with
 }}
 
 {{ C-c o, open ??? ##
