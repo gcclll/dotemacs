@@ -466,3 +466,6 @@ url = https://github.com/nlamirault/gotest.el.git
 [submodule "site-lisp/extensions/yaml-mode"]
 	path = site-lisp/extensions/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "site-lisp/extensions/toggle-quotes-plus"]
+	path = site-lisp/extensions/toggle-quotes-plus
+	url = https://github.com/jcs-elpa/toggle-quotes-plus.git

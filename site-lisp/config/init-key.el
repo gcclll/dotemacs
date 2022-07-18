@@ -342,7 +342,7 @@
                          ("C-c j" . tiny-expand) 
                          ("M-i" . string-inflection-toggle) 
                          ("<f5>" . restart-emacs) 
-                         ("C-M-'" . cycle-quotes)) "init-misc")
+                         ("C-M-'" . toggle-quotes-plus)) "init-misc")
 ;; }}
 
 ;; {{ 工具函数 ##
