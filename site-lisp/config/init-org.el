@@ -121,6 +121,10 @@
           ("a" "auto export" plain "%?" :target
            (file+head "${slug}.org" "#+SETUPFILE:~/.gclrc/org/hugo_setup.org
 #+HUGO_SLUG: ${slug}
+odt_prettify_xml:
+#+HTML_HEAD: <style>
+#+HTML_HEAD: .textbox { color: #000000; background: #fff8ca; border: 1px solid #000000; padding: 1em; }
+#+HTML_HEAD: </style>
 #+PROPERTY: header-args:js :exports both
 #+PROPERTY: header-args :noweb no-export
 #+TITLE: ${title}\n
@@ -130,6 +134,8 @@
 
 \* COMMENT Local Variables       :ARCHIVE:
 # Local Variables:
+# eval: (buffer-face-mode 1)
+# org-hide-emphasis-markers: t
 # after-save-hook: gcl/org-html-export-to-html
 # End:")
            :unnarrowed t)

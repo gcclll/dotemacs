@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: vue-file-sse
+# key: vuesse
+# --
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
+<template>
+  <div>
+    {{ t('not-found')$1 }}
+  </div>
+</template>
+
+<route lang="yaml">
+meta:
+  layout: 404
+</route>
