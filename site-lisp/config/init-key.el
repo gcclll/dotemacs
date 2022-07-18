@@ -221,7 +221,8 @@
 
 ;; {{ 搜索 ##
 ;; 搜索替换
-(lazy-load-global-keys '(("C-M-%" . vr/query-replace)) "init-visual-regexp")
+(lazy-load-global-keys '(("C-M-%" . vr/query-replace)
+                         ("C-c r r" . vr/query-replace)) "init-visual-regexp")
 
 ;; --- ivy
 ;; (lazy-load-global-keys '(("M-x" . counsel-M-x) 
@@ -341,7 +342,7 @@
                          ("C-c j" . tiny-expand) 
                          ("M-i" . string-inflection-toggle) 
                          ("<f5>" . restart-emacs) 
-                         ("M-'" . cycle-quotes)) "init-misc")
+                         ("C-M-'" . cycle-quotes)) "init-misc")
 ;; }}
 
 ;; {{ 工具函数 ##

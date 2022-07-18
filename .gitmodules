@@ -463,3 +463,6 @@ url = https://github.com/nlamirault/gotest.el.git
 [submodule "site-lisp/extensions/org-mode-ox-odt"]
 	path = site-lisp/extensions/org-mode-ox-odt
 	url = https://github.com/kjambunathan/org-mode-ox-odt.git
+[submodule "site-lisp/extensions/yaml-mode"]
+	path = site-lisp/extensions/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git

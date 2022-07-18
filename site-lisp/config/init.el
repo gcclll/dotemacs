@@ -88,10 +88,12 @@
 
                                    (require 'init-consult)
                                    ;; 开发相关
+                                   (require 'init-flycheck)
                                    (require 'init-c)
                                    (require 'init-web-mode)
                                    (require 'init-git)
                                    (require 'init-lua)
+                                   (require 'yaml-mode)
                                    (require 'init-highlight)
                                    ;; (require 'init-python)
                                    ;; (require 'init-rjsx-mode)
